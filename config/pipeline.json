@@ -13,6 +13,28 @@
     "require_conclusion": true,
     "one_idea_per_segment": true
   },
+  "reference": {
+    "profile": "references/shorts-style-profile.md",
+    "recommended_sample_count": [3, 5],
+    "analyze": [
+      "hook",
+      "narration_pacing",
+      "caption_density",
+      "title_card",
+      "asset_mix",
+      "ending_pattern"
+    ]
+  },
+  "content": {
+    "domain": "fictional_media_lore",
+    "claim_types": [
+      "official",
+      "secondary_reference",
+      "creative_interpretation"
+    ],
+    "allow_creative_interpretation": true,
+    "label_interpretation_as_such": true
+  },
   "media": {
     "preferred_order": [
       "licensed_web_asset",

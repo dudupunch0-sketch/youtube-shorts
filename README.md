@@ -14,7 +14,7 @@
 ## 파이프라인
 
 ```text
-짧은 노트
+레퍼런스 쇼츠 + 주제
   ↓
 scriptwriter 스킬
   ↓
@@ -33,6 +33,7 @@ TTS 생성 및 실제 길이 측정
 
 ```text
 config/pipeline.json       파이프라인 규칙과 길이 제한
+references/                 레퍼런스 쇼츠에서 추출한 스타일 프로필
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
 examples/notes/             입력 노트 예시
 examples/episodes/          장면 JSON 예시
@@ -47,7 +48,7 @@ WSL에서 실행한다.
 python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 ```
 
-검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다.
+검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
 
 ## 다음 작업
 
@@ -59,3 +60,6 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 6. 사람 검수용 프리뷰 리포트 생성
 7. 유튜브 업로드는 위 과정이 안정화된 뒤 별도 단계로 추가
 
+## 콘텐츠 원칙
+
+초기 도메인은 창작물의 설정, 캐릭터, 기술, 에피소드, 상품, 번역, 팬덤의 오해를 다루는 정보형 쇼츠다. 공식 자료와 2차 자료를 참고할 수 있으며, 해석을 섞을 수 있다. 다만 공식 설정과 2차 자료와 창작적 해석을 내부적으로 구분해, 해석을 공식 사실처럼 포장하지 않는다.
