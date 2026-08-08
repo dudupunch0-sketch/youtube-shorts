@@ -1,0 +1,63 @@
+{
+  "video": {
+    "aspect_ratio": "9:16",
+    "target_duration_seconds": 60,
+    "accepted_duration_range_seconds": [55, 65],
+    "recommended_segment_count": [12, 18],
+    "segment_duration_seconds": [2.5, 5.0]
+  },
+  "concepts": {
+    "registry": "concepts/registry.json",
+    "active": "fictional-media-lore",
+    "selection": "explicit_concept_or_active"
+  },
+  "llm": {
+    "provider": "openai",
+    "endpoint": "https://api.openai.com/v1/chat/completions",
+    "model_env": "OPENAI_MODEL",
+    "default_model": "gpt-5.6"
+  },
+  "script": {
+    "language": "ko-KR",
+    "max_segment_words": 24,
+    "require_hook": true,
+    "require_conclusion": true,
+    "one_idea_per_segment": true
+  },
+  "reference": {
+    "profile": "references/shorts-style-profile.md",
+    "mode": "bootstrap_once",
+    "required_for_each_episode": false,
+    "recommended_sample_count": [3, 5],
+    "analyze": [
+      "hook",
+      "narration_pacing",
+      "caption_density",
+      "title_card",
+      "asset_mix",
+      "ending_pattern"
+    ]
+  },
+  "content": {
+    "domain": "fictional_media_lore",
+    "claim_types": [
+      "official",
+      "secondary_reference",
+      "creative_interpretation"
+    ],
+    "allow_creative_interpretation": true,
+    "label_interpretation_as_such": true
+  },
+  "media": {
+    "preferred_order": [
+      "licensed_web_asset",
+      "generated_image",
+      "abstract_background"
+    ],
+    "required_attribution_fields": [
+      "source_url",
+      "license",
+      "creator"
+    ]
+  }
+}

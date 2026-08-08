@@ -1,0 +1,144 @@
+{
+  "title": "로마인들은 왜 목욕탕에서 정치를 했을까?",
+  "topic": "고대 로마의 목욕탕",
+  "language": "ko-KR",
+  "target_duration_sec": 60,
+  "estimated_duration_sec": 60,
+  "segments": [
+    {
+      "index": 1,
+      "narration": "고대 로마의 목욕탕은 단순히 몸을 씻는 곳이 아니었습니다.",
+      "visual_query": "ancient Roman bath interior, cinematic illustration",
+      "visual_type": "illustration",
+      "caption": "목욕탕은 생활의 중심이었다",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 2,
+      "narration": "그곳은 오늘날의 헬스장과 카페와 광장을 합친 공간에 가까웠습니다.",
+      "visual_query": "Roman public bath social gathering, historical illustration",
+      "visual_type": "illustration",
+      "caption": "헬스장과 카페와 광장",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 3,
+      "narration": "로마인들은 하루 일과를 마치면 목욕탕으로 향했습니다.",
+      "visual_query": "ancient Romans walking toward public baths at sunset",
+      "visual_type": "illustration",
+      "caption": "하루 일과 뒤의 목적지",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 4,
+      "narration": "입장료는 비교적 저렴해서 많은 시민이 이용할 수 있었습니다.",
+      "visual_query": "Roman bath entrance with citizens, educational illustration",
+      "visual_type": "illustration",
+      "caption": "많은 시민이 이용했다",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 5,
+      "narration": "안으로 들어가면 먼저 옷을 맡기는 공간이 나왔습니다.",
+      "visual_query": "Roman bath changing room, archaeological reconstruction",
+      "visual_type": "illustration",
+      "caption": "첫 번째 공간: 탈의실",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 6,
+      "narration": "그다음에는 차가운 방, 미지근한 방, 뜨거운 방을 차례로 이용했습니다.",
+      "visual_query": "Roman bath cold room warm room hot room diagram",
+      "visual_type": "map",
+      "caption": "차가운 방에서 뜨거운 방까지",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 7,
+      "narration": "뜨거운 방의 바닥은 지하의 불길로 데워졌습니다.",
+      "visual_query": "Roman hypocaust underfloor heating cutaway diagram",
+      "visual_type": "map",
+      "caption": "지하에서 바닥을 데웠다",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 8,
+      "narration": "이 난방 방식은 로마의 건축 기술을 보여주는 대표적인 사례입니다.",
+      "visual_query": "ancient Roman engineering hypocaust reconstruction",
+      "visual_type": "illustration",
+      "caption": "로마의 놀라운 난방 기술",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 9,
+      "narration": "하지만 목욕탕의 진짜 핵심은 물보다 그곳에 모인 사람들이었습니다.",
+      "visual_query": "busy Roman bath conversations, cinematic historical illustration",
+      "visual_type": "illustration",
+      "caption": "진짜 핵심은 사람들이었다",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 10,
+      "narration": "사람들은 그곳에서 물건을 사고팔고, 소문을 나누고, 인맥을 만들었습니다.",
+      "visual_query": "Roman bath marketplace and social conversation, illustration",
+      "visual_type": "illustration",
+      "caption": "거래와 소문과 인맥",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 11,
+      "narration": "정치가들도 이곳에서 사람을 만나고 여론을 살폈습니다.",
+      "visual_query": "Roman politician speaking in public bath, historical illustration",
+      "visual_type": "illustration",
+      "caption": "정치 이야기도 목욕탕에서",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 12,
+      "narration": "그래서 목욕탕은 정보를 얻는 장소이자 사회생활의 무대였습니다.",
+      "visual_query": "Roman bath as center of city life, wide establishing illustration",
+      "visual_type": "illustration",
+      "caption": "정보와 사회생활의 무대",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 13,
+      "narration": "오늘날 우리가 카페에서 뉴스를 듣는 모습과 크게 다르지 않았던 셈입니다.",
+      "visual_query": "visual comparison ancient Roman bath and modern cafe, split screen",
+      "visual_type": "illustration",
+      "caption": "고대 로마판 카페",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 14,
+      "narration": "로마인에게 목욕은 청결보다 훨씬 넓은 의미를 가지고 있었습니다.",
+      "visual_query": "Roman bath mosaic and citizens, warm cinematic illustration",
+      "visual_type": "illustration",
+      "caption": "목욕은 청결 그 이상이었다",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 15,
+      "narration": "그들에게 목욕탕은 도시 전체가 연결되는 가장 뜨거운 장소였습니다.",
+      "visual_query": "grand Roman bath at night, people and architecture, cinematic illustration",
+      "visual_type": "illustration",
+      "caption": "도시가 연결되는 장소",
+      "duration_sec": 4,
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    }
+  ]
+}
