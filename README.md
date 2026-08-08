@@ -14,7 +14,7 @@
 ## 파이프라인
 
 ```text
-저장된 스타일 프로필 + 주제
+활성 concept의 스타일 프로필 + 주제
   ↓
 scriptwriter 스킬
   ↓
@@ -33,6 +33,7 @@ TTS 생성 및 실제 길이 측정
 
 ```text
 config/pipeline.json       파이프라인 규칙과 길이 제한
+concepts/                   concept 레지스트리와 concept별 정의
 references/                 레퍼런스 쇼츠에서 추출한 스타일 프로필
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
 examples/notes/             입력 노트 예시
@@ -72,6 +73,18 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 ```
 
 스타일을 바꾸고 싶을 때만 새 레퍼런스를 추가로 제공해 프로필을 갱신한다.
+
+## Concept 시스템
+
+현재 초기 설정은 `fictional-media-lore` concept으로 저장되어 있으며 `concepts/registry.json`에서 활성 상태다. 각 concept은 다음을 독립적으로 가질 수 있다.
+
+- 스타일 프로필
+- 대상 도메인
+- 말투와 전개 규칙
+- 출처·해석 정책
+- 장면과 영상 출력 규칙
+
+나중에 다른 분야를 추가할 때는 새 concept 정의와 스타일 프로필을 등록하고, 입력에 `concept`을 지정하면 된다. 생략하면 현재 활성 concept을 사용한다.
 
 ## 콘텐츠 원칙
 

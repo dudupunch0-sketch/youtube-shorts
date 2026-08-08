@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "active_concept": "fictional-media-lore",
+  "selection": "explicit_concept_or_active",
+  "concepts": [
+    {
+      "id": "fictional-media-lore",
+      "name": "창작물 설정 호기심 쇼츠",
+      "status": "active",
+      "definition": "concepts/fictional-media-lore.md",
+      "style_profile": "references/shorts-style-profile.md",
+      "reference_setup": "bootstrap_complete",
+      "domains": [
+        "pokemon",
+        "digimon",
+        "fictional_media_lore"
+      ]
+    }
+  ]
+}
