@@ -1,0 +1,808 @@
+{
+  "manifest_version": 1,
+  "episode_id": "phantom-clefairy-shadow",
+  "episode_path": "output/episodes/phantom-clefairy-shadow.json",
+  "title": "팬텀은 사실 삐삐의 그림자일까?",
+  "strategy": "collect_then_manual_review",
+  "search_fallback_skill": "insane-search",
+  "generation_fallback": "manual_only",
+  "asset_root": "output/media/phantom-clefairy-shadow",
+  "generated_at": "2026-08-08T13:20:34.580348+00:00",
+  "segments": [
+    {
+      "index": 1,
+      "duration_sec": 4.0,
+      "narration": "팬텀을 볼 때마다 삐삐가 떠오른다면, 꽤 유명한 이론을 알고 계신 겁니다.",
+      "caption": "팬텀은 삐삐의 그림자일까?",
+      "visual_type": "illustration",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "Gengar and Clefairy silhouette comparison, dramatic black background",
+          "Gengar and Clefairy silhouette comparison, dramatic black background public domain",
+          "Gengar and Clefairy silhouette comparison, dramatic black background Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877036+00:00",
+        "errors": [
+          "openverse_candidates(Gengar and Clefairy silhouette comparison, dramatic black background): TimeoutError",
+          "openverse_candidates(Gengar Clefairy silhouette comparison): TimeoutError",
+          "commons_candidates(Gengar Clefairy silhouette comparison): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "web_image_query",
+          "query": "Gengar official artwork",
+          "title": "Gengar official artwork gallery",
+          "asset_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+          "thumbnail_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+          "landing_url": "https://pokemondb.net/artwork/gengar",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Ken Sugimori (as described by the landing page)",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        },
+        {
+          "provider": "web_image_query",
+          "query": "Clefairy official artwork",
+          "title": "Clefairy Pokédex artwork",
+          "asset_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+          "thumbnail_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+          "landing_url": "https://pokemondb.net/pokedex/clefairy",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Ken Sugimori (as described by the landing page)",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefairy silhouette comparison, dramatic black background\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 2,
+      "duration_sec": 4.0,
+      "narration": "팬텀은 사실 삐삐의 그림자라는 주장인데요.",
+      "caption": "유명한 팬 이론",
+      "visual_type": "illustration",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "Gengar behind Clefairy as a shadow, fan theory concept art",
+          "Gengar behind Clefairy as a shadow, fan theory concept art public domain",
+          "Gengar behind Clefairy as a shadow, fan theory concept art Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877075+00:00",
+        "errors": [
+          "commons_candidates(Gengar behind Clefairy as a shadow, fan theory concept art): http_429",
+          "commons_candidates(Gengar behind Clefairy shadow): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar behind Clefairy as a shadow, fan theory concept art\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 3,
+      "duration_sec": 4.0,
+      "narration": "처음 들으면 말도 안 되는 소리 같지만, 근거처럼 보이는 단서가 꽤 있습니다.",
+      "caption": "그런데 단서가 있다",
+      "visual_type": "illustration",
+      "claim_type": "secondary_reference",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "mysterious Pokemon fan theory evidence board, red strings, dark style",
+          "mysterious Pokemon fan theory evidence board, red strings, dark style public domain",
+          "mysterious Pokemon fan theory evidence board, red strings, dark style Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877084+00:00",
+        "errors": [
+          "openverse_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): TimeoutError",
+          "commons_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): http_429",
+          "commons_candidates(mysterious fan theory evidence): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: mysterious Pokemon fan theory evidence board, red strings, dark style\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 4,
+      "duration_sec": 4.0,
+      "narration": "두 포켓몬의 둥근 몸과 짧은 팔, 뾰족한 귀는 묘하게 닮아 있습니다.",
+      "caption": "실루엣이 묘하게 닮았다",
+      "visual_type": "map",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "Gengar and Clefairy side by side shape comparison, clean infographic",
+          "Gengar and Clefairy side by side shape comparison, clean infographic public domain",
+          "Gengar and Clefairy side by side shape comparison, clean infographic Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877088+00:00",
+        "errors": [
+          "openverse_candidates(Gengar Clefairy by shape): TimeoutError",
+          "commons_candidates(Gengar Clefairy by shape): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "web_image_query",
+          "query": "Gengar and Clefairy official artwork",
+          "title": "Gengar official artwork gallery",
+          "asset_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+          "thumbnail_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+          "landing_url": "https://pokemondb.net/artwork/gengar",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Ken Sugimori (as described by the landing page)",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        },
+        {
+          "provider": "web_image_query",
+          "query": "Gengar and Clefairy official artwork",
+          "title": "Clefairy Pokédex artwork",
+          "asset_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+          "thumbnail_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+          "landing_url": "https://pokemondb.net/pokedex/clefairy",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Ken Sugimori (as described by the landing page)",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefairy side by side shape comparison, clean infographic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 5,
+      "duration_sec": 4.0,
+      "narration": "색깔은 정반대지만, 밝은 요정과 어두운 그림자라는 대비도 잘 맞죠.",
+      "caption": "밝은 요정과 어두운 그림자",
+      "visual_type": "illustration",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "bright fairy Pokemon versus dark ghost Pokemon, yin yang composition",
+          "bright fairy Pokemon versus dark ghost Pokemon, yin yang composition public domain",
+          "bright fairy Pokemon versus dark ghost Pokemon, yin yang composition Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877092+00:00",
+        "errors": [
+          "openverse_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): TimeoutError",
+          "commons_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): http_429",
+          "commons_candidates(bright fairy dark ghost): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "openverse",
+          "query": "bright fairy dark ghost",
+          "title": "Boy with a face of a man",
+          "asset_url": "https://live.staticflickr.com/8421/7633207028_88d9573748_b.jpg",
+          "thumbnail_url": "https://api.openverse.org/v1/images/e8e14211-f869-4ce2-a212-3207ff950b8d/thumb/",
+          "landing_url": "https://www.flickr.com/photos/46156860@N04/7633207028",
+          "license": "by-nc-sa",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+          "creator": "Faugel",
+          "creator_url": "https://www.flickr.com/photos/46156860@N04",
+          "attribution": "\"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
+          "review_status": "needs_review"
+        },
+        {
+          "provider": "openverse",
+          "query": "bright fairy dark ghost",
+          "title": "bottled up light",
+          "asset_url": "https://live.staticflickr.com/2134/2184175400_e1ce3984c5_b.jpg",
+          "thumbnail_url": "https://api.openverse.org/v1/images/97ecb9b5-3fdc-4bec-bf2a-3048ca1817ab/thumb/",
+          "landing_url": "https://www.flickr.com/photos/21175496@N04/2184175400",
+          "license": "by-nc-nd",
+          "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+          "creator": " Ed Murray",
+          "creator_url": "https://www.flickr.com/photos/21175496@N04",
+          "attribution": "\"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+          "review_status": "needs_review"
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: bright fairy Pokemon versus dark ghost Pokemon, yin yang composition\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 6,
+      "duration_sec": 4.0,
+      "narration": "게다가 팬텀의 공식 도감 분류부터가 그림자 포켓몬입니다.",
+      "caption": "공식 분류: 그림자 포켓몬",
+      "visual_type": "typography",
+      "claim_type": "official",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "official style Pokemon Pokedex entry for Gengar, shadow category graphic",
+          "official style Pokemon Pokedex entry for Gengar, shadow category graphic public domain",
+          "official style Pokemon Pokedex entry for Gengar, shadow category graphic Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877094+00:00",
+        "errors": [
+          "commons_candidates(official Pokedex Gengar shadow): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "web_image_query",
+          "query": "Gengar official artwork",
+          "title": "Gengar official artwork",
+          "asset_url": "https://media.pokemoncentral.it/wiki/d/d1/Artwork0094_RFVF.png",
+          "thumbnail_url": "https://media.pokemoncentral.it/wiki/d/d1/Artwork0094_RFVF.png",
+          "landing_url": "https://wiki.pokemoncentral.it/Gengar",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Unknown",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: official style Pokemon Pokedex entry for Gengar, shadow category graphic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 7,
+      "duration_sec": 4.0,
+      "narration": "여기에 팬덤이 주목한 숫자가 하나 더 있습니다.",
+      "caption": "그리고 숫자 하나",
+      "visual_type": "typography",
+      "claim_type": "secondary_reference",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "dramatic weighing scale and Pokemon silhouette, mystery reveal",
+          "dramatic weighing scale and Pokemon silhouette, mystery reveal public domain",
+          "dramatic weighing scale and Pokemon silhouette, mystery reveal Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877099+00:00",
+        "errors": [
+          "openverse_candidates(dramatic weighing scale and Pokemon silhouette, mystery reveal): TimeoutError",
+          "commons_candidates(weighing scale silhouette mystery): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: dramatic weighing scale and Pokemon silhouette, mystery reveal\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 8,
+      "duration_sec": 4.0,
+      "narration": "팬텀의 몸무게는 정확히 40.5킬로그램입니다.",
+      "caption": "팬텀: 40.5kg",
+      "visual_type": "typography",
+      "claim_type": "official",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "Gengar weight 40.5 kg Pokedex style data card",
+          "Gengar weight 40.5 kg Pokedex style data card public domain",
+          "Gengar weight 40.5 kg Pokedex style data card Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877101+00:00",
+        "errors": [
+          "commons_candidates(Gengar weight 40.5 kg Pokedex style data card): http_429",
+          "commons_candidates(Gengar weight 40.5 kg): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar weight 40.5 kg Pokedex style data card\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 9,
+      "duration_sec": 4.0,
+      "narration": "그런데 삐삐의 진화형인 픽시는 40.0킬로그램입니다.",
+      "caption": "픽시: 40.0kg",
+      "visual_type": "typography",
+      "claim_type": "official",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "Clefable weight 40.0 kg Pokedex style data card",
+          "Clefable weight 40.0 kg Pokedex style data card public domain",
+          "Clefable weight 40.0 kg Pokedex style data card Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877104+00:00",
+        "errors": [
+          "openverse_candidates(Clefable weight 40.0 kg Pokedex style data card): TimeoutError",
+          "commons_candidates(Clefable weight 40.0 kg Pokedex style data card): http_429",
+          "openverse_candidates(Clefable weight 40.0 kg): TimeoutError",
+          "commons_candidates(Clefable weight 40.0 kg): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "web_image_query",
+          "query": "Clefable official artwork",
+          "title": "Clefable Pokédex artwork",
+          "asset_url": "https://media.dexerto.com/media/pokemon-firered-leafgreen-clefable-artwork.png?format=auto&quality=75&width=385",
+          "thumbnail_url": "https://media.dexerto.com/media/pokemon-firered-leafgreen-clefable-artwork.png?format=auto&quality=75&width=385",
+          "landing_url": "https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/",
+          "license": "unknown",
+          "license_url": null,
+          "creator": "Unknown",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review",
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefable weight 40.0 kg Pokedex style data card\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 10,
+      "duration_sec": 4.0,
+      "narration": "불과 0.5킬로그램 차이라서, 그림자라면 질량까지 비슷한 것 아니냐는 해석이 나온 겁니다.",
+      "caption": "고작 0.5kg 차이",
+      "visual_type": "map",
+      "claim_type": "secondary_reference",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "40.5 kg versus 40.0 kg comparison graphic, dramatic scale",
+          "40.5 kg versus 40.0 kg comparison graphic, dramatic scale public domain",
+          "40.5 kg versus 40.0 kg comparison graphic, dramatic scale Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877108+00:00",
+        "errors": [
+          "openverse_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): TimeoutError",
+          "commons_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): http_429",
+          "commons_candidates(40.5 kg 40.0 kg): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: 40.5 kg versus 40.0 kg comparison graphic, dramatic scale\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 11,
+      "duration_sec": 4.0,
+      "narration": "하지만 여기서 중요한 반전이 있습니다.",
+      "caption": "하지만 반전이 있다",
+      "visual_type": "typography",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "dramatic mystery reveal card, black and yellow Korean text",
+          "dramatic mystery reveal card, black and yellow Korean text public domain",
+          "dramatic mystery reveal card, black and yellow Korean text Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877112+00:00",
+        "errors": [
+          "commons_candidates(dramatic mystery reveal card, black and yellow Korean text): http_429",
+          "commons_candidates(mystery card yellow Korean): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: dramatic mystery reveal card, black and yellow Korean text\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 12,
+      "duration_sec": 4.0,
+      "narration": "삐삐 자체의 몸무게는 7.5킬로그램이라 팬텀과는 전혀 가깝지 않습니다.",
+      "caption": "삐삐는 7.5kg",
+      "visual_type": "map",
+      "claim_type": "official",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic",
+          "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic public domain",
+          "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877114+00:00",
+        "errors": [
+          "commons_candidates(Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic): http_429",
+          "commons_candidates(Clefairy weight 7.5 kg): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 13,
+      "duration_sec": 4.0,
+      "narration": "그러니까 정확히 말하면 이 이론은 삐삐보다는 픽시와 더 잘 맞습니다.",
+      "caption": "정확히는 픽시 쪽에 가깝다",
+      "visual_type": "illustration",
+      "claim_type": "secondary_reference",
+      "search": {
+        "status": "collected",
+        "queries": [
+          "Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison",
+          "Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison public domain",
+          "Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877119+00:00",
+        "errors": [
+          "openverse_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): TimeoutError",
+          "commons_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): http_429"
+        ]
+      },
+      "candidates": [
+        {
+          "provider": "wikimedia_commons",
+          "query": "Clefairy evolution line Clefairy",
+          "title": "File:Augustins - Clef de voûte aux armoiries de Bernard de Rousergue - XVIe siècle RA 1061 Joconde05620001817.jpg",
+          "asset_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Augustins_-_Clef_de_vo%C3%BBte_aux_armoiries_de_Bernard_de_Rousergue_-_XVIe_si%C3%A8cle_RA_1061_Joconde05620001817.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Augustins_-_Clef_de_vo%C3%BBte_aux_armoiries_de_Bernard_de_Rousergue_-_XVIe_si%C3%A8cle_RA_1061_Joconde05620001817.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "landing_url": "https://commons.wikimedia.org/wiki/File%3AAugustins_-_Clef_de_vo%C3%BBte_aux_armoiries_de_Bernard_de_Rousergue_-_XVIe_si%C3%A8cle_RA_1061_Joconde05620001817.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review"
+        },
+        {
+          "provider": "wikimedia_commons",
+          "query": "Clefairy evolution line Clefairy",
+          "title": "File:(Albi) Cathédrale Sainte-Cécile - Vierge à l'Enfant remettant les clefs à Saint-Pierre - Jacques Blanchard PallissyPM81000015.jpg",
+          "asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%28Albi%29_Cath%C3%A9drale_Sainte-C%C3%A9cile_-_Vierge_%C3%A0_l%27Enfant_remettant_les_clefs_%C3%A0_Saint-Pierre_-_Jacques_Blanchard_PallissyPM81000015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%28Albi%29_Cath%C3%A9drale_Sainte-C%C3%A9cile_-_Vierge_%C3%A0_l%27Enfant_remettant_les_clefs_%C3%A0_Saint-Pierre_-_Jacques_Blanchard_PallissyPM81000015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "landing_url": "https://commons.wikimedia.org/wiki/File%3A%28Albi%29_Cath%C3%A9drale_Sainte-C%C3%A9cile_-_Vierge_%C3%A0_l%27Enfant_remettant_les_clefs_%C3%A0_Saint-Pierre_-_Jacques_Blanchard_PallissyPM81000015.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "creator": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
+          "creator_url": null,
+          "attribution": null,
+          "review_status": "needs_review"
+        }
+      ],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 14,
+      "duration_sec": 4.0,
+      "narration": "그렇다고 공식 설정에서 팬텀이 픽시의 그림자라고 확인된 적은 없습니다.",
+      "caption": "공식 설정은 아니다",
+      "visual_type": "map",
+      "claim_type": "official",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "Pokemon official canon versus fan theory split screen, question mark",
+          "Pokemon official canon versus fan theory split screen, question mark public domain",
+          "Pokemon official canon versus fan theory split screen, question mark Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877124+00:00",
+        "errors": [
+          "commons_candidates(Pokemon official canon versus fan theory split screen, question mark): http_429",
+          "commons_candidates(official canon fan theory): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Pokemon official canon versus fan theory split screen, question mark\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    },
+    {
+      "index": 15,
+      "duration_sec": 4.0,
+      "narration": "결국 팬텀은 정말 그림자일까요, 아니면 우연히 닮은 포켓몬일까요?",
+      "caption": "여러분은 어떻게 생각하나요?",
+      "visual_type": "illustration",
+      "claim_type": "creative_interpretation",
+      "search": {
+        "status": "blocked_or_failed",
+        "queries": [
+          "Gengar and Clefable facing each other under moonlight, mysterious ending",
+          "Gengar and Clefable facing each other under moonlight, mysterious ending public domain",
+          "Gengar and Clefable facing each other under moonlight, mysterious ending Creative Commons"
+        ],
+        "provider_order": [
+          "official_public_api",
+          "openly_licensed_media_index",
+          "official_source_page",
+          "insane-search-fallback"
+        ],
+        "last_run_at": "2026-08-08T13:27:13.877126+00:00",
+        "errors": [
+          "commons_candidates(Gengar and Clefable facing each other under moonlight, mysterious ending): http_429",
+          "commons_candidates(Gengar Clefable facing each): http_429"
+        ]
+      },
+      "candidates": [],
+      "asset": {
+        "status": "pending",
+        "mode": null,
+        "path": null,
+        "source_url": null,
+        "landing_url": null,
+        "license": null,
+        "license_url": null,
+        "creator": null,
+        "attribution": null,
+        "generator": null,
+        "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefable facing each other under moonlight, mysterious ending\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
+        "review_notes": "Candidates collected; select and verify license manually before approval."
+      }
+    }
+  ],
+  "collected_at": "2026-08-08T13:27:13.877129+00:00",
+  "candidate_imports": [
+    {
+      "file": "references/media-candidate-seeds/phantom-clefairy-shadow.json",
+      "imported_at": "2026-08-08T13:28:52.840818+00:00",
+      "count": 6
+    }
+  ]
+}

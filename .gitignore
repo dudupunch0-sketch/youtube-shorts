@@ -6,6 +6,10 @@ __pycache__/
 config/local/elevenlabs-tts.json
 output/audio/
 output/manifests/
+!output/manifests/
+output/manifests/*
+!output/manifests/*.media.json
+output/media/
 .venv-tts/
 *.mp4
 *.mov

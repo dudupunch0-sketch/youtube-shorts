@@ -64,10 +64,24 @@
     "label_interpretation_as_such": true
   },
   "media": {
+    "strategy": "collect_then_manual_review",
+    "first_implementation": "candidate_collection_only",
+    "search_fallback_skill": "insane-search",
+    "generation_fallback": "manual_only",
+    "manifest_schema": "scripts/plan_media.py",
+    "candidate_collector": "scripts/collect_media_candidates.py",
+    "manual_candidate_importer": "scripts/import_media_candidates.py",
+    "validation_script": "scripts/validate_media_manifest.py",
+    "require_human_review_for": [
+      "unknown_license",
+      "official_copyrighted_asset",
+      "cc_by_nc",
+      "cc_by_nd"
+    ],
     "preferred_order": [
       "licensed_web_asset",
-      "generated_image",
-      "abstract_background"
+      "human_reviewed_web_asset",
+      "generated_image_after_explicit_approval"
     ],
     "required_attribution_fields": [
       "source_url",

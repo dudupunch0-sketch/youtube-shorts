@@ -11,6 +11,16 @@ This file records project decisions, experiments, and known limitations. It is a
 - The plugin smoke test passed 6 of 8 checks. One selector test and one external `httpbin` test failed in this environment; the core benign URL path passed.
 - The skill improves access only. It does not replace license verification or media attribution.
 
+## 2026-08-08 — First media implementation
+
+- Approved the first implementation scope: collect web image/video candidates per scene, keep 12-18 scene support, and leave license decisions to human review.
+- Added `references/media-policy.md` with acquisition order, manual-review gates, generated-asset constraints, and provenance fields.
+- Added `scripts/plan_media.py`, `scripts/collect_media_candidates.py`, `scripts/import_media_candidates.py`, and `scripts/validate_media_manifest.py`.
+- The first episode manifest now records 10 unapproved candidates across the 15 scenes. The candidates include public-index results and manually imported web-image search results; their licenses remain explicitly `unknown` where they were not verified.
+- Validation passed in collection mode: `0/15 approved`, `15 awaiting review`, `10 collected candidates`.
+- Image generation was tested during implementation but is not part of the accepted media output because it is costly and does not match the desired source-collection workflow. Existing generated files remain local and unreferenced.
+- `insane-search` was not invoked for this episode because ordinary API access did not encounter a blocked URL. It remains installed as the blocked-access fallback.
+
 ## 2026-08-08 — TTS comparison closed
 
 ### Context
@@ -58,6 +68,6 @@ The TTS comparison is closed for now. Qwen is recorded as the quality/reference 
 
 ## Open work
 
-- Search or generate visuals for every scene and preserve attribution/provenance.
+- Add a real media-search adapter that stores landing pages, licenses, creators, and attribution for sourced assets.
 - Assemble captions, audio, visuals, and transitions into the final 9:16 video.
 - Add automated WAV non-silence validation and generation-time fallback handling.

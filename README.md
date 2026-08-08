@@ -41,6 +41,13 @@ examples/episodes/          장면 JSON 예시
 scripts/generate_episode.py 주제에서 episode JSON을 생성하는 CLI
 scripts/validate_episode.py 에피소드 포맷 검증기
 scripts/generate_tts.py       장면별 TTS와 타이밍 manifest 생성 CLI
+scripts/plan_media.py         장면별 미디어 검색·생성 계획 manifest 생성 CLI
+scripts/collect_media_candidates.py 공개 검색 API 후보 수집 CLI
+scripts/import_media_candidates.py 사람이 찾은 후보 URL을 manifest에 병합
+scripts/mark_generated_media.py 명시적으로 승인된 생성 이미지의 provenance 기록
+scripts/validate_media_manifest.py 미디어 파일·manifest 검증기
+output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태
+output/media/               에피소드별 이미지 자산
 ```
 
 ## 빠른 검증
@@ -51,7 +58,28 @@ WSL에서 실행한다.
 python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 ```
 
-검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
+검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
+
+## 미디어 계획과 검증
+
+첫 구현은 장면마다 사용할 웹 이미지·영상 후보를 수집한다. 후보의 라이선스와 실제 사용 가능 여부는 사람이 판단하며, 자동 생성은 명시적으로 요청한 경우에만 별도로 실행한다.
+
+```bash
+python3 scripts/plan_media.py \
+  output/episodes/phantom-clefairy-shadow.json
+
+python3 scripts/collect_media_candidates.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/import_media_candidates.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  references/media-candidate-seeds/phantom-clefairy-shadow.json
+
+python3 scripts/validate_media_manifest.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+```
+
+`insane-search`는 일반 검색/API가 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 접근 fallback으로 사용한다. 검색이 성공해도 라이선스와 출처 검증은 별도로 수행한다. 수집기는 후보 URL과 라이선스 메타데이터를 `candidates`에 기록하고, 선택 전에는 어떤 자산도 `approved`로 바꾸지 않는다.
 
 ## 웹 미디어 검색 fallback
 
@@ -135,7 +163,7 @@ python3 scripts/generate_tts.py \
 ## 다음 작업
 
 1. ElevenLabs 키·음성 프로필로 실제 TTS 한 편 생성
-2. 웹 미디어 검색/출처 저장 어댑터 연결
+2. 후보 목록을 확인하고 사람이 선택한 자산을 다운로드·출처 확정
 3. 이미지·음성·자막을 MP4로 합성
 4. 사람 검수용 프리뷰 리포트 생성
 5. 새 레퍼런스를 받을 때만 스타일 프로필 갱신 기능 추가
