@@ -1,0 +1,28 @@
+{
+  "video": {
+    "aspect_ratio": "9:16",
+    "target_duration_seconds": 60,
+    "accepted_duration_range_seconds": [55, 65],
+    "recommended_segment_count": [12, 18],
+    "segment_duration_seconds": [2.5, 5.0]
+  },
+  "script": {
+    "language": "ko-KR",
+    "max_segment_words": 24,
+    "require_hook": true,
+    "require_conclusion": true,
+    "one_idea_per_segment": true
+  },
+  "media": {
+    "preferred_order": [
+      "licensed_web_asset",
+      "generated_image",
+      "abstract_background"
+    ],
+    "required_attribution_fields": [
+      "source_url",
+      "license",
+      "creator"
+    ]
+  }
+}
