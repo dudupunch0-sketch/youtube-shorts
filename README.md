@@ -55,7 +55,7 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 ## TTS 연결
 
-TTS는 로컬 실행 가능한 Supertonic 3와 Qwen3-TTS를 기본 후보로 사용한다. 둘 다 API 비용 없이 실행할 수 있지만, 모델 다운로드와 로컬 CPU/GPU 자원은 필요하다. ElevenLabs는 외부 API fallback으로 유지한다.
+TTS는 로컬 실행 가능한 Supertonic 3와 Qwen3-TTS를 사용한다. 듣기 좋은 음질은 Qwen 쪽이었지만, 현재 장비에서는 CPU 생성이 너무 느리고 MX450 GPU 경로도 안정적이지 않다. 따라서 Supertonic 3을 실제 파이프라인의 기본 provider로 유지하고, Qwen은 품질 기준/reference provider로 보존한다. ElevenLabs는 외부 API fallback으로 유지한다.
 
 ### 로컬 TTS 설치
 
@@ -82,7 +82,7 @@ uv pip install --python .venv-tts/bin/python -r requirements-tts-local.txt
   --limit 3
 ```
 
-전체 장면은 `--limit`을 빼고 실행한다. Qwen이 GPU 메모리 부족으로 실패하면 `--device cpu`로 재시도한다.
+전체 장면은 `--limit`을 빼고 실행한다. Qwen을 실행할 때는 생성된 WAV가 무음이 아닌지 직접 확인한다. 현재 MX450에서는 Qwen의 일반 FP16 GPU 샘플링이 실패할 수 있으므로, production 기본값은 Supertonic으로 둔다.
 
 ```bash
 .venv-tts/bin/python scripts/generate_local_tts.py \
