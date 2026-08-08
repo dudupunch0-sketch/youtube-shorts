@@ -1,0 +1,162 @@
+{
+  "title": "팬텀은 사실 삐삐의 그림자일까?",
+  "topic": "팬텀과 삐삐의 그림자설",
+  "concept_id": "fictional-media-lore",
+  "language": "ko-KR",
+  "target_duration_sec": 60,
+  "estimated_duration_sec": 60,
+  "reference_style": "references/shorts-style-profile.md",
+  "content_domain": "fictional_media_lore",
+  "segments": [
+    {
+      "index": 1,
+      "narration": "팬텀을 볼 때마다 삐삐가 떠오른다면, 꽤 유명한 이론을 알고 계신 겁니다.",
+      "visual_query": "Gengar and Clefairy silhouette comparison, dramatic black background",
+      "visual_type": "illustration",
+      "caption": "팬텀은 삐삐의 그림자일까?",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 2,
+      "narration": "팬텀은 사실 삐삐의 그림자라는 주장인데요.",
+      "visual_query": "Gengar behind Clefairy as a shadow, fan theory concept art",
+      "visual_type": "illustration",
+      "caption": "유명한 팬 이론",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 3,
+      "narration": "처음 들으면 말도 안 되는 소리 같지만, 근거처럼 보이는 단서가 꽤 있습니다.",
+      "visual_query": "mysterious Pokemon fan theory evidence board, red strings, dark style",
+      "visual_type": "illustration",
+      "caption": "그런데 단서가 있다",
+      "duration_sec": 4,
+      "claim_type": "secondary_reference",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 4,
+      "narration": "두 포켓몬의 둥근 몸과 짧은 팔, 뾰족한 귀는 묘하게 닮아 있습니다.",
+      "visual_query": "Gengar and Clefairy side by side shape comparison, clean infographic",
+      "visual_type": "map",
+      "caption": "실루엣이 묘하게 닮았다",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 5,
+      "narration": "색깔은 정반대지만, 밝은 요정과 어두운 그림자라는 대비도 잘 맞죠.",
+      "visual_query": "bright fairy Pokemon versus dark ghost Pokemon, yin yang composition",
+      "visual_type": "illustration",
+      "caption": "밝은 요정과 어두운 그림자",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 6,
+      "narration": "게다가 팬텀의 공식 도감 분류부터가 그림자 포켓몬입니다.",
+      "visual_query": "official style Pokemon Pokedex entry for Gengar, shadow category graphic",
+      "visual_type": "typography",
+      "caption": "공식 분류: 그림자 포켓몬",
+      "duration_sec": 4,
+      "claim_type": "official",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 7,
+      "narration": "여기에 팬덤이 주목한 숫자가 하나 더 있습니다.",
+      "visual_query": "dramatic weighing scale and Pokemon silhouette, mystery reveal",
+      "visual_type": "typography",
+      "caption": "그리고 숫자 하나",
+      "duration_sec": 4,
+      "claim_type": "secondary_reference",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 8,
+      "narration": "팬텀의 몸무게는 정확히 40.5킬로그램입니다.",
+      "visual_query": "Gengar weight 40.5 kg Pokedex style data card",
+      "visual_type": "typography",
+      "caption": "팬텀: 40.5kg",
+      "duration_sec": 4,
+      "claim_type": "official",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 9,
+      "narration": "그런데 삐삐의 진화형인 픽시는 40.0킬로그램입니다.",
+      "visual_query": "Clefable weight 40.0 kg Pokedex style data card",
+      "visual_type": "typography",
+      "caption": "픽시: 40.0kg",
+      "duration_sec": 4,
+      "claim_type": "official",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 10,
+      "narration": "불과 0.5킬로그램 차이라서, 그림자라면 질량까지 비슷한 것 아니냐는 해석이 나온 겁니다.",
+      "visual_query": "40.5 kg versus 40.0 kg comparison graphic, dramatic scale",
+      "visual_type": "map",
+      "caption": "고작 0.5kg 차이",
+      "duration_sec": 4,
+      "claim_type": "secondary_reference",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 11,
+      "narration": "하지만 여기서 중요한 반전이 있습니다.",
+      "visual_query": "dramatic mystery reveal card, black and yellow Korean text",
+      "visual_type": "typography",
+      "caption": "하지만 반전이 있다",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 12,
+      "narration": "삐삐 자체의 몸무게는 7.5킬로그램이라 팬텀과는 전혀 가깝지 않습니다.",
+      "visual_query": "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic",
+      "visual_type": "map",
+      "caption": "삐삐는 7.5kg",
+      "duration_sec": 4,
+      "claim_type": "official",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 13,
+      "narration": "그러니까 정확히 말하면 이 이론은 삐삐보다는 픽시와 더 잘 맞습니다.",
+      "visual_query": "Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison",
+      "visual_type": "illustration",
+      "caption": "정확히는 픽시 쪽에 가깝다",
+      "duration_sec": 4,
+      "claim_type": "secondary_reference",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 14,
+      "narration": "그렇다고 공식 설정에서 팬텀이 픽시의 그림자라고 확인된 적은 없습니다.",
+      "visual_query": "Pokemon official canon versus fan theory split screen, question mark",
+      "visual_type": "map",
+      "caption": "공식 설정은 아니다",
+      "duration_sec": 4,
+      "claim_type": "official",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    },
+    {
+      "index": 15,
+      "narration": "결국 팬텀은 정말 그림자일까요, 아니면 우연히 닮은 포켓몬일까요?",
+      "visual_query": "Gengar and Clefable facing each other under moonlight, mysterious ending",
+      "visual_type": "illustration",
+      "caption": "여러분은 어떻게 생각하나요?",
+      "duration_sec": 4,
+      "claim_type": "creative_interpretation",
+      "source": {"status": "pending", "source_url": null, "license": null, "creator": null}
+    }
+  ]
+}

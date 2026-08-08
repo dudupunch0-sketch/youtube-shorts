@@ -2,7 +2,7 @@
   "video": {
     "aspect_ratio": "9:16",
     "target_duration_seconds": 60,
-    "accepted_duration_range_seconds": [55, 65],
+    "accepted_duration_range_seconds": [50, 70],
     "recommended_segment_count": [12, 18],
     "segment_duration_seconds": [2.5, 5.0]
   },
@@ -12,10 +12,25 @@
     "selection": "explicit_concept_or_active"
   },
   "llm": {
-    "provider": "openai",
-    "endpoint": "https://api.openai.com/v1/chat/completions",
-    "model_env": "OPENAI_MODEL",
-    "default_model": "gpt-5.6"
+    "default_provider": "openai_api",
+    "providers": {
+      "openai_api": {
+        "endpoint": "https://api.openai.com/v1/chat/completions",
+        "model_env": "OPENAI_MODEL",
+        "default_model": "gpt-5.6"
+      },
+      "claude_code": {
+        "command_env": "CLAUDE_COMMAND",
+        "model_env": "CLAUDE_MODEL"
+      },
+      "codex_cli": {
+        "command_env": "CODEX_COMMAND",
+        "model_env": "CODEX_MODEL"
+      },
+      "chatgpt_prompt": {
+        "output_dir": "output/prompts"
+      }
+    }
   },
   "script": {
     "language": "ko-KR",
@@ -59,5 +74,37 @@
       "license",
       "creator"
     ]
+  },
+  "tts": {
+    "default_provider": "supertonic",
+    "providers": {
+      "supertonic": {
+        "package": "supertonic",
+        "model": "supertonic-3",
+        "language": "ko",
+        "default_voice": "F1",
+        "default_speed": 1.4,
+        "output_format": "wav",
+        "local_only": true,
+        "measure_actual_duration": true
+      },
+      "qwen3_tts": {
+        "package": "qwen-tts",
+        "model": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+        "language": "Korean",
+        "default_speaker": "Sohee",
+        "output_format": "wav",
+        "local_only": true,
+        "measure_actual_duration": true
+      },
+      "elevenlabs": {
+        "config_env": "ELEVENLABS_TTS_CONFIG",
+        "profile_env": "ELEVENLABS_TTS_PROFILE",
+        "default_model": "eleven_multilingual_v2",
+        "default_output_format": "mp3_44100_128",
+        "scene_audio": true,
+        "measure_actual_duration": true
+      }
+    }
   }
 }
