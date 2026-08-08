@@ -38,6 +38,7 @@ references/                 레퍼런스 쇼츠에서 추출한 스타일 프로
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
 examples/notes/             입력 노트 예시
 examples/episodes/          장면 JSON 예시
+scripts/generate_episode.py 주제에서 episode JSON을 생성하는 CLI
 scripts/validate_episode.py 에피소드 포맷 검증기
 ```
 
@@ -53,14 +54,12 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 ## 다음 작업
 
-1. 실제 입력 노트 파일을 받는 CLI 추가
-2. 저장된 스타일 프로필을 읽는 LLM 호출 어댑터 연결
-3. TTS 어댑터와 실제 음성 길이 측정 연결
-4. 웹 미디어 검색/출처 저장 어댑터 연결
-5. 이미지·음성·자막을 MP4로 합성
-6. 사람 검수용 프리뷰 리포트 생성
-7. 새 레퍼런스를 받을 때만 스타일 프로필 갱신 기능 추가
-8. 유튜브 업로드는 위 과정이 안정화된 뒤 별도 단계로 추가
+1. TTS 어댑터와 실제 음성 길이 측정 연결
+2. 웹 미디어 검색/출처 저장 어댑터 연결
+3. 이미지·음성·자막을 MP4로 합성
+4. 사람 검수용 프리뷰 리포트 생성
+5. 새 레퍼런스를 받을 때만 스타일 프로필 갱신 기능 추가
+6. 유튜브 업로드는 위 과정이 안정화된 뒤 별도 단계로 추가
 
 ## 실제 사용 흐름
 
@@ -73,6 +72,26 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 ```
 
 스타일을 바꾸고 싶을 때만 새 레퍼런스를 추가로 제공해 프로필을 갱신한다.
+
+## 대본 생성 실행
+
+OpenAI API 키를 환경 변수로 설정한 뒤 실행한다.
+
+```bash
+export OPENAI_API_KEY="..."
+python3 scripts/generate_episode.py \
+  --topic "포켓몬에서 가장 오해받는 설정" \
+  --must-include "타입 상성에 관한 공식 설명" \
+  --avoid "지나치게 전문적인 설명"
+```
+
+짧은 노트 파일을 직접 넣을 수도 있다.
+
+```bash
+python3 scripts/generate_episode.py --note examples/notes/roman-baths.md
+```
+
+API를 호출하지 않고 concept과 프롬프트 연결만 확인하려면 `--dry-run`을 사용한다. 생성된 episode는 기존 검증기를 통과한 경우에만 `output/episodes/`에 저장된다.
 
 ## Concept 시스템
 
