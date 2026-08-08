@@ -28,6 +28,13 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 - Keep the original landing URL, creator, license, and attribution data in the media manifest even when the fallback skill retrieves the content.
 - Accept a fetched page only after the skill's validation result and trace show a real content response, not merely HTTP 200.
 
+### NamuWiki capture context
+
+- Use `skills/namuwiki-source-capture/SKILL.md` for NamuWiki evidence collection.
+- Capture the nearest complete table for structured values such as weight, height, IDs, classifications, and rates.
+- Capture the complete readable paragraph or list item for explanatory history, relationships, theories, and other prose.
+- Keep embedded third-party media hidden unless it is separately requested and reviewed. Preserve page URL, history URL, capture time, match, and context metadata.
+
 ## TTS policy (decision recorded 2026-08-08)
 
 - Qwen3-TTS 0.6B (`Sohee`) is the preferred quality/reference voice based on listening tests.

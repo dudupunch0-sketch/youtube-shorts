@@ -139,18 +139,44 @@ def main() -> int:
       const nodes = Array.from(document.querySelectorAll('p, li, td, blockquote, h2, h3, h4, div'))
         .filter(node => isVisible(node) && (node.innerText || '').includes(needle))
         .sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
-      const matchNode = nodes.find(node => ['TD', 'TH'].includes(node.tagName)) || nodes[0];
+      const blockTags = new Set(['P', 'LI', 'TD', 'TH', 'BLOCKQUOTE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'DIV']);
+      const leafBlocks = nodes.filter(node => !Array.from(node.children).some(child =>
+        blockTags.has(child.tagName) && (child.innerText || '').includes(needle)
+      ));
+      const matchNode = nodes.find(node => ['TD', 'TH'].includes(node.tagName)) || leafBlocks[0] || nodes[0];
       if (!matchNode) return {{ok: false, page_url: location.href, match: needle}};
       let target = matchNode;
       let contextType = 'element';
+      let contextNote = 'Captured the smallest readable text block containing the match.';
+      let matchExcerpt = (matchNode.innerText || '').trim();
       const nearestTable = matchNode.closest('table');
       if ((contextMode === 'auto' || contextMode === 'table') && nearestTable && isVisible(nearestTable)) {{
         target = nearestTable;
         contextType = 'table';
+        contextNote = 'Captured the nearest complete table so the title, headers, and related rows remain visible.';
       }}
       if (contextMode === 'table' && contextType !== 'table') {{
         return {{ok: false, page_url: location.href, match: needle, reason: 'match is not inside a visible table'}};
       }}
+      if (contextType === 'element') {{
+        const paragraphs = matchExcerpt.split(/\\n\\s*\\n/).map(value => value.trim()).filter(Boolean);
+        const matchedParagraph = paragraphs.find(value => value.includes(needle));
+        if (matchedParagraph && paragraphs.length > 1) {{
+          const wrapper = document.createElement('div');
+          wrapper.style.cssText = 'box-sizing:border-box; max-width:calc(100vw - 24px); padding:12px; background:#fff; color:#222; font-family:inherit; font-size:18px; line-height:1.7; white-space:pre-wrap; overflow-wrap:anywhere;';
+          wrapper.textContent = matchedParagraph;
+          document.body.appendChild(wrapper);
+          target = wrapper;
+          matchExcerpt = matchedParagraph;
+          contextNote = 'Extracted the complete paragraph containing the match from a larger text container.';
+        }}
+      }}
+      const floatingNodes = Array.from(document.querySelectorAll('body *')).filter(node => {{
+        if (node === target || target.contains(node)) return false;
+        const position = getComputedStyle(node).position;
+        return position === 'fixed' || position === 'sticky';
+      }});
+      floatingNodes.forEach(node => node.style.setProperty('display', 'none', 'important'));
       const embeddedMediaCount = target.querySelectorAll('img, video, iframe').length;
       {media_policy}
       target.setAttribute('data-codex-capture-root', 'true');
@@ -166,11 +192,12 @@ def main() -> int:
         history_url: historyLink ? new URL(historyLink.getAttribute('href'), location.href).href : null,
         match: needle,
         text_excerpt: (target.innerText || '').trim(),
-        match_excerpt: (matchNode.innerText || '').trim(),
+        match_excerpt: matchExcerpt,
         context_type: contextType,
         context_rows: rows.length,
         context_columns: rows.reduce((max, row) => Math.max(max, row.length), 0),
-        context_note: contextType === 'table' ? 'Captured the nearest complete table so the title, headers, and related rows remain visible.' : 'Captured the smallest readable text block containing the match.',
+        context_note: contextNote,
+        floating_ui_hidden: floatingNodes.length,
         third_party_media_present: embeddedMediaCount > 0,
         embedded_media_hidden: {str(not args.include_embedded_media).lower()}
       }};

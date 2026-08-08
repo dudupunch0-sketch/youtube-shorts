@@ -36,6 +36,7 @@ config/pipeline.json       파이프라인 규칙과 길이 제한
 concepts/                   concept 레지스트리와 concept별 정의
 references/                 레퍼런스 쇼츠에서 추출한 스타일 프로필
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
+skills/namuwiki-source-capture/ 표·문단 맥락형 나무위키 출처 캡처 스킬
 examples/notes/             입력 노트 예시
 examples/episodes/          장면 JSON 예시
 scripts/generate_episode.py 주제에서 episode JSON을 생성하는 CLI
@@ -49,7 +50,7 @@ scripts/set_media_layout.py 장면별 full_frame/split_2up 후보 선택
 scripts/migrate_media_manifest.py 기존 manifest를 다중 자산 schema로 마이그레이션
 scripts/download_media_selection.py 선택 후보를 로컬 검토 폴더에 다운로드
 scripts/render_media_preview.py 선택 레이아웃 미리보기 생성
-scripts/capture_namuwiki.py 모바일 나무위키 설명 블록 캡처
+scripts/capture_namuwiki.py 표·문단 맥락형 모바일 나무위키 캡처
 scripts/mark_generated_media.py 명시적으로 승인된 생성 이미지의 provenance 기록
 scripts/validate_media_manifest.py 미디어 파일·manifest 검증기
 output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태

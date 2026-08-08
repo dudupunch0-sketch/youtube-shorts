@@ -1,0 +1,4 @@
+interface:
+  display_name: "NamuWiki Evidence Capture"
+  short_description: "Capture tables and full prose context"
+  default_prompt: "Use $namuwiki-source-capture to collect contextual NamuWiki evidence for a Shorts scene."

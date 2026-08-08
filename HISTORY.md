@@ -30,6 +30,8 @@ This file records project decisions, experiments, and known limitations. It is a
 - Updated `scripts/capture_namuwiki.py` so `--context auto` captures the nearest complete table when a match is inside a table, preserving the title, headers, and related rows.
 - Recaptured the Phantom episode's numeric NamuWiki candidates for segments 8, 9, and 12. Each now records a 6-row × 5-column table context and updates the existing candidate in place.
 - Added `capture_context`, row/column counts, and the context mode to the media review report.
+- Added the reusable `skills/namuwiki-source-capture/` project skill, documenting when to capture a complete table versus a complete explanatory paragraph and how to retain provenance.
+- Improved prose capture for NamuWiki's nested `div` layout by extracting the matching paragraph from larger containers and hiding fixed/sticky page controls. Verified the attached-style paragraph capture and the segment 12 table capture visually.
 
 ## 2026-08-08 — TTS comparison closed
 

@@ -12,7 +12,7 @@ The first implementation collects still-image and video candidates for each epis
 4. Store candidate URLs and provenance in the media manifest, even when the license is unknown.
 5. Leave selection and rights judgment to a human. Generation is an explicitly requested, manual fallback only.
 
-For the current noncommercial channel workflow, NamuWiki text captures may be collected as `namuwiki_capture` candidates under CC BY-NC-SA 2.0 KR assumptions. The capture must include the page URL, history URL, capture time, and attribution. When a matched value is inside a table, capture the complete nearest table so the title, headers, and related rows preserve context. This allowance does not automatically cover third-party images embedded in the page.
+For the current noncommercial channel workflow, NamuWiki text captures may be collected as `namuwiki_capture` candidates under CC BY-NC-SA 2.0 KR assumptions. The capture must include the page URL, history URL, capture time, and attribution. Use the contextual capture skill: capture the complete nearest table for structured values, or the complete readable paragraph/list item for explanatory information. This allowance does not automatically cover third-party images embedded in the page.
 
 `insane-search` improves access to a page. It does not make the page or its media reusable.
 
