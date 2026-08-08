@@ -15,6 +15,8 @@
   },
   "reference": {
     "profile": "references/shorts-style-profile.md",
+    "mode": "bootstrap_once",
+    "required_for_each_episode": false,
     "recommended_sample_count": [3, 5],
     "analyze": [
       "hook",
