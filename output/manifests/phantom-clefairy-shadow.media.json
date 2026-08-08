@@ -1,5 +1,5 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "episode_id": "phantom-clefairy-shadow",
   "episode_path": "output/episodes/phantom-clefairy-shadow.json",
   "title": "팬텀은 사실 삐삐의 그림자일까?",
@@ -81,6 +81,41 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefairy silhouette comparison, dramatic black background\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "split_2up",
+        "fit": "contain",
+        "caption_safe_area": "bottom",
+        "assets": [
+          {
+            "position": "left",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-001-left.jpg",
+            "source_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+            "landing_url": "https://pokemondb.net/artwork/gengar",
+            "license": "unknown",
+            "license_url": null,
+            "creator": "Ken Sugimori (as described by the landing page)",
+            "attribution": null,
+            "review_notes": "Downloaded for local review only; not approved for publication."
+          },
+          {
+            "position": "right",
+            "candidate_index": 2,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-001-right.jpg",
+            "source_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+            "landing_url": "https://pokemondb.net/pokedex/clefairy",
+            "license": "unknown",
+            "license_url": null,
+            "creator": "Ken Sugimori (as described by the landing page)",
+            "attribution": null,
+            "review_notes": "Downloaded for local review only; not approved for publication."
+          }
+        ]
       }
     },
     {
@@ -123,6 +158,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar behind Clefairy as a shadow, fan theory concept art\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -166,6 +207,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: mysterious Pokemon fan theory evidence board, red strings, dark style\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -239,6 +286,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefairy side by side shape comparison, clean infographic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -311,6 +364,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: bright fairy Pokemon versus dark ghost Pokemon, yin yang composition\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -353,6 +412,27 @@
           "attribution": null,
           "review_status": "needs_review",
           "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        },
+        {
+          "provider": "namuwiki_capture",
+          "query": "그림자포켓몬",
+          "title": "팬텀(포켓몬스터)",
+          "asset_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "thumbnail_url": null,
+          "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+          "creator": "NamuWiki contributors; see page history",
+          "creator_url": "https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "review_status": "needs_review",
+          "content_type": "text_excerpt_capture",
+          "capture_path": "output/playwright/namuwiki/segment-006.png",
+          "capture_metadata_path": "output/playwright/namuwiki/segment-006.json",
+          "capture_selector": "[data-codex-capture-root=\"true\"]",
+          "capture_match": "그림자포켓몬",
+          "third_party_media_present": false,
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
         }
       ],
       "asset": {
@@ -368,6 +448,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: official style Pokemon Pokedex entry for Gengar, shadow category graphic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -410,6 +496,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: dramatic weighing scale and Pokemon silhouette, mystery reveal\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -420,7 +512,7 @@
       "visual_type": "typography",
       "claim_type": "official",
       "search": {
-        "status": "blocked_or_failed",
+        "status": "collected",
         "queries": [
           "Gengar weight 40.5 kg Pokedex style data card",
           "Gengar weight 40.5 kg Pokedex style data card public domain",
@@ -438,7 +530,29 @@
           "commons_candidates(Gengar weight 40.5 kg): http_429"
         ]
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "provider": "namuwiki_capture",
+          "query": "40.5kg",
+          "title": "팬텀(포켓몬스터)",
+          "asset_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "thumbnail_url": null,
+          "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+          "creator": "NamuWiki contributors; see page history",
+          "creator_url": "https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "review_status": "needs_review",
+          "content_type": "text_excerpt_capture",
+          "capture_path": "output/playwright/namuwiki/segment-008.png",
+          "capture_metadata_path": "output/playwright/namuwiki/segment-008.json",
+          "capture_selector": "[data-codex-capture-root=\"true\"]",
+          "capture_match": "40.5kg",
+          "third_party_media_present": false,
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+        }
+      ],
       "asset": {
         "status": "pending",
         "mode": null,
@@ -452,6 +566,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar weight 40.5 kg Pokedex style data card\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -497,6 +617,27 @@
           "attribution": null,
           "review_status": "needs_review",
           "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+        },
+        {
+          "provider": "namuwiki_capture",
+          "query": "40.0kg",
+          "title": "픽시(포켓몬스터)",
+          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "thumbnail_url": null,
+          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+          "creator": "NamuWiki contributors; see page history",
+          "creator_url": "https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "attribution": "나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "review_status": "needs_review",
+          "content_type": "text_excerpt_capture",
+          "capture_path": "output/playwright/namuwiki/segment-009.png",
+          "capture_metadata_path": "output/playwright/namuwiki/segment-009.json",
+          "capture_selector": "[data-codex-capture-root=\"true\"]",
+          "capture_match": "40.0kg",
+          "third_party_media_present": false,
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
         }
       ],
       "asset": {
@@ -512,6 +653,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefable weight 40.0 kg Pokedex style data card\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -555,6 +702,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: 40.5 kg versus 40.0 kg comparison graphic, dramatic scale\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -597,6 +750,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: dramatic mystery reveal card, black and yellow Korean text\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -607,7 +766,7 @@
       "visual_type": "map",
       "claim_type": "official",
       "search": {
-        "status": "blocked_or_failed",
+        "status": "collected",
         "queries": [
           "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic",
           "Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic public domain",
@@ -625,7 +784,29 @@
           "commons_candidates(Clefairy weight 7.5 kg): http_429"
         ]
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "provider": "namuwiki_capture",
+          "query": "7.5kg",
+          "title": "픽시(포켓몬스터)",
+          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "thumbnail_url": null,
+          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+          "creator": "NamuWiki contributors; see page history",
+          "creator_url": "https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "attribution": "나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "review_status": "needs_review",
+          "content_type": "text_excerpt_capture",
+          "capture_path": "output/playwright/namuwiki/segment-012.png",
+          "capture_metadata_path": "output/playwright/namuwiki/segment-012.json",
+          "capture_selector": "[data-codex-capture-root=\"true\"]",
+          "capture_match": "7.5kg",
+          "third_party_media_present": false,
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+        }
+      ],
       "asset": {
         "status": "pending",
         "mode": null,
@@ -639,6 +820,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -695,6 +882,27 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review"
+        },
+        {
+          "provider": "namuwiki_capture",
+          "query": "픽시의 그림자",
+          "title": "팬텀(포켓몬스터)",
+          "asset_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "thumbnail_url": null,
+          "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+          "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+          "creator": "NamuWiki contributors; see page history",
+          "creator_url": "https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+          "review_status": "needs_review",
+          "content_type": "text_excerpt_capture",
+          "capture_path": "output/playwright/namuwiki/segment-013.png",
+          "capture_metadata_path": "output/playwright/namuwiki/segment-013.json",
+          "capture_selector": "[data-codex-capture-root=\"true\"]",
+          "capture_match": "픽시의 그림자",
+          "third_party_media_present": true,
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
         }
       ],
       "asset": {
@@ -710,6 +918,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -752,6 +966,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Pokemon official canon versus fan theory split screen, question mark\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     },
     {
@@ -794,6 +1014,12 @@
         "generator": null,
         "prompt": "Use case: illustration-story\nAsset type: vertical 9:16 still image for a Korean YouTube Shorts slideshow\nPrimary request: visualize this scene idea: Gengar and Clefable facing each other under moonlight, mysterious ending\nStyle/medium: original editorial illustration, cinematic but readable\nComposition/framing: one clear focal subject, centered or upper-third subject, negative space for captions, vertical framing\nLighting/mood: curious, mysterious, high contrast, suitable for a short fact explainer\nConstraints: no text, no subtitles, no watermark, no logo, no UI, no collage, do not reproduce official key art or an exact copyrighted character design\nAvoid: illegible details, extra characters, visual clutter, borders",
         "review_notes": "Candidates collected; select and verify license manually before approval."
+      },
+      "visual": {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": []
       }
     }
   ],

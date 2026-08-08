@@ -68,7 +68,20 @@
     "first_implementation": "candidate_collection_only",
     "search_fallback_skill": "insane-search",
     "generation_fallback": "manual_only",
+    "layouts": {
+      "full_frame": {"asset_count": 1, "positions": ["full"]},
+      "split_2up": {"asset_count": 2, "positions": ["left", "right"]}
+    },
+    "caption_safe_area": "bottom",
+    "namuwiki_capture": {
+      "provider": "namuwiki_capture",
+      "mode": "mobile_browser_text_excerpt",
+      "license_assumption": "CC BY-NC-SA 2.0 KR",
+      "noncommercial_only": true,
+      "capture_script": "scripts/capture_namuwiki.py"
+    },
     "manifest_schema": "scripts/plan_media.py",
+    "manifest_migrator": "scripts/migrate_media_manifest.py",
     "candidate_collector": "scripts/collect_media_candidates.py",
     "manual_candidate_importer": "scripts/import_media_candidates.py",
     "review_report_script": "scripts/render_media_review.py",

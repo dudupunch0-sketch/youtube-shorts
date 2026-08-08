@@ -17,6 +17,8 @@ This file records project decisions, experiments, and known limitations. It is a
 - Added `references/media-policy.md` with acquisition order, manual-review gates, generated-asset constraints, and provenance fields.
 - Added `scripts/plan_media.py`, `scripts/collect_media_candidates.py`, `scripts/import_media_candidates.py`, and `scripts/validate_media_manifest.py`.
 - Added `scripts/render_media_review.py`, which creates a clickable scene-by-scene review sheet instead of silently approving a source.
+- Added `full_frame` and `split_2up` visual layouts, multi-asset provenance fields, a local two-up preview, and a v1-to-v2 manifest migrator.
+- Added mobile NamuWiki text capture with Playwright/Chromium. The Phantom episode now has captures for the shadow classification, Gengar weight, Clefable weight, Clefairy weight, and the fan-theory paragraph; embedded media is hidden by default.
 - The first episode manifest now records 10 unapproved candidates across the 15 scenes. The candidates include public-index results and manually imported web-image search results; their licenses remain explicitly `unknown` where they were not verified.
 - Validation passed in collection mode: `0/15 approved`, `15 awaiting review`, `10 collected candidates`.
 - The public APIs also returned timeouts and HTTP 429 rate limits for some scene queries. Those scenes remain visibly marked as missing/failed in the review sheet rather than being filled with generated images.

@@ -12,6 +12,8 @@ The first implementation collects still-image and video candidates for each epis
 4. Store candidate URLs and provenance in the media manifest, even when the license is unknown.
 5. Leave selection and rights judgment to a human. Generation is an explicitly requested, manual fallback only.
 
+For the current noncommercial channel workflow, NamuWiki text captures may be collected as `namuwiki_capture` candidates under CC BY-NC-SA 2.0 KR assumptions. The capture must include the page URL, history URL, capture time, and attribution. This allowance does not automatically cover third-party images embedded in the page.
+
 `insane-search` improves access to a page. It does not make the page or its media reusable.
 
 ## Source policy
@@ -25,6 +27,13 @@ Prefer public domain, CC0, CC BY, and CC BY-SA assets when the original page con
 - assets whose creator or landing page cannot be identified.
 
 Every sourced asset must retain its original URL, landing URL, creator, license, license URL, and attribution text.
+
+## Layouts
+
+- `full_frame`: one selected asset fills the visual area.
+- `split_2up`: exactly two selected assets appear left and right with a divider and a shared bottom caption-safe area.
+
+Candidates remain separate provenance records even when they are displayed together. The compositor must not flatten two sources into one provenance-less asset before review.
 
 ## Optional generated image policy
 

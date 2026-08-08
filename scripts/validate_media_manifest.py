@@ -11,6 +11,7 @@ from typing import Any
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 ASSET_STATUSES = {"pending", "needs_review", "approved", "rejected"}
+LAYOUT_ASSET_COUNTS = {"full_frame": 1, "split_2up": 2}
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 JPEG_SIGNATURE = b"\xff\xd8\xff"
 WEBP_SIGNATURE = b"RIFF"
@@ -25,6 +26,33 @@ def valid_image_header(path: Path) -> bool:
     if header.startswith(PNG_SIGNATURE) or header.startswith(JPEG_SIGNATURE):
         return True
     return header.startswith(WEBP_SIGNATURE) and header[8:12] == b"WEBP"
+
+
+def validate_approved_asset(asset: dict[str, Any], segment_index: int, asset_label: str, manifest_root: Path) -> None:
+    mode = asset.get("mode")
+    if mode not in {"sourced", "generated"}:
+        fail(f"segment {segment_index} {asset_label}: invalid asset mode {mode!r}")
+    relative_path = asset.get("path")
+    if not isinstance(relative_path, str) or not relative_path:
+        fail(f"segment {segment_index} {asset_label}: missing asset path")
+    asset_path = (manifest_root / relative_path).resolve()
+    if manifest_root not in asset_path.parents:
+        fail(f"segment {segment_index} {asset_label}: asset escapes repository root")
+    if asset_path.suffix.lower() not in IMAGE_EXTENSIONS:
+        fail(f"segment {segment_index} {asset_label}: unsupported image extension {asset_path.suffix}")
+    if not asset_path.is_file() or asset_path.stat().st_size < 1024:
+        fail(f"segment {segment_index} {asset_label}: missing or suspiciously small asset {asset_path}")
+    if not valid_image_header(asset_path):
+        fail(f"segment {segment_index} {asset_label}: invalid image header {asset_path}")
+
+    if mode == "sourced":
+        for field in ("source_url", "landing_url", "license", "license_url", "creator", "attribution"):
+            if not asset.get(field):
+                fail(f"segment {segment_index} {asset_label}: sourced asset missing {field}")
+    else:
+        for field in ("generator", "prompt"):
+            if not asset.get(field):
+                fail(f"segment {segment_index} {asset_label}: generated asset missing {field}")
 
 
 def validate(manifest_path: Path) -> tuple[int, int, int]:
@@ -59,33 +87,44 @@ def validate(manifest_path: Path) -> tuple[int, int, int]:
                 if not candidate.get(field):
                     fail(f"segment {expected_index} candidate {candidate_index}: missing {field}")
 
-        if status != "approved":
-            continue
-        mode = asset.get("mode")
-        if mode not in {"sourced", "generated"}:
-            fail(f"segment {expected_index}: invalid asset mode {mode!r}")
-        relative_path = asset.get("path")
-        if not isinstance(relative_path, str) or not relative_path:
-            fail(f"segment {expected_index}: missing asset path")
-        asset_path = (manifest_root / relative_path).resolve()
-        if manifest_root not in asset_path.parents:
-            fail(f"segment {expected_index}: asset escapes repository root")
-        if asset_path.suffix.lower() not in IMAGE_EXTENSIONS:
-            fail(f"segment {expected_index}: unsupported image extension {asset_path.suffix}")
-        if not asset_path.is_file() or asset_path.stat().st_size < 1024:
-            fail(f"segment {expected_index}: missing or suspiciously small asset {asset_path}")
-        if not valid_image_header(asset_path):
-            fail(f"segment {expected_index}: invalid image header {asset_path}")
-
-        if mode == "sourced":
-            for field in ("source_url", "landing_url", "license", "license_url", "creator", "attribution"):
-                if not asset.get(field):
-                    fail(f"segment {expected_index}: sourced asset missing {field}")
+        visual = segment.get("visual")
+        if isinstance(visual, dict):
+            layout = visual.get("layout", "full_frame")
+            if layout not in LAYOUT_ASSET_COUNTS:
+                fail(f"segment {expected_index}: invalid visual layout {layout!r}")
+            visual_assets = visual.get("assets", [])
+            if not isinstance(visual_assets, list):
+                fail(f"segment {expected_index}: visual.assets must be a list")
+            if visual_assets and len(visual_assets) != LAYOUT_ASSET_COUNTS[layout]:
+                fail(
+                    f"segment {expected_index}: layout {layout!r} requires "
+                    f"{LAYOUT_ASSET_COUNTS[layout]} visual asset(s), received {len(visual_assets)}"
+                )
+            positions = [item.get("position") for item in visual_assets]
+            expected_positions = ["full"] if layout == "full_frame" else ["left", "right"]
+            if visual_assets and positions != expected_positions:
+                fail(f"segment {expected_index}: visual asset positions must be {expected_positions}")
+            selected_assets = visual_assets
         else:
-            for field in ("generator", "prompt"):
-                if not asset.get(field):
-                    fail(f"segment {expected_index}: generated asset missing {field}")
-        approved += 1
+            selected_assets = [asset] if asset else []
+
+        for selected_index, selected_asset in enumerate(selected_assets, start=1):
+            if not isinstance(selected_asset, dict):
+                fail(f"segment {expected_index} visual asset {selected_index}: expected object")
+            selected_status = selected_asset.get("status")
+            if selected_status not in ASSET_STATUSES:
+                fail(f"segment {expected_index} visual asset {selected_index}: invalid status {selected_status!r}")
+            candidate_index = selected_asset.get("candidate_index")
+            if candidate_index is not None and not 1 <= candidate_index <= len(candidates):
+                fail(f"segment {expected_index} visual asset {selected_index}: invalid candidate_index")
+            if selected_status == "approved":
+                validate_approved_asset(
+                    selected_asset,
+                    expected_index,
+                    f"visual asset {selected_index}",
+                    manifest_root,
+                )
+                approved += 1
     candidate_count = sum(len(segment.get("candidates", [])) for segment in segments)
     return len(segments), approved, candidate_count
 

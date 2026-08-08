@@ -45,6 +45,11 @@ scripts/plan_media.py         장면별 미디어 검색·생성 계획 manifest
 scripts/collect_media_candidates.py 공개 검색 API 후보 수집 CLI
 scripts/import_media_candidates.py 사람이 찾은 후보 URL을 manifest에 병합
 scripts/render_media_review.py 장면별 클릭 가능한 후보 검토표 생성
+scripts/set_media_layout.py 장면별 full_frame/split_2up 후보 선택
+scripts/migrate_media_manifest.py 기존 manifest를 다중 자산 schema로 마이그레이션
+scripts/download_media_selection.py 선택 후보를 로컬 검토 폴더에 다운로드
+scripts/render_media_preview.py 선택 레이아웃 미리보기 생성
+scripts/capture_namuwiki.py 모바일 나무위키 설명 블록 캡처
 scripts/mark_generated_media.py 명시적으로 승인된 생성 이미지의 provenance 기록
 scripts/validate_media_manifest.py 미디어 파일·manifest 검증기
 output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태
@@ -78,6 +83,16 @@ python3 scripts/import_media_candidates.py \
 
 python3 scripts/render_media_review.py \
   output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/set_media_layout.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  1 split_2up 1 2
+
+python3 scripts/capture_namuwiki.py \
+  "https://namu.wiki/w/팬텀(포켓몬스터)" \
+  --match 픽시의 그림자 \
+  --segment=13 \
+  --manifest=output/manifests/phantom-clefairy-shadow.media.json
 
 python3 scripts/validate_media_manifest.py \
   output/manifests/phantom-clefairy-shadow.media.json

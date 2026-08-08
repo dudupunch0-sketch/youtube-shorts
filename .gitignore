@@ -11,6 +11,9 @@ output/manifests/*
 !output/manifests/*.media.json
 !output/manifests/*.media-review.md
 output/media/
+output/media-candidates/
+output/playwright/
+.playwright-cli/
 .venv-tts/
 *.mp4
 *.mov

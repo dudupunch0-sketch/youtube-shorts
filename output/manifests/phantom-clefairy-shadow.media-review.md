@@ -2,8 +2,8 @@
 
 - Episode: `phantom-clefairy-shadow`
 - 장면: 15개
-- 후보가 있는 장면: 6/15개
-- 수집 후보: 10개
+- 후보가 있는 장면: 8/15개
+- 수집 후보: 15개
 - 승인된 자산: 0/15개
 
 > 라이선스와 실제 사용 가능 여부는 자동 판단하지 않습니다. 아래 원본 페이지와 라이선스를 직접 확인한 뒤, 사용할 후보 번호를 알려주세요.
@@ -21,6 +21,9 @@
 - 내레이션: 팬텀을 볼 때마다 삐삐가 떠오른다면, 꽤 유명한 이론을 알고 계신 겁니다.
 - 검색 의도: `Gengar and Clefairy silhouette comparison, dramatic black background`
 - 검색 상태: `collected`
+
+- 화면 레이아웃: `split_2up`
+- 선택 후보: left: 후보 1, right: 후보 2
 
 - 검색 오류: `openverse_candidates(Gengar and Clefairy silhouette comparison, dramatic black background): TimeoutError; openverse_candidates(Gengar Clefairy silhouette comparison): TimeoutError; commons_candidates(Gengar Clefairy silhouette comparison): http_429`
 
@@ -54,6 +57,9 @@
 - 검색 의도: `Gengar behind Clefairy as a shadow, fan theory concept art`
 - 검색 상태: `blocked_or_failed`
 
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
+
 - 검색 오류: `commons_candidates(Gengar behind Clefairy as a shadow, fan theory concept art): http_429; commons_candidates(Gengar behind Clefairy shadow): http_429`
 
 **후보 없음** — 이 장면은 추가 검색이 필요합니다.
@@ -64,6 +70,9 @@
 - 검색 의도: `mysterious Pokemon fan theory evidence board, red strings, dark style`
 - 검색 상태: `blocked_or_failed`
 
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
+
 - 검색 오류: `openverse_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): TimeoutError; commons_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): http_429; commons_candidates(mysterious fan theory evidence): http_429`
 
 **후보 없음** — 이 장면은 추가 검색이 필요합니다.
@@ -73,6 +82,9 @@
 - 내레이션: 두 포켓몬의 둥근 몸과 짧은 팔, 뾰족한 귀는 묘하게 닮아 있습니다.
 - 검색 의도: `Gengar and Clefairy side by side shape comparison, clean infographic`
 - 검색 상태: `collected`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `openverse_candidates(Gengar Clefairy by shape): TimeoutError; commons_candidates(Gengar Clefairy by shape): http_429`
 
@@ -106,6 +118,9 @@
 - 검색 의도: `bright fairy Pokemon versus dark ghost Pokemon, yin yang composition`
 - 검색 상태: `collected`
 
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
+
 - 검색 오류: `openverse_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): TimeoutError; commons_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): http_429; commons_candidates(bright fairy dark ghost): http_429`
 
 ### 후보 1 — openverse
@@ -138,6 +153,9 @@
 - 검색 의도: `official style Pokemon Pokedex entry for Gengar, shadow category graphic`
 - 검색 상태: `collected`
 
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
+
 - 검색 오류: `commons_candidates(official Pokedex Gengar shadow): http_429`
 
 ### 후보 1 — web_image_query
@@ -152,11 +170,27 @@
 - 현재 상태: `needs_review`
 - 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
 
+### 후보 2 — namuwiki_capture
+
+- 제목: 팬텀(포켓몬스터)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-006.png)
+- 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
+- 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
+- 제작자: NamuWiki contributors; see page history
+- 출처 표기: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)
+- 현재 상태: `needs_review`
+- 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
+
 ## 장면 7 — 그리고 숫자 하나
 
 - 내레이션: 여기에 팬덤이 주목한 숫자가 하나 더 있습니다.
 - 검색 의도: `dramatic weighing scale and Pokemon silhouette, mystery reveal`
 - 검색 상태: `blocked_or_failed`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `openverse_candidates(dramatic weighing scale and Pokemon silhouette, mystery reveal): TimeoutError; commons_candidates(weighing scale silhouette mystery): http_429`
 
@@ -166,17 +200,34 @@
 
 - 내레이션: 팬텀의 몸무게는 정확히 40.5킬로그램입니다.
 - 검색 의도: `Gengar weight 40.5 kg Pokedex style data card`
-- 검색 상태: `blocked_or_failed`
+- 검색 상태: `collected`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `commons_candidates(Gengar weight 40.5 kg Pokedex style data card): http_429; commons_candidates(Gengar weight 40.5 kg): http_429`
 
-**후보 없음** — 이 장면은 추가 검색이 필요합니다.
+### 후보 1 — namuwiki_capture
+
+- 제목: 팬텀(포켓몬스터)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-008.png)
+- 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
+- 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
+- 제작자: NamuWiki contributors; see page history
+- 출처 표기: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)
+- 현재 상태: `needs_review`
+- 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
 
 ## 장면 9 — 픽시: 40.0kg
 
 - 내레이션: 그런데 삐삐의 진화형인 픽시는 40.0킬로그램입니다.
 - 검색 의도: `Clefable weight 40.0 kg Pokedex style data card`
 - 검색 상태: `collected`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `openverse_candidates(Clefable weight 40.0 kg Pokedex style data card): TimeoutError; commons_candidates(Clefable weight 40.0 kg Pokedex style data card): http_429; openverse_candidates(Clefable weight 40.0 kg): TimeoutError; commons_candidates(Clefable weight 40.0 kg): http_429`
 
@@ -192,11 +243,27 @@
 - 현재 상태: `needs_review`
 - 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
 
+### 후보 2 — namuwiki_capture
+
+- 제목: 픽시(포켓몬스터)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-009.png)
+- 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
+- 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
+- 제작자: NamuWiki contributors; see page history
+- 출처 표기: 나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)
+- 현재 상태: `needs_review`
+- 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
+
 ## 장면 10 — 고작 0.5kg 차이
 
 - 내레이션: 불과 0.5킬로그램 차이라서, 그림자라면 질량까지 비슷한 것 아니냐는 해석이 나온 겁니다.
 - 검색 의도: `40.5 kg versus 40.0 kg comparison graphic, dramatic scale`
 - 검색 상태: `blocked_or_failed`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `openverse_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): TimeoutError; commons_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): http_429; commons_candidates(40.5 kg 40.0 kg): http_429`
 
@@ -208,6 +275,9 @@
 - 검색 의도: `dramatic mystery reveal card, black and yellow Korean text`
 - 검색 상태: `blocked_or_failed`
 
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
+
 - 검색 오류: `commons_candidates(dramatic mystery reveal card, black and yellow Korean text): http_429; commons_candidates(mystery card yellow Korean): http_429`
 
 **후보 없음** — 이 장면은 추가 검색이 필요합니다.
@@ -216,17 +286,34 @@
 
 - 내레이션: 삐삐 자체의 몸무게는 7.5킬로그램이라 팬텀과는 전혀 가깝지 않습니다.
 - 검색 의도: `Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic`
-- 검색 상태: `blocked_or_failed`
+- 검색 상태: `collected`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `commons_candidates(Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic): http_429; commons_candidates(Clefairy weight 7.5 kg): http_429`
 
-**후보 없음** — 이 장면은 추가 검색이 필요합니다.
+### 후보 1 — namuwiki_capture
+
+- 제목: 픽시(포켓몬스터)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-012.png)
+- 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
+- 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
+- 제작자: NamuWiki contributors; see page history
+- 출처 표기: 나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)
+- 현재 상태: `needs_review`
+- 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
 
 ## 장면 13 — 정확히는 픽시 쪽에 가깝다
 
 - 내레이션: 그러니까 정확히 말하면 이 이론은 삐삐보다는 픽시와 더 잘 맞습니다.
 - 검색 의도: `Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison`
 - 검색 상태: `collected`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `openverse_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): TimeoutError; commons_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): http_429`
 
@@ -254,11 +341,27 @@
 - 현재 상태: `needs_review`
 - 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
 
+### 후보 3 — namuwiki_capture
+
+- 제목: 팬텀(포켓몬스터)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-013.png)
+- 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
+- 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
+- 제작자: NamuWiki contributors; see page history
+- 출처 표기: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)
+- 현재 상태: `needs_review`
+- 사람 판단: `[ ] 승인  [ ] 거절  [ ] 추가 확인`
+
 ## 장면 14 — 공식 설정은 아니다
 
 - 내레이션: 그렇다고 공식 설정에서 팬텀이 픽시의 그림자라고 확인된 적은 없습니다.
 - 검색 의도: `Pokemon official canon versus fan theory split screen, question mark`
 - 검색 상태: `blocked_or_failed`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `commons_candidates(Pokemon official canon versus fan theory split screen, question mark): http_429; commons_candidates(official canon fan theory): http_429`
 
@@ -269,6 +372,9 @@
 - 내레이션: 결국 팬텀은 정말 그림자일까요, 아니면 우연히 닮은 포켓몬일까요?
 - 검색 의도: `Gengar and Clefable facing each other under moonlight, mysterious ending`
 - 검색 상태: `blocked_or_failed`
+
+- 화면 레이아웃: `full_frame`
+- 선택 후보: 아직 선택되지 않음
 
 - 검색 오류: `commons_candidates(Gengar and Clefable facing each other under moonlight, mysterious ending): http_429; commons_candidates(Gengar Clefable facing each): http_429`
 

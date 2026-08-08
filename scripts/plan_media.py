@@ -75,6 +75,12 @@ def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any
                     "errors": [],
                 },
                 "candidates": [],
+                "visual": {
+                    "layout": "full_frame",
+                    "fit": "cover",
+                    "caption_safe_area": "bottom",
+                    "assets": [],
+                },
                 "asset": {
                     "status": "pending",
                     "mode": None,
@@ -92,7 +98,7 @@ def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any
             }
         )
     return {
-        "manifest_version": 1,
+        "manifest_version": 2,
         "episode_id": episode_id,
         "episode_path": str(episode_path),
         "title": episode.get("title"),

@@ -9,7 +9,7 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 1. Select an explicit concept from `concepts/registry.json`.
 2. Expand a short topic or premise into a Korean script using the active concept's style profile.
 3. Produce 12-18 short narration segments. The target is 60 seconds, with an accepted total timeline of 50-70 seconds.
-4. Collect visual candidates per segment, let a human choose and verify them, then record source URL, license, creator, and attribution. Generate only after explicit approval.
+4. Collect visual candidates per segment, let a human choose and verify them, then record source URL, license, creator, and attribution. Support `full_frame` and `split_2up` layouts. Generate only after explicit approval.
 5. Generate scene audio, captions, and the final 9:16 video.
 6. Validate the episode, timing manifest, media provenance, and final render before publishing.
 
@@ -49,7 +49,7 @@ Before an audio file enters the video pipeline, check its sample rate, duration,
 
 ## Current TODO
 
-- Complete candidate coverage, human selection, download, and attribution handling.
+- Complete candidate coverage, human selection, download, layout previews, and attribution handling.
 - Complete caption timing and 9:16 video assembly.
 - Add automated audio non-silence validation to the local TTS script.
 - Add a safe provider fallback policy for generation-time failures, not only model-load failures.

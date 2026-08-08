@@ -64,6 +64,14 @@ def render(manifest: dict[str, Any]) -> str:
                 "",
             ]
         )
+        visual = segment.get("visual") or {}
+        if visual.get("layout"):
+            selected = visual.get("assets") or []
+            refs = ", ".join(
+                f"{item.get('position')}: 후보 {item.get('candidate_index')}"
+                for item in selected
+            ) or "아직 선택되지 않음"
+            lines.extend([f"- 화면 레이아웃: `{clean(visual.get('layout'))}`", f"- 선택 후보: {refs}", ""])
         if search.get("errors"):
             lines.extend([f"- 검색 오류: `{clean('; '.join(search['errors']))}`", ""])
         if not candidates:
@@ -79,6 +87,11 @@ def render(manifest: dict[str, Any]) -> str:
                     f"- 제목: {clean(candidate.get('title')) or '미기록'}",
                     f"- 미리보기/파일: {link('열기', candidate.get('asset_url'))}",
                     f"- 원본 페이지: {link('landing page', candidate.get('landing_url'))}",
+                    *(
+                        [f"- 모바일 캡처: [로컬 파일](../playwright/namuwiki/{Path(candidate['capture_path']).name})"]
+                        if candidate.get("capture_path")
+                        else []
+                    ),
                     f"- 라이선스: `{license_value}`",
                     f"- 라이선스 URL: {link('확인', candidate.get('license_url'))}",
                     f"- 제작자: {clean(candidate.get('creator')) or '미기록'}",
