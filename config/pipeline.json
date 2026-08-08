@@ -2,7 +2,7 @@
   "video": {
     "aspect_ratio": "9:16",
     "target_duration_seconds": 60,
-    "accepted_duration_range_seconds": [55, 65],
+    "accepted_duration_range_seconds": [50, 70],
     "recommended_segment_count": [12, 18],
     "segment_duration_seconds": [2.5, 5.0]
   },
@@ -76,8 +76,27 @@
     ]
   },
   "tts": {
-    "default_provider": "elevenlabs",
+    "default_provider": "supertonic",
     "providers": {
+      "supertonic": {
+        "package": "supertonic",
+        "model": "supertonic-3",
+        "language": "ko",
+        "default_voice": "F1",
+        "default_speed": 1.4,
+        "output_format": "wav",
+        "local_only": true,
+        "measure_actual_duration": true
+      },
+      "qwen3_tts": {
+        "package": "qwen-tts",
+        "model": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+        "language": "Korean",
+        "default_speaker": "Sohee",
+        "output_format": "wav",
+        "local_only": true,
+        "measure_actual_duration": true
+      },
       "elevenlabs": {
         "config_env": "ELEVENLABS_TTS_CONFIG",
         "profile_env": "ELEVENLABS_TTS_PROFILE",

@@ -4,7 +4,7 @@
 
 ## 현재 확정된 방향
 
-- 영상 목표 길이: 55~65초
+- 영상 목표 길이: 50~70초
 - 장면 수: 고정하지 않음. 기본 권장 범위는 12~18개
 - 장면 길이: 대본과 TTS 길이에 따라 약 2.5~5초
 - 장면 단위: 한 장면에는 하나의 핵심 내용만 둔다
@@ -55,7 +55,50 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 ## TTS 연결
 
-TTS는 현재 ElevenLabs를 기본 어댑터로 사용한다. ChatGPT 구독만으로는 이 저장소가 MP3 파일을 직접 받을 수 없으므로, ElevenLabs 계정의 API 키를 로컬 환경에 한 번 연결해야 한다. 키와 개인 음성 ID는 Git에 저장하지 않는다.
+TTS는 로컬 실행 가능한 Supertonic 3와 Qwen3-TTS를 기본 후보로 사용한다. 둘 다 API 비용 없이 실행할 수 있지만, 모델 다운로드와 로컬 CPU/GPU 자원은 필요하다. ElevenLabs는 외부 API fallback으로 유지한다.
+
+### 로컬 TTS 설치
+
+별도 가상환경을 만든다. WSL에서 실행한다.
+
+```bash
+uv venv .venv-tts
+uv pip install --python .venv-tts/bin/python -r requirements-tts-local.txt
+```
+
+두 provider 모두 같은 episode를 입력으로 받을 수 있다. 먼저 3개 장면만 생성해 음질과 발음을 비교할 수 있다.
+
+```bash
+.venv-tts/bin/python scripts/generate_local_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --provider supertonic \
+  --voice F1 \
+  --limit 3
+
+.venv-tts/bin/python scripts/generate_local_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --provider qwen3_tts \
+  --speaker Sohee \
+  --limit 3
+```
+
+전체 장면은 `--limit`을 빼고 실행한다. Qwen이 GPU 메모리 부족으로 실패하면 `--device cpu`로 재시도한다.
+
+```bash
+.venv-tts/bin/python scripts/generate_local_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --provider supertonic
+
+.venv-tts/bin/python scripts/generate_local_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --provider qwen3_tts --device cpu
+```
+
+결과는 provider별 `output/audio/` 폴더와 `output/manifests/`에 저장된다. manifest에는 장면별 실제 음성 길이와 생성 시간이 기록된다.
+
+### ElevenLabs fallback
+
+ChatGPT 구독만으로는 이 저장소가 MP3 파일을 직접 받을 수 없으므로, ElevenLabs를 사용하려면 별도 API 키가 필요하다. 키와 개인 음성 ID는 Git에 저장하지 않는다.
 
 1. `config/local/elevenlabs-tts.json.example`을 `config/local/elevenlabs-tts.json`으로 복사한다.
 2. `.env.example`을 `.env`로 복사한다.
@@ -79,7 +122,7 @@ python3 scripts/generate_tts.py \
   --profile korean-narrator
 ```
 
-결과 음성은 `output/audio/` 아래에 저장되며 Git에는 올라가지 않는다. 기본 `planned` 타임라인은 대본의 55~65초 목표를 유지하고, 특정 음성이 계획 장면보다 길 경우 해당 장면만 늘린다. 나중에 음성 길이만으로 타임라인을 만들고 싶으면 `--timeline-mode speech`를 사용한다.
+결과 음성은 `output/audio/` 아래에 저장되며 Git에는 올라가지 않는다. 기본 `planned` 타임라인은 대본의 50~70초 목표를 유지하고, 특정 음성이 계획 장면보다 길 경우 해당 장면만 늘린다. 나중에 음성 길이만으로 타임라인을 만들고 싶으면 `--timeline-mode speech`를 사용한다.
 
 음성은 사용자가 직접 복잡하게 찾아야 하는 것은 아니다. 우선 한국어 내레이션에 어울리는 음성 하나를 계정에서 선택하면 되고, 이후에는 같은 프로필로 자동 생성된다. 원하는 분위기(차분한 설명체, 빠른 정보형, 낮은 남성 음성 등)만 정하면 음성 선택 기준은 프로젝트 쪽에서 관리할 수 있다.
 

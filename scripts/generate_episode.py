@@ -34,7 +34,7 @@ EPISODE_SCHEMA: dict[str, Any] = {
         "concept_id": {"type": "string"},
         "language": {"type": "string"},
         "target_duration_sec": {"type": "number"},
-        "estimated_duration_sec": {"type": "number", "minimum": 55, "maximum": 65},
+        "estimated_duration_sec": {"type": "number", "minimum": 50, "maximum": 70},
         "reference_style": {"type": "string"},
         "content_domain": {"type": "string"},
         "segments": {
@@ -189,7 +189,7 @@ Information that must be included:
 Directions to avoid:
 {avoid_text}
 
-The output must be a complete episode JSON with 12-18 segments and a total duration between 55 and 65 seconds. Keep each narration unit short enough for TTS. Set concept_id to '{concept['id']}', reference_style to '{concept['style_profile']}', and target_duration_sec to {video['target_duration_seconds']}.
+The output must be a complete episode JSON with 12-18 segments and a total duration between 50 and 70 seconds. Keep each narration unit short enough for TTS. Set concept_id to '{concept['id']}', reference_style to '{concept['style_profile']}', and target_duration_sec to {video['target_duration_seconds']}.
 """
     return system_prompt, user_prompt
 

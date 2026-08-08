@@ -1,0 +1,5 @@
+# Local CPU/GPU TTS providers used by scripts/generate_local_tts.py
+supertonic
+qwen-tts
+soundfile
+requests

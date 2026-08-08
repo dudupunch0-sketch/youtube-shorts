@@ -315,8 +315,8 @@ def main() -> int:
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote timing manifest: {manifest_path}")
     total = manifest["timeline_duration_sec"]
-    if not 55 <= total <= 65:
-        print(f"WARN: timeline is {total:g}s; expected 55-65s", file=sys.stderr)
+    if not 50 <= total <= 70:
+        print(f"WARN: timeline is {total:g}s; expected 50-70s", file=sys.stderr)
     return 0
 
 

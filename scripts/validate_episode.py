@@ -76,8 +76,8 @@ def main() -> None:
     if indexes != list(range(1, len(segments) + 1)):
         fail("segment indexes must be consecutive")
 
-    if not 55 <= duration_sum <= 65:
-        fail(f"sum of segment durations is {duration_sum:g}s; expected 55-65s")
+    if not 50 <= duration_sum <= 70:
+        fail(f"sum of segment durations is {duration_sum:g}s; expected 50-70s")
 
     if not 12 <= len(segments) <= 18:
         print(f"WARN: {len(segments)} segments is outside the recommended 12-18 range")
@@ -92,4 +92,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
