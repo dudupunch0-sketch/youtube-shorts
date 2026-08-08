@@ -20,6 +20,14 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 - Do not copy the supplied Shorts. Reuse only abstract pacing, structure, and presentation patterns recorded in `references/`.
 - Keep one idea per segment and include a hook and a conclusion.
 
+## Web search and collection fallback
+
+- Use ordinary web search or an official public API first for simple searches.
+- When a source URL is blocked, returns a WAF/challenge response, or normal fetching fails, use the installed `insane-search` skill as the fallback. It is not the first choice for ordinary keyword search.
+- `insane-search` improves access and extraction; it does not grant image/video reuse rights and it is not a license filter.
+- Keep the original landing URL, creator, license, and attribution data in the media manifest even when the fallback skill retrieves the content.
+- Accept a fetched page only after the skill's validation result and trace show a real content response, not merely HTTP 200.
+
 ## TTS policy (decision recorded 2026-08-08)
 
 - Qwen3-TTS 0.6B (`Sohee`) is the preferred quality/reference voice based on listening tests.

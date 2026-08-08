@@ -53,6 +53,12 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
 
+## 웹 미디어 검색 fallback
+
+웹 검색이나 공식 공개 API를 먼저 사용한다. 특정 URL이 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 Codex에 설치된 `insane-search` 스킬을 fallback으로 사용한다. 이 스킬은 페이지 접근과 내용 추출을 돕지만 라이선스를 보증하지 않으므로, 최종 미디어 manifest에는 원본 URL·제작자·라이선스·출처를 계속 기록해야 한다.
+
+일반 URL fallback의 진입점은 스킬의 `scripts/run_engine.sh`이며, 결과의 validation과 trace가 실제 콘텐츠를 확인한 경우에만 수집 결과를 채택한다. Openverse·Wikimedia Commons 같은 공개 미디어 검색 결과도 동일하게 원본 라이선스 페이지를 확인한다.
+
 ## TTS 연결
 
 TTS는 로컬 실행 가능한 Supertonic 3와 Qwen3-TTS를 사용한다. 듣기 좋은 음질은 Qwen 쪽이었지만, 현재 장비에서는 CPU 생성이 너무 느리고 MX450 GPU 경로도 안정적이지 않다. 따라서 Supertonic 3을 실제 파이프라인의 기본 provider로 유지하고, Qwen은 품질 기준/reference provider로 보존한다. ElevenLabs는 외부 API fallback으로 유지한다.

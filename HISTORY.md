@@ -2,6 +2,15 @@
 
 This file records project decisions, experiments, and known limitations. It is a development log, not a user-facing release changelog.
 
+## 2026-08-08 — Search fallback installed
+
+- Installed the public `insane-search-codex` package, version 0.8.2, from `fivetaku/gptaku-plugins-codex`.
+- Installed its Python dependencies in an isolated skill-local virtual environment so the WSL system Python remains unchanged.
+- Intended role: fallback for blocked, WAF-protected, or failed source URLs after ordinary search/API access fails.
+- Verification: `https://example.com` returned `strong_ok` through the `curl_cffi` probe path.
+- The plugin smoke test passed 6 of 8 checks. One selector test and one external `httpbin` test failed in this environment; the core benign URL path passed.
+- The skill improves access only. It does not replace license verification or media attribution.
+
 ## 2026-08-08 — TTS comparison closed
 
 ### Context
