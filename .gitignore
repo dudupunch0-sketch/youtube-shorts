@@ -9,6 +9,7 @@ output/manifests/
 !output/manifests/
 output/manifests/*
 !output/manifests/*.media.json
+!output/manifests/*.media-review.md
 output/media/
 .venv-tts/
 *.mp4

@@ -44,6 +44,7 @@ scripts/generate_tts.py       장면별 TTS와 타이밍 manifest 생성 CLI
 scripts/plan_media.py         장면별 미디어 검색·생성 계획 manifest 생성 CLI
 scripts/collect_media_candidates.py 공개 검색 API 후보 수집 CLI
 scripts/import_media_candidates.py 사람이 찾은 후보 URL을 manifest에 병합
+scripts/render_media_review.py 장면별 클릭 가능한 후보 검토표 생성
 scripts/mark_generated_media.py 명시적으로 승인된 생성 이미지의 provenance 기록
 scripts/validate_media_manifest.py 미디어 파일·manifest 검증기
 output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태
@@ -75,11 +76,14 @@ python3 scripts/import_media_candidates.py \
   output/manifests/phantom-clefairy-shadow.media.json \
   references/media-candidate-seeds/phantom-clefairy-shadow.json
 
+python3 scripts/render_media_review.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+
 python3 scripts/validate_media_manifest.py \
   output/manifests/phantom-clefairy-shadow.media.json
 ```
 
-`insane-search`는 일반 검색/API가 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 접근 fallback으로 사용한다. 검색이 성공해도 라이선스와 출처 검증은 별도로 수행한다. 수집기는 후보 URL과 라이선스 메타데이터를 `candidates`에 기록하고, 선택 전에는 어떤 자산도 `approved`로 바꾸지 않는다.
+`insane-search`는 일반 검색/API가 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 접근 fallback으로 사용한다. 검색이 성공해도 라이선스와 출처 검증은 별도로 수행한다. 수집기는 후보 URL과 라이선스 메타데이터를 `candidates`에 기록하고, 선택 전에는 어떤 자산도 `approved`로 바꾸지 않는다. 검토표는 `output/manifests/*.media-review.md`에 생성된다.
 
 ## 웹 미디어 검색 fallback
 

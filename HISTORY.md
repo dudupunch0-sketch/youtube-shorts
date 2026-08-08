@@ -16,8 +16,10 @@ This file records project decisions, experiments, and known limitations. It is a
 - Approved the first implementation scope: collect web image/video candidates per scene, keep 12-18 scene support, and leave license decisions to human review.
 - Added `references/media-policy.md` with acquisition order, manual-review gates, generated-asset constraints, and provenance fields.
 - Added `scripts/plan_media.py`, `scripts/collect_media_candidates.py`, `scripts/import_media_candidates.py`, and `scripts/validate_media_manifest.py`.
+- Added `scripts/render_media_review.py`, which creates a clickable scene-by-scene review sheet instead of silently approving a source.
 - The first episode manifest now records 10 unapproved candidates across the 15 scenes. The candidates include public-index results and manually imported web-image search results; their licenses remain explicitly `unknown` where they were not verified.
 - Validation passed in collection mode: `0/15 approved`, `15 awaiting review`, `10 collected candidates`.
+- The public APIs also returned timeouts and HTTP 429 rate limits for some scene queries. Those scenes remain visibly marked as missing/failed in the review sheet rather than being filled with generated images.
 - Image generation was tested during implementation but is not part of the accepted media output because it is costly and does not match the desired source-collection workflow. Existing generated files remain local and unreferenced.
 - `insane-search` was not invoked for this episode because ordinary API access did not encounter a blocked URL. It remains installed as the blocked-access fallback.
 

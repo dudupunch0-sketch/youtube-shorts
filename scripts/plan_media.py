@@ -59,6 +59,7 @@ def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any
                 "duration_sec": float(segment.get("duration_sec", 0)),
                 "narration": segment.get("narration", ""),
                 "caption": segment.get("caption", ""),
+                "visual_query": query,
                 "visual_type": segment.get("visual_type", "illustration"),
                 "claim_type": segment.get("claim_type", "unknown"),
                 "search": {
