@@ -75,6 +75,10 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 ## 대본 생성 실행
 
+기본 제공자는 OpenAI API이며, 필요한 경우 Claude Code·Codex CLI·ChatGPT 프롬프트 방식으로 바꿀 수 있다.
+
+### OpenAI API
+
 OpenAI API 키를 환경 변수로 설정한 뒤 실행한다.
 
 ```bash
@@ -92,6 +96,40 @@ python3 scripts/generate_episode.py --note examples/notes/roman-baths.md
 ```
 
 API를 호출하지 않고 concept과 프롬프트 연결만 확인하려면 `--dry-run`을 사용한다. 생성된 episode는 기존 검증기를 통과한 경우에만 `output/episodes/`에 저장된다.
+
+### Claude Code
+
+Claude Code가 PATH에 있거나 `CLAUDE_COMMAND`로 실행 파일을 지정하면 된다.
+
+```bash
+export CLAUDE_COMMAND=claude
+python3 scripts/generate_episode.py \
+  --provider claude_code \
+  --topic "포켓몬의 의외의 설정"
+```
+
+### Codex CLI
+
+Codex CLI 로그인 상태에서 실행한다. 모델 인증은 Codex CLI가 관리한다.
+
+```bash
+export CODEX_COMMAND=codex
+python3 scripts/generate_episode.py \
+  --provider codex_cli \
+  --topic "포켓몬의 의외의 설정"
+```
+
+### ChatGPT 수동 프롬프트
+
+현재 대화 중인 ChatGPT 세션을 로컬 프로그램이 직접 호출할 수는 없으므로, ChatGPT에 바로 붙여 넣을 수 있는 프롬프트 파일을 만든다.
+
+```bash
+python3 scripts/generate_episode.py \
+  --provider chatgpt_prompt \
+  --topic "포켓몬의 의외의 설정"
+```
+
+이 방식은 `output/prompts/`에 저장된 프롬프트를 ChatGPT에 넣고, 반환된 JSON을 다음 단계의 episode 파일로 사용한다.
 
 ## Concept 시스템
 

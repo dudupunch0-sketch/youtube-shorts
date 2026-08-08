@@ -12,10 +12,25 @@
     "selection": "explicit_concept_or_active"
   },
   "llm": {
-    "provider": "openai",
-    "endpoint": "https://api.openai.com/v1/chat/completions",
-    "model_env": "OPENAI_MODEL",
-    "default_model": "gpt-5.6"
+    "default_provider": "openai_api",
+    "providers": {
+      "openai_api": {
+        "endpoint": "https://api.openai.com/v1/chat/completions",
+        "model_env": "OPENAI_MODEL",
+        "default_model": "gpt-5.6"
+      },
+      "claude_code": {
+        "command_env": "CLAUDE_COMMAND",
+        "model_env": "CLAUDE_MODEL"
+      },
+      "codex_cli": {
+        "command_env": "CODEX_COMMAND",
+        "model_env": "CODEX_MODEL"
+      },
+      "chatgpt_prompt": {
+        "output_dir": "output/prompts"
+      }
+    }
   },
   "script": {
     "language": "ko-KR",
