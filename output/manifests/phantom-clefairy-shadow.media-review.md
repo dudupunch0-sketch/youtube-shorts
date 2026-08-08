@@ -210,9 +210,10 @@
 ### 후보 1 — namuwiki_capture
 
 - 제목: 팬텀(포켓몬스터)
-- 미리보기/파일: [열기](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
-- 원본 페이지: [landing page](https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
 - 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-008.png)
+- 캡처 맥락: `table` (6행 × 5열)
 - 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
 - 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
 - 제작자: NamuWiki contributors; see page history
@@ -246,9 +247,10 @@
 ### 후보 2 — namuwiki_capture
 
 - 제목: 픽시(포켓몬스터)
-- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
-- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
 - 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-009.png)
+- 캡처 맥락: `table` (6행 × 5열)
 - 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
 - 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
 - 제작자: NamuWiki contributors; see page history
@@ -296,9 +298,10 @@
 ### 후보 1 — namuwiki_capture
 
 - 제목: 픽시(포켓몬스터)
-- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
-- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29)
+- 미리보기/파일: [열기](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
+- 원본 페이지: [landing page](https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0))
 - 모바일 캡처: [로컬 파일](../playwright/namuwiki/segment-012.png)
+- 캡처 맥락: `table` (6행 × 5열)
 - 라이선스: `CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)`
 - 라이선스 URL: [확인](https://creativecommons.org/licenses/by-nc-sa/2.0/kr/)
 - 제작자: NamuWiki contributors; see page history

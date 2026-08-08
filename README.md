@@ -91,12 +91,18 @@ python3 scripts/set_media_layout.py \
 python3 scripts/capture_namuwiki.py \
   "https://namu.wiki/w/팬텀(포켓몬스터)" \
   --match 픽시의 그림자 \
+  --context auto \
   --segment=13 \
   --manifest=output/manifests/phantom-clefairy-shadow.media.json
 
 python3 scripts/validate_media_manifest.py \
   output/manifests/phantom-clefairy-shadow.media.json
 ```
+
+`--context auto` is the default. When the matched text is inside a table, the
+capture contains the nearest complete table, including its title, headers, and
+related rows. Use `--context element` only for an intentional narrow text
+capture, or `--context table` to require a table match.
 
 `insane-search`는 일반 검색/API가 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 접근 fallback으로 사용한다. 검색이 성공해도 라이선스와 출처 검증은 별도로 수행한다. 수집기는 후보 URL과 라이선스 메타데이터를 `candidates`에 기록하고, 선택 전에는 어떤 자산도 `approved`로 바꾸지 않는다. 검토표는 `output/manifests/*.media-review.md`에 생성된다.
 

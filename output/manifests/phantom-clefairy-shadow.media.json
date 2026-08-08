@@ -535,9 +535,9 @@
           "provider": "namuwiki_capture",
           "query": "40.5kg",
           "title": "팬텀(포켓몬스터)",
-          "asset_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "asset_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "thumbnail_url": null,
-          "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
           "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
           "creator": "NamuWiki contributors; see page history",
@@ -550,7 +550,10 @@
           "capture_selector": "[data-codex-capture-root=\"true\"]",
           "capture_match": "40.5kg",
           "third_party_media_present": false,
-          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
+          "capture_context": "table",
+          "context_rows": 6,
+          "context_columns": 5
         }
       ],
       "asset": {
@@ -622,9 +625,9 @@
           "provider": "namuwiki_capture",
           "query": "40.0kg",
           "title": "픽시(포켓몬스터)",
-          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "thumbnail_url": null,
-          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
           "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
           "creator": "NamuWiki contributors; see page history",
@@ -637,7 +640,10 @@
           "capture_selector": "[data-codex-capture-root=\"true\"]",
           "capture_match": "40.0kg",
           "third_party_media_present": false,
-          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
+          "capture_context": "table",
+          "context_rows": 6,
+          "context_columns": 5
         }
       ],
       "asset": {
@@ -789,9 +795,9 @@
           "provider": "namuwiki_capture",
           "query": "7.5kg",
           "title": "픽시(포켓몬스터)",
-          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "asset_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "thumbnail_url": null,
-          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)?from=%EC%82%90%EC%82%90%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+          "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
           "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
           "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
           "creator": "NamuWiki contributors; see page history",
@@ -804,7 +810,10 @@
           "capture_selector": "[data-codex-capture-root=\"true\"]",
           "capture_match": "7.5kg",
           "third_party_media_present": false,
-          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
+          "capture_context": "table",
+          "context_rows": 6,
+          "context_columns": 5
         }
       ],
       "asset": {

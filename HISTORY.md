@@ -25,6 +25,12 @@ This file records project decisions, experiments, and known limitations. It is a
 - Image generation was tested during implementation but is not part of the accepted media output because it is costly and does not match the desired source-collection workflow. Existing generated files remain local and unreferenced.
 - `insane-search` was not invoked for this episode because ordinary API access did not encounter a blocked URL. It remains installed as the blocked-access fallback.
 
+## 2026-08-09 — Contextual NamuWiki captures
+
+- Updated `scripts/capture_namuwiki.py` so `--context auto` captures the nearest complete table when a match is inside a table, preserving the title, headers, and related rows.
+- Recaptured the Phantom episode's numeric NamuWiki candidates for segments 8, 9, and 12. Each now records a 6-row × 5-column table context and updates the existing candidate in place.
+- Added `capture_context`, row/column counts, and the context mode to the media review report.
+
 ## 2026-08-08 — TTS comparison closed
 
 ### Context

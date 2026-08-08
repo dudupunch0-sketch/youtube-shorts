@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture a selected NamuWiki text block in a mobile browser viewport."""
+"""Capture a contextual NamuWiki text or table block in a mobile viewport."""
 
 from __future__ import annotations
 
@@ -72,13 +72,21 @@ def add_manifest_candidate(
         "capture_metadata_path": capture_path.rsplit(".", 1)[0] + ".json",
         "capture_selector": metadata.get("selector"),
         "capture_match": metadata.get("match"),
+        "capture_context": metadata.get("context_type"),
+        "context_rows": metadata.get("context_rows"),
+        "context_columns": metadata.get("context_columns"),
         "third_party_media_present": metadata.get("third_party_media_present", False),
         "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
     }
-    existing = {item.get("capture_path") for item in segment.get("candidates", [])}
-    if capture_path not in existing:
+    existing = next(
+        (item for item in segment.get("candidates", []) if item.get("capture_path") == capture_path),
+        None,
+    )
+    if existing is None:
         segment.setdefault("candidates", []).append(candidate)
-        segment.setdefault("search", {})["status"] = "collected"
+    else:
+        existing.update(candidate)
+    segment.setdefault("search", {})["status"] = "collected"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -90,6 +98,12 @@ def main() -> int:
         "--include-embedded-media",
         action="store_true",
         help="Keep images, videos, and iframes inside the captured block",
+    )
+    parser.add_argument(
+        "--context",
+        choices=("auto", "table", "element"),
+        default="auto",
+        help="Capture context mode; auto captures the nearest full table when the match is in a table",
     )
     parser.add_argument("--segment", type=int)
     parser.add_argument("--manifest", type=Path)
@@ -111,21 +125,39 @@ def main() -> int:
     run_cli(session, "open", page_url, "--browser", "chromium", "--mobile", timeout=args.timeout)
     run_cli(session, "resize", "390", "844", timeout=args.timeout)
     match_json = json.dumps(match, ensure_ascii=False)
+    context_json = json.dumps(args.context, ensure_ascii=False)
     media_policy = "" if args.include_embedded_media else "target.querySelectorAll('img, video, iframe').forEach(node => node.style.display = 'none');"
     find_block = f"""() => {{
       const needle = {match_json};
+      const contextMode = {context_json};
+      const isVisible = node => {{
+        const style = getComputedStyle(node);
+        const rect = node.getBoundingClientRect();
+        return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+      }};
       document.querySelectorAll('[data-codex-capture-root="true"]').forEach(node => node.removeAttribute('data-codex-capture-root'));
       const nodes = Array.from(document.querySelectorAll('p, li, td, blockquote, h2, h3, h4, div'))
-        .filter(node => (node.innerText || '').includes(needle))
+        .filter(node => isVisible(node) && (node.innerText || '').includes(needle))
         .sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
-      const target = nodes.find(node => (node.innerText || '').length >= needle.length) || nodes[0];
-      if (!target) return {{ok: false, page_url: location.href, match: needle}};
+      const matchNode = nodes.find(node => ['TD', 'TH'].includes(node.tagName)) || nodes[0];
+      if (!matchNode) return {{ok: false, page_url: location.href, match: needle}};
+      let target = matchNode;
+      let contextType = 'element';
+      const nearestTable = matchNode.closest('table');
+      if ((contextMode === 'auto' || contextMode === 'table') && nearestTable && isVisible(nearestTable)) {{
+        target = nearestTable;
+        contextType = 'table';
+      }}
+      if (contextMode === 'table' && contextType !== 'table') {{
+        return {{ok: false, page_url: location.href, match: needle, reason: 'match is not inside a visible table'}};
+      }}
       const embeddedMediaCount = target.querySelectorAll('img, video, iframe').length;
       {media_policy}
       target.setAttribute('data-codex-capture-root', 'true');
       target.scrollIntoView({{block: 'center', inline: 'nearest'}});
       const title = document.querySelector('h1')?.innerText?.trim() || document.title;
       const historyLink = Array.from(document.querySelectorAll('a')).find(a => (a.innerText || '').trim() === '역사');
+      const rows = contextType === 'table' ? Array.from(target.rows || []).map(row => Array.from(row.cells || []).map(cell => (cell.innerText || '').trim())) : [];
       return {{
         ok: true,
         selector: '{CAPTURE_SELECTOR}',
@@ -134,6 +166,11 @@ def main() -> int:
         history_url: historyLink ? new URL(historyLink.getAttribute('href'), location.href).href : null,
         match: needle,
         text_excerpt: (target.innerText || '').trim(),
+        match_excerpt: (matchNode.innerText || '').trim(),
+        context_type: contextType,
+        context_rows: rows.length,
+        context_columns: rows.reduce((max, row) => Math.max(max, row.length), 0),
+        context_note: contextType === 'table' ? 'Captured the nearest complete table so the title, headers, and related rows remain visible.' : 'Captured the smallest readable text block containing the match.',
         third_party_media_present: embeddedMediaCount > 0,
         embedded_media_hidden: {str(not args.include_embedded_media).lower()}
       }};

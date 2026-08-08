@@ -92,6 +92,18 @@ def render(manifest: dict[str, Any]) -> str:
                         if candidate.get("capture_path")
                         else []
                     ),
+                    *(
+                        [
+                            f"- 캡처 맥락: `{clean(candidate.get('capture_context'))}`"
+                            + (
+                                f" ({candidate.get('context_rows')}행 × {candidate.get('context_columns')}열)"
+                                if candidate.get("context_rows") and candidate.get("context_columns")
+                                else ""
+                            )
+                        ]
+                        if candidate.get("capture_context")
+                        else []
+                    ),
                     f"- 라이선스: `{license_value}`",
                     f"- 라이선스 URL: {link('확인', candidate.get('license_url'))}",
                     f"- 제작자: {clean(candidate.get('creator')) or '미기록'}",
