@@ -74,5 +74,18 @@
       "license",
       "creator"
     ]
+  },
+  "tts": {
+    "default_provider": "elevenlabs",
+    "providers": {
+      "elevenlabs": {
+        "config_env": "ELEVENLABS_TTS_CONFIG",
+        "profile_env": "ELEVENLABS_TTS_PROFILE",
+        "default_model": "eleven_multilingual_v2",
+        "default_output_format": "mp3_44100_128",
+        "scene_audio": true,
+        "measure_actual_duration": true
+      }
+    }
   }
 }

@@ -40,6 +40,7 @@ examples/notes/             입력 노트 예시
 examples/episodes/          장면 JSON 예시
 scripts/generate_episode.py 주제에서 episode JSON을 생성하는 CLI
 scripts/validate_episode.py 에피소드 포맷 검증기
+scripts/generate_tts.py       장면별 TTS와 타이밍 manifest 생성 CLI
 ```
 
 ## 빠른 검증
@@ -52,9 +53,39 @@ python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 
 검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
 
+## TTS 연결
+
+TTS는 현재 ElevenLabs를 기본 어댑터로 사용한다. ChatGPT 구독만으로는 이 저장소가 MP3 파일을 직접 받을 수 없으므로, ElevenLabs 계정의 API 키를 로컬 환경에 한 번 연결해야 한다. 키와 개인 음성 ID는 Git에 저장하지 않는다.
+
+1. `config/local/elevenlabs-tts.json.example`을 `config/local/elevenlabs-tts.json`으로 복사한다.
+2. `.env.example`을 `.env`로 복사한다.
+3. `.env`에 `ELEVENLABS_API_KEY`를 넣고, `ELEVENLABS_TTS_VOICE_ID` 또는 로컬 프로필의 `voice_name`을 설정한다.
+4. 아래 dry-run으로 장면별 생성 계획을 확인한다.
+
+```bash
+python3 scripts/generate_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --config config/local/elevenlabs-tts.json \
+  --profile korean-narrator \
+  --dry-run
+```
+
+실제 생성은 장면당 MP3 한 개를 만들고, 음성의 실제 길이를 측정해 `output/manifests/*.tts.json`에 기록한다.
+
+```bash
+python3 scripts/generate_tts.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  --config config/local/elevenlabs-tts.json \
+  --profile korean-narrator
+```
+
+결과 음성은 `output/audio/` 아래에 저장되며 Git에는 올라가지 않는다. 기본 `planned` 타임라인은 대본의 55~65초 목표를 유지하고, 특정 음성이 계획 장면보다 길 경우 해당 장면만 늘린다. 나중에 음성 길이만으로 타임라인을 만들고 싶으면 `--timeline-mode speech`를 사용한다.
+
+음성은 사용자가 직접 복잡하게 찾아야 하는 것은 아니다. 우선 한국어 내레이션에 어울리는 음성 하나를 계정에서 선택하면 되고, 이후에는 같은 프로필로 자동 생성된다. 원하는 분위기(차분한 설명체, 빠른 정보형, 낮은 남성 음성 등)만 정하면 음성 선택 기준은 프로젝트 쪽에서 관리할 수 있다.
+
 ## 다음 작업
 
-1. TTS 어댑터와 실제 음성 길이 측정 연결
+1. ElevenLabs 키·음성 프로필로 실제 TTS 한 편 생성
 2. 웹 미디어 검색/출처 저장 어댑터 연결
 3. 이미지·음성·자막을 MP4로 합성
 4. 사람 검수용 프리뷰 리포트 생성

@@ -2,7 +2,9 @@
 .venv/
 __pycache__/
 *.pyc
+.env
+config/local/elevenlabs-tts.json
+output/audio/
 *.mp4
 *.mov
 *.mkv
-
