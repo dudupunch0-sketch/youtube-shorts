@@ -13,6 +13,8 @@ output/manifests/*
 output/media/
 output/media-candidates/
 output/playwright/
+output/captions/
+output/video/
 .playwright-cli/
 .venv-tts/
 *.mp4

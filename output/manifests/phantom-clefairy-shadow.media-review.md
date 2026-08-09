@@ -22,8 +22,11 @@
 - 검색 의도: `Gengar and Clefairy silhouette comparison, dramatic black background`
 - 검색 상태: `collected`
 
-- 화면 레이아웃: `split_2up`
+- 화면 레이아웃: `split_2up_left_right`
 - 선택 후보: left: 후보 1, right: 후보 2
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Hook compares the two visual subjects directly.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(Gengar and Clefairy silhouette comparison, dramatic black background): TimeoutError; openverse_candidates(Gengar Clefairy silhouette comparison): TimeoutError; commons_candidates(Gengar Clefairy silhouette comparison): http_429`
 
@@ -59,6 +62,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(Gengar behind Clefairy as a shadow, fan theory concept art): http_429; commons_candidates(Gengar behind Clefairy shadow): http_429`
 
@@ -72,6 +78,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): TimeoutError; commons_candidates(mysterious Pokemon fan theory evidence board, red strings, dark style): http_429; commons_candidates(mysterious fan theory evidence): http_429`
 
@@ -83,8 +92,11 @@
 - 검색 의도: `Gengar and Clefairy side by side shape comparison, clean infographic`
 - 검색 상태: `collected`
 
-- 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 화면 레이아웃: `sequence`
+- 선택 후보: sequence: 후보 1(순서 1), sequence: 후보 2(순서 2)
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Show the first silhouette and then replace it with the second for a similarity reveal.
+- 씬 내부 전환: `slide_left`
 
 - 검색 오류: `openverse_candidates(Gengar Clefairy by shape): TimeoutError; commons_candidates(Gengar Clefairy by shape): http_429`
 
@@ -118,8 +130,11 @@
 - 검색 의도: `bright fairy Pokemon versus dark ghost Pokemon, yin yang composition`
 - 검색 상태: `collected`
 
-- 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 화면 레이아웃: `split_2up_left_right`
+- 선택 후보: left: 후보 1, right: 후보 2
+- 연출 판단: `auto` / 신뢰도 `0.86`
+- 연출 이유: Comparison or contrast language supports parallel two-up framing.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): TimeoutError; commons_candidates(bright fairy Pokemon versus dark ghost Pokemon, yin yang composition): http_429; commons_candidates(bright fairy dark ghost): http_429`
 
@@ -154,7 +169,10 @@
 - 검색 상태: `collected`
 
 - 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 선택 후보: full: 후보 2
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Use the contextual official-category source capture as the evidence card.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(official Pokedex Gengar shadow): http_429`
 
@@ -191,6 +209,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(dramatic weighing scale and Pokemon silhouette, mystery reveal): TimeoutError; commons_candidates(weighing scale silhouette mystery): http_429`
 
@@ -203,7 +224,10 @@
 - 검색 상태: `collected`
 
 - 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 선택 후보: full: 후보 1
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Use the complete weight table as a fact card.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(Gengar weight 40.5 kg Pokedex style data card): http_429; commons_candidates(Gengar weight 40.5 kg): http_429`
 
@@ -227,8 +251,11 @@
 - 검색 의도: `Clefable weight 40.0 kg Pokedex style data card`
 - 검색 상태: `collected`
 
-- 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 화면 레이아웃: `split_2up_left_right`
+- 선택 후보: left: 후보 1, right: 후보 2
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Show the artwork and the complete weight table side by side.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(Clefable weight 40.0 kg Pokedex style data card): TimeoutError; commons_candidates(Clefable weight 40.0 kg Pokedex style data card): http_429; openverse_candidates(Clefable weight 40.0 kg): TimeoutError; commons_candidates(Clefable weight 40.0 kg): http_429`
 
@@ -266,6 +293,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): TimeoutError; commons_candidates(40.5 kg versus 40.0 kg comparison graphic, dramatic scale): http_429; commons_candidates(40.5 kg 40.0 kg): http_429`
 
@@ -279,6 +309,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(dramatic mystery reveal card, black and yellow Korean text): http_429; commons_candidates(mystery card yellow Korean): http_429`
 
@@ -291,7 +324,10 @@
 - 검색 상태: `collected`
 
 - 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 선택 후보: full: 후보 1
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Use the complete Clefairy weight table as the counterexample.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(Clefairy weight 7.5 kg versus Gengar 40.5 kg comparison infographic): http_429; commons_candidates(Clefairy weight 7.5 kg): http_429`
 
@@ -316,7 +352,10 @@
 - 검색 상태: `collected`
 
 - 화면 레이아웃: `full_frame`
-- 선택 후보: 아직 선택되지 않음
+- 선택 후보: full: 후보 3
+- 연출 판단: `manual` / 신뢰도 `1.0`
+- 연출 이유: Use the explanatory NamuWiki paragraph for the clarification.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `openverse_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): TimeoutError; commons_candidates(Clefairy evolution line Clefairy Clefable, Gengar shadow theory comparison): http_429`
 
@@ -365,6 +404,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(Pokemon official canon versus fan theory split screen, question mark): http_429; commons_candidates(official canon fan theory): http_429`
 
@@ -378,6 +420,9 @@
 
 - 화면 레이아웃: `full_frame`
 - 선택 후보: 아직 선택되지 않음
+- 연출 판단: `auto` / 신뢰도 `0.18`
+- 연출 이유: No candidates collected; reserve a text-card or additional-search fallback.
+- 씬 내부 전환: `없음`
 
 - 검색 오류: `commons_candidates(Gengar and Clefable facing each other under moonlight, mysterious ending): http_429; commons_candidates(Gengar Clefable facing each): http_429`
 

@@ -31,7 +31,16 @@ Every sourced asset must retain its original URL, landing URL, creator, license,
 ## Layouts
 
 - `full_frame`: one selected asset fills the visual area.
-- `split_2up`: exactly two selected assets appear left and right with a divider and a shared bottom caption-safe area.
+- `split_2up_left_right`: exactly two selected assets appear left and right with a divider and a shared bottom caption-safe area.
+- `split_2up_top_bottom`: exactly two selected assets appear top and bottom with a divider and a shared bottom caption-safe area.
+- `sequence`: two to four selected assets appear in order inside one scene.
+- `split_2up` remains a compatibility alias for `split_2up_left_right`.
+
+The presentation planner recommends a layout from the narration and candidate count, records its confidence and reason, and accepts per-episode or per-scene overrides. Evidence-oriented NamuWiki table and paragraph captures default to `contain` so the complete context remains readable instead of being cropped to fill the vertical frame.
+
+## Scene transitions
+
+Sequence scenes support four restrained effects: `fade`, `slide_left`, `slide_up`, and `cut`. The planner chooses a varied sequence and avoids repeating the same effect consecutively. A human override may specify one effect or an explicit sequence; the effect never changes provenance or rights status.
 
 Candidates remain separate provenance records even when they are displayed together. The compositor must not flatten two sources into one provenance-less asset before review.
 

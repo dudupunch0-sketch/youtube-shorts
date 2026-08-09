@@ -11,7 +11,14 @@ from typing import Any
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 ASSET_STATUSES = {"pending", "needs_review", "approved", "rejected"}
-LAYOUT_ASSET_COUNTS = {"full_frame": 1, "split_2up": 2}
+LAYOUT_ALIASES = {"split_2up": "split_2up_left_right"}
+LAYOUT_RULES = {
+    "full_frame": {"min_assets": 1, "max_assets": 1, "positions": ["full"]},
+    "split_2up_left_right": {"min_assets": 2, "max_assets": 2, "positions": ["left", "right"]},
+    "split_2up_top_bottom": {"min_assets": 2, "max_assets": 2, "positions": ["top", "bottom"]},
+    "sequence": {"min_assets": 2, "max_assets": 4, "positions": ["sequence"]},
+}
+TRANSITIONS = {"fade", "slide_left", "slide_up", "cut"}
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 JPEG_SIGNATURE = b"\xff\xd8\xff"
 WEBP_SIGNATURE = b"RIFF"
@@ -89,21 +96,52 @@ def validate(manifest_path: Path) -> tuple[int, int, int]:
 
         visual = segment.get("visual")
         if isinstance(visual, dict):
-            layout = visual.get("layout", "full_frame")
-            if layout not in LAYOUT_ASSET_COUNTS:
-                fail(f"segment {expected_index}: invalid visual layout {layout!r}")
+            layout_raw = visual.get("layout", "full_frame")
+            layout = LAYOUT_ALIASES.get(layout_raw, layout_raw)
+            if layout not in LAYOUT_RULES:
+                fail(f"segment {expected_index}: invalid visual layout {layout_raw!r}")
             visual_assets = visual.get("assets", [])
             if not isinstance(visual_assets, list):
                 fail(f"segment {expected_index}: visual.assets must be a list")
-            if visual_assets and len(visual_assets) != LAYOUT_ASSET_COUNTS[layout]:
+            rule = LAYOUT_RULES[layout]
+            if visual_assets and not rule["min_assets"] <= len(visual_assets) <= rule["max_assets"]:
                 fail(
-                    f"segment {expected_index}: layout {layout!r} requires "
-                    f"{LAYOUT_ASSET_COUNTS[layout]} visual asset(s), received {len(visual_assets)}"
+                    f"segment {expected_index}: layout {layout_raw!r} requires "
+                    f"{rule['min_assets']}-{rule['max_assets']} visual asset(s), received {len(visual_assets)}"
                 )
             positions = [item.get("position") for item in visual_assets]
-            expected_positions = ["full"] if layout == "full_frame" else ["left", "right"]
+            expected_positions = ["sequence"] * len(visual_assets) if layout == "sequence" else rule["positions"]
             if visual_assets and positions != expected_positions:
                 fail(f"segment {expected_index}: visual asset positions must be {expected_positions}")
+            if layout == "sequence" and visual_assets:
+                orders = [item.get("order") for item in visual_assets]
+                if orders != list(range(1, len(visual_assets) + 1)):
+                    fail(f"segment {expected_index}: sequence asset orders must be consecutive from 1")
+            transition = visual.get("transition") or {}
+            if transition:
+                if not isinstance(transition, dict):
+                    fail(f"segment {expected_index}: visual.transition must be an object")
+                default_transition = transition.get("default", "fade")
+                if default_transition not in TRANSITIONS:
+                    fail(f"segment {expected_index}: invalid default transition {default_transition!r}")
+                try:
+                    duration = float(transition.get("duration_sec", 0.28))
+                except (TypeError, ValueError):
+                    fail(f"segment {expected_index}: invalid transition duration")
+                if not 0.0 <= duration <= 1.5:
+                    fail(f"segment {expected_index}: transition duration must be between 0 and 1.5 seconds")
+                transition_sequence = transition.get("sequence", [])
+                if not isinstance(transition_sequence, list) or any(item not in TRANSITIONS for item in transition_sequence):
+                    fail(f"segment {expected_index}: invalid transition sequence")
+                expected_transition_count = max(len(visual_assets) - 1, 0) if layout == "sequence" else 0
+                if visual_assets and len(transition_sequence) != expected_transition_count:
+                    fail(
+                        f"segment {expected_index}: sequence transition count must be {expected_transition_count}"
+                    )
+                if transition.get("avoid_consecutive_same", True):
+                    for left, right in zip(transition_sequence, transition_sequence[1:]):
+                        if left == right:
+                            fail(f"segment {expected_index}: consecutive transitions repeat {left!r}")
             selected_assets = visual_assets
         else:
             selected_assets = [asset] if asset else []
@@ -117,6 +155,14 @@ def validate(manifest_path: Path) -> tuple[int, int, int]:
             candidate_index = selected_asset.get("candidate_index")
             if candidate_index is not None and not 1 <= candidate_index <= len(candidates):
                 fail(f"segment {expected_index} visual asset {selected_index}: invalid candidate_index")
+            candidate_id = selected_asset.get("candidate_id")
+            if candidate_id and candidate_index is not None:
+                expected_candidate_id = candidates[candidate_index - 1].get("candidate_id")
+                if expected_candidate_id and candidate_id != expected_candidate_id:
+                    fail(
+                        f"segment {expected_index} visual asset {selected_index}: "
+                        "candidate_id does not match candidate_index"
+                    )
             if selected_status == "approved":
                 validate_approved_asset(
                     selected_asset,

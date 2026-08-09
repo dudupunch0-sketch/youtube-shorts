@@ -70,8 +70,11 @@
     "generation_fallback": "manual_only",
     "layouts": {
       "full_frame": {"asset_count": 1, "positions": ["full"]},
-      "split_2up": {"asset_count": 2, "positions": ["left", "right"]}
+      "split_2up_left_right": {"asset_count": 2, "positions": ["left", "right"]},
+      "split_2up_top_bottom": {"asset_count": 2, "positions": ["top", "bottom"]},
+      "sequence": {"min_asset_count": 2, "max_asset_count": 4, "positions": ["sequence"]}
     },
+    "legacy_layout_aliases": {"split_2up": "split_2up_left_right"},
     "caption_safe_area": "bottom",
     "namuwiki_capture": {
       "provider": "namuwiki_capture",
@@ -79,6 +82,27 @@
       "license_assumption": "CC BY-NC-SA 2.0 KR",
       "noncommercial_only": true,
       "capture_script": "scripts/capture_namuwiki.py"
+    },
+    "presentation": {
+      "layouts": {
+        "full_frame": {"asset_count": 1, "positions": ["full"]},
+        "split_2up_left_right": {"asset_count": 2, "positions": ["left", "right"]},
+        "split_2up_top_bottom": {"asset_count": 2, "positions": ["top", "bottom"]},
+        "sequence": {"min_asset_count": 2, "max_asset_count": 4, "positions": ["sequence"]}
+      },
+      "legacy_layout_aliases": {"split_2up": "split_2up_left_right"},
+      "transitions": {
+        "allowed": ["fade", "slide_left", "slide_up", "cut"],
+        "default": "fade",
+        "duration_sec": 0.28,
+        "avoid_consecutive_same": true,
+        "max_consecutive_same": 1
+      },
+      "auto_planner": {
+        "script": "scripts/plan_presentation.py",
+        "low_confidence_requires_review": true,
+        "stable_candidate_ids": true
+      }
     },
     "manifest_schema": "scripts/plan_media.py",
     "manifest_migrator": "scripts/migrate_media_manifest.py",

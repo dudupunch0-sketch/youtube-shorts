@@ -75,7 +75,9 @@ def main() -> int:
             position = selected.get("position", "full")
             review_dir = repo_root / "output" / "media-candidates" / data["episode_id"]
             review_dir.mkdir(parents=True, exist_ok=True)
-            destination = review_dir / f"segment-{segment['index']:03d}-{position}"
+            order = selected.get("order")
+            asset_label = f"{position}-{int(order):02d}" if position == "sequence" and order else position
+            destination = review_dir / f"segment-{segment['index']:03d}-{asset_label}"
             if not args.force and any(destination.with_suffix(ext).is_file() for ext in (".jpg", ".jpeg", ".png", ".webp")):
                 existing = next(destination.with_suffix(ext) for ext in (".jpg", ".jpeg", ".png", ".webp") if destination.with_suffix(ext).is_file())
                 output_path = existing

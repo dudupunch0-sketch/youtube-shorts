@@ -50,7 +50,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-3a4c7f337811"
         },
         {
           "provider": "web_image_query",
@@ -65,7 +66,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-ed38a292da0c"
         }
       ],
       "asset": {
@@ -83,12 +85,13 @@
         "review_notes": "Candidates collected; select and verify license manually before approval."
       },
       "visual": {
-        "layout": "split_2up",
+        "layout": "split_2up_left_right",
         "fit": "contain",
         "caption_safe_area": "bottom",
         "assets": [
           {
             "position": "left",
+            "candidate_id": "cand-3a4c7f337811",
             "candidate_index": 1,
             "status": "needs_review",
             "mode": "sourced",
@@ -99,10 +102,12 @@
             "license_url": null,
             "creator": "Ken Sugimori (as described by the landing page)",
             "attribution": null,
-            "review_notes": "Downloaded for local review only; not approved for publication."
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "web_image_query"
           },
           {
             "position": "right",
+            "candidate_id": "cand-ed38a292da0c",
             "candidate_index": 2,
             "status": "needs_review",
             "mode": "sourced",
@@ -113,8 +118,26 @@
             "license_url": null,
             "creator": "Ken Sugimori (as described by the landing page)",
             "attribution": null,
-            "review_notes": "Downloaded for local review only; not approved for publication."
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "web_image_query"
           }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "split_2up_left_right",
+        "confidence": 1.0,
+        "reason": "Hook compares the two visual subjects directly.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-3a4c7f337811",
+          "cand-ed38a292da0c"
         ]
       }
     },
@@ -163,7 +186,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -212,7 +249,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -255,7 +306,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-adda18d99c84"
         },
         {
           "provider": "web_image_query",
@@ -270,7 +322,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-386403cce8ef"
         }
       ],
       "asset": {
@@ -288,10 +341,64 @@
         "review_notes": "Candidates collected; select and verify license manually before approval."
       },
       "visual": {
-        "layout": "full_frame",
+        "layout": "sequence",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "sequence",
+            "candidate_id": "cand-adda18d99c84",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-004-sequence-01.jpg",
+            "source_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+            "landing_url": "https://pokemondb.net/artwork/gengar",
+            "license": "unknown",
+            "license_url": null,
+            "creator": "Ken Sugimori (as described by the landing page)",
+            "attribution": null,
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "web_image_query",
+            "order": 1
+          },
+          {
+            "position": "sequence",
+            "candidate_id": "cand-386403cce8ef",
+            "candidate_index": 2,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-004-sequence-02.jpg",
+            "source_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+            "landing_url": "https://pokemondb.net/pokedex/clefairy",
+            "license": "unknown",
+            "license_url": null,
+            "creator": "Ken Sugimori (as described by the landing page)",
+            "attribution": null,
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "web_image_query",
+            "order": 2
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [
+            "slide_left"
+          ],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "sequence",
+        "confidence": 1.0,
+        "reason": "Show the first silhouette and then replace it with the second for a similarity reveal.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-adda18d99c84",
+          "cand-386403cce8ef"
+        ]
       }
     },
     {
@@ -334,7 +441,8 @@
           "creator": "Faugel",
           "creator_url": "https://www.flickr.com/photos/46156860@N04",
           "attribution": "\"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
-          "review_status": "needs_review"
+          "review_status": "needs_review",
+          "candidate_id": "cand-8768941022dc"
         },
         {
           "provider": "openverse",
@@ -348,7 +456,8 @@
           "creator": " Ed Murray",
           "creator_url": "https://www.flickr.com/photos/21175496@N04",
           "attribution": "\"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
-          "review_status": "needs_review"
+          "review_status": "needs_review",
+          "candidate_id": "cand-75d39111adf0"
         }
       ],
       "asset": {
@@ -366,10 +475,60 @@
         "review_notes": "Candidates collected; select and verify license manually before approval."
       },
       "visual": {
-        "layout": "full_frame",
-        "fit": "cover",
+        "layout": "split_2up_left_right",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "left",
+            "candidate_id": "cand-8768941022dc",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-005-left.jpg",
+            "source_url": "https://live.staticflickr.com/8421/7633207028_88d9573748_b.jpg",
+            "landing_url": "https://www.flickr.com/photos/46156860@N04/7633207028",
+            "license": "by-nc-sa",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+            "creator": "Faugel",
+            "attribution": "\"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "openverse"
+          },
+          {
+            "position": "right",
+            "candidate_id": "cand-75d39111adf0",
+            "candidate_index": 2,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-005-right.jpg",
+            "source_url": "https://live.staticflickr.com/2134/2184175400_e1ce3984c5_b.jpg",
+            "landing_url": "https://www.flickr.com/photos/21175496@N04/2184175400",
+            "license": "by-nc-nd",
+            "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+            "creator": " Ed Murray",
+            "attribution": "\"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "openverse"
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "split_2up_left_right",
+        "confidence": 0.86,
+        "reason": "Comparison or contrast language supports parallel two-up framing.",
+        "source": "planner",
+        "candidate_ids": [
+          "cand-8768941022dc",
+          "cand-75d39111adf0"
+        ]
       }
     },
     {
@@ -411,7 +570,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-c3859b9eb2f3"
         },
         {
           "provider": "namuwiki_capture",
@@ -432,7 +592,8 @@
           "capture_selector": "[data-codex-capture-root=\"true\"]",
           "capture_match": "그림자포켓몬",
           "third_party_media_present": false,
-          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
+          "candidate_id": "cand-156168994661"
         }
       ],
       "asset": {
@@ -451,9 +612,47 @@
       },
       "visual": {
         "layout": "full_frame",
-        "fit": "cover",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "full",
+            "candidate_id": "cand-156168994661",
+            "candidate_index": 2,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-006-full.png",
+            "source_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+            "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+            "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+            "creator": "NamuWiki contributors; see page history",
+            "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "namuwiki_capture",
+            "content_type": "text_excerpt_capture",
+            "capture_path": "output/playwright/namuwiki/segment-006.png",
+            "capture_metadata_path": "output/playwright/namuwiki/segment-006.json",
+            "capture_match": "그림자포켓몬",
+            "third_party_media_present": false
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "full_frame",
+        "confidence": 1.0,
+        "reason": "Use the contextual official-category source capture as the evidence card.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-156168994661"
+        ]
       }
     },
     {
@@ -501,7 +700,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -553,7 +766,8 @@
           "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
           "capture_context": "table",
           "context_rows": 6,
-          "context_columns": 5
+          "context_columns": 5,
+          "candidate_id": "cand-6375b69a1cc3"
         }
       ],
       "asset": {
@@ -572,9 +786,48 @@
       },
       "visual": {
         "layout": "full_frame",
-        "fit": "cover",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "full",
+            "candidate_id": "cand-6375b69a1cc3",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-008-full.png",
+            "source_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+            "creator": "NamuWiki contributors; see page history",
+            "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "namuwiki_capture",
+            "content_type": "text_excerpt_capture",
+            "capture_path": "output/playwright/namuwiki/segment-008.png",
+            "capture_metadata_path": "output/playwright/namuwiki/segment-008.json",
+            "capture_context": "table",
+            "capture_match": "40.5kg",
+            "third_party_media_present": false
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "full_frame",
+        "confidence": 1.0,
+        "reason": "Use the complete weight table as a fact card.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-6375b69a1cc3"
+        ]
       }
     },
     {
@@ -619,7 +872,8 @@
           "creator_url": null,
           "attribution": null,
           "review_status": "needs_review",
-          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed."
+          "review_notes": "Franchise artwork; do not use until rights and platform policy are confirmed.",
+          "candidate_id": "cand-84582203f99f"
         },
         {
           "provider": "namuwiki_capture",
@@ -643,7 +897,8 @@
           "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
           "capture_context": "table",
           "context_rows": 6,
-          "context_columns": 5
+          "context_columns": 5,
+          "candidate_id": "cand-78d3f23f3a61"
         }
       ],
       "asset": {
@@ -661,10 +916,66 @@
         "review_notes": "Candidates collected; select and verify license manually before approval."
       },
       "visual": {
-        "layout": "full_frame",
-        "fit": "cover",
+        "layout": "split_2up_left_right",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "left",
+            "candidate_id": "cand-84582203f99f",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-009-left.png",
+            "source_url": "https://media.dexerto.com/media/pokemon-firered-leafgreen-clefable-artwork.png?format=auto&quality=75&width=385",
+            "landing_url": "https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/",
+            "license": "unknown",
+            "license_url": null,
+            "creator": "Unknown",
+            "attribution": null,
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "web_image_query"
+          },
+          {
+            "position": "right",
+            "candidate_id": "cand-78d3f23f3a61",
+            "candidate_index": 2,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-009-right.png",
+            "source_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+            "creator": "NamuWiki contributors; see page history",
+            "attribution": "나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "namuwiki_capture",
+            "content_type": "text_excerpt_capture",
+            "capture_path": "output/playwright/namuwiki/segment-009.png",
+            "capture_metadata_path": "output/playwright/namuwiki/segment-009.json",
+            "capture_context": "table",
+            "capture_match": "40.0kg",
+            "third_party_media_present": false
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "split_2up_left_right",
+        "confidence": 1.0,
+        "reason": "Show the artwork and the complete weight table side by side.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-84582203f99f",
+          "cand-78d3f23f3a61"
+        ]
       }
     },
     {
@@ -713,7 +1024,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -761,7 +1086,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -813,7 +1152,8 @@
           "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
           "capture_context": "table",
           "context_rows": 6,
-          "context_columns": 5
+          "context_columns": 5,
+          "candidate_id": "cand-c91e7445d65f"
         }
       ],
       "asset": {
@@ -832,9 +1172,48 @@
       },
       "visual": {
         "layout": "full_frame",
-        "fit": "cover",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "full",
+            "candidate_id": "cand-c91e7445d65f",
+            "candidate_index": 1,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-012-full.png",
+            "source_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+            "creator": "NamuWiki contributors; see page history",
+            "attribution": "나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "namuwiki_capture",
+            "content_type": "text_excerpt_capture",
+            "capture_path": "output/playwright/namuwiki/segment-012.png",
+            "capture_metadata_path": "output/playwright/namuwiki/segment-012.json",
+            "capture_context": "table",
+            "capture_match": "7.5kg",
+            "third_party_media_present": false
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "full_frame",
+        "confidence": 1.0,
+        "reason": "Use the complete Clefairy weight table as the counterexample.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-c91e7445d65f"
+        ]
       }
     },
     {
@@ -876,7 +1255,8 @@
           "creator": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
           "creator_url": null,
           "attribution": null,
-          "review_status": "needs_review"
+          "review_status": "needs_review",
+          "candidate_id": "cand-4820288638c9"
         },
         {
           "provider": "wikimedia_commons",
@@ -890,7 +1270,8 @@
           "creator": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
           "creator_url": null,
           "attribution": null,
-          "review_status": "needs_review"
+          "review_status": "needs_review",
+          "candidate_id": "cand-ac0666639c8f"
         },
         {
           "provider": "namuwiki_capture",
@@ -911,7 +1292,8 @@
           "capture_selector": "[data-codex-capture-root=\"true\"]",
           "capture_match": "픽시의 그림자",
           "third_party_media_present": true,
-          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately."
+          "review_notes": "Noncommercial NamuWiki text capture; verify attribution, revision, and embedded media separately.",
+          "candidate_id": "cand-7421e925d523"
         }
       ],
       "asset": {
@@ -930,9 +1312,47 @@
       },
       "visual": {
         "layout": "full_frame",
-        "fit": "cover",
+        "fit": "contain",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [
+          {
+            "position": "full",
+            "candidate_id": "cand-7421e925d523",
+            "candidate_index": 3,
+            "status": "needs_review",
+            "mode": "sourced",
+            "path": "output/media-candidates/phantom-clefairy-shadow/segment-013-full.png",
+            "source_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+            "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+            "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+            "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+            "creator": "NamuWiki contributors; see page history",
+            "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+            "review_notes": "Downloaded for local review only; not approved for publication.",
+            "provider": "namuwiki_capture",
+            "content_type": "text_excerpt_capture",
+            "capture_path": "output/playwright/namuwiki/segment-013.png",
+            "capture_metadata_path": "output/playwright/namuwiki/segment-013.json",
+            "capture_match": "픽시의 그림자",
+            "third_party_media_present": true
+          }
+        ],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "manual",
+        "recommended_layout": "full_frame",
+        "confidence": 1.0,
+        "reason": "Use the explanatory NamuWiki paragraph for the clarification.",
+        "source": "override",
+        "candidate_ids": [
+          "cand-7421e925d523"
+        ]
       }
     },
     {
@@ -980,7 +1400,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     },
     {
@@ -1028,7 +1462,21 @@
         "layout": "full_frame",
         "fit": "cover",
         "caption_safe_area": "bottom",
-        "assets": []
+        "assets": [],
+        "transition": {
+          "default": "fade",
+          "duration_sec": 0.28,
+          "sequence": [],
+          "avoid_consecutive_same": true
+        }
+      },
+      "presentation": {
+        "mode": "auto",
+        "recommended_layout": "full_frame",
+        "confidence": 0.18,
+        "reason": "No candidates collected; reserve a text-card or additional-search fallback.",
+        "source": "planner",
+        "candidate_ids": []
       }
     }
   ],
@@ -1039,5 +1487,74 @@
       "imported_at": "2026-08-08T13:28:52.840818+00:00",
       "count": 6
     }
-  ]
+  ],
+  "presentation_overrides": {
+    "1": {
+      "layout": "split_2up_left_right",
+      "candidate_indices": [
+        1,
+        2
+      ],
+      "reason": "Hook compares the two visual subjects directly."
+    },
+    "4": {
+      "layout": "sequence",
+      "candidate_indices": [
+        1,
+        2
+      ],
+      "transition": {
+        "sequence": [
+          "slide_left"
+        ],
+        "duration_sec": 0.28
+      },
+      "reason": "Show the first silhouette and then replace it with the second for a similarity reveal."
+    },
+    "5": {
+      "layout": "auto",
+      "reason": "Search new candidates first, then let the planner choose parallel or sequential contrast."
+    },
+    "6": {
+      "layout": "full_frame",
+      "candidate_indices": [
+        2
+      ],
+      "reason": "Use the contextual official-category source capture as the evidence card."
+    },
+    "8": {
+      "layout": "full_frame",
+      "candidate_indices": [
+        1
+      ],
+      "reason": "Use the complete weight table as a fact card."
+    },
+    "9": {
+      "layout": "split_2up_left_right",
+      "candidate_indices": [
+        1,
+        2
+      ],
+      "reason": "Show the artwork and the complete weight table side by side."
+    },
+    "12": {
+      "layout": "full_frame",
+      "candidate_indices": [
+        1
+      ],
+      "reason": "Use the complete Clefairy weight table as the counterexample."
+    },
+    "13": {
+      "layout": "full_frame",
+      "candidate_indices": [
+        3
+      ],
+      "reason": "Use the explanatory NamuWiki paragraph for the clarification."
+    }
+  },
+  "presentation_planner": {
+    "script": "scripts/plan_presentation.py",
+    "transition_policy": "avoid_consecutive_same",
+    "stable_candidate_ids": true
+  }
 }

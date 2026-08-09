@@ -11,6 +11,8 @@ from pathlib import Path
 import time
 from typing import Any, Callable, Optional
 
+from audio_validation import AudioValidationError, validate_wav
+
 
 class LocalTtsError(RuntimeError):
     """Raised when a local TTS provider cannot be loaded or run."""
@@ -191,7 +193,8 @@ def main() -> int:
     for item in plan:
         output = Path(item["output"])
         started = time.perf_counter()
-        if args.force or not output.exists():
+        generated = args.force or not output.exists()
+        if generated:
             try:
                 audio, sample_rate = synthesize(item["narration"])
                 save_audio(audio, sample_rate, output)
@@ -206,8 +209,11 @@ def main() -> int:
             except Exception as error:
                 raise LocalTtsError(f"could not measure existing audio {output}: {error}") from error
         generation_sec = time.perf_counter() - started
-        if args.force or not output.exists():
-            duration_sec = len(audio) / sample_rate
+        try:
+            audio_validation = validate_wav(output)
+        except (OSError, AudioValidationError) as error:
+            raise LocalTtsError(f"audio validation failed for segment {item['index']}: {error}") from error
+        duration_sec = audio_validation["duration_sec"]
         planned_duration = item["planned_duration_sec"]
         timeline_duration = duration_sec if args.timeline_mode == "speech" else max(planned_duration, duration_sec)
         manifest_segments.append({
@@ -217,6 +223,7 @@ def main() -> int:
             "planned_duration_sec": planned_duration,
             "timeline_duration_sec": round(timeline_duration, 3),
             "generation_time_sec": round(generation_sec, 3),
+            "audio_validation": audio_validation,
             "narration": item["narration"],
         })
         print(f"OK segment {item['index']:03d}: {duration_sec:.2f}s speech, {generation_sec:.2f}s generation")

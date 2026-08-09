@@ -69,9 +69,22 @@ def render(manifest: dict[str, Any]) -> str:
             selected = visual.get("assets") or []
             refs = ", ".join(
                 f"{item.get('position')}: 후보 {item.get('candidate_index')}"
+                + (f"(순서 {item.get('order')})" if item.get("order") is not None else "")
                 for item in selected
             ) or "아직 선택되지 않음"
-            lines.extend([f"- 화면 레이아웃: `{clean(visual.get('layout'))}`", f"- 선택 후보: {refs}", ""])
+            presentation = segment.get("presentation") or {}
+            transition = visual.get("transition") or {}
+            transitions = ", ".join(str(item) for item in transition.get("sequence", [])) or "없음"
+            lines.extend(
+                [
+                    f"- 화면 레이아웃: `{clean(visual.get('layout'))}`",
+                    f"- 선택 후보: {refs}",
+                    f"- 연출 판단: `{clean(presentation.get('mode'))}` / 신뢰도 `{presentation.get('confidence', 0)}`",
+                    f"- 연출 이유: {clean(presentation.get('reason')) or '미기록'}",
+                    f"- 씬 내부 전환: `{transitions}`",
+                    "",
+                ]
+            )
         if search.get("errors"):
             lines.extend([f"- 검색 오류: `{clean('; '.join(search['errors']))}`", ""])
         if not candidates:

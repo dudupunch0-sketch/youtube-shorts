@@ -70,6 +70,17 @@ The TTS comparison is closed for now. Qwen is recorded as the quality/reference 
 - The recommended structure is 12-18 segments, usually 2.5-5 seconds each.
 - Timing manifests record actual speech duration, planned duration, timeline duration, and generation time.
 
+## 2026-08-09 — Presentation, audio validation, and draft video pipeline
+
+- Added `scripts/plan_presentation.py` with stable candidate IDs, automatic layout recommendations, per-scene overrides, confidence/reason metadata, and compatibility support for the old `split_2up` name.
+- Added `split_2up_left_right`, `split_2up_top_bottom`, and `sequence` layouts. Sequence scenes support restrained `fade`, `slide_left`, `slide_up`, and `cut` transitions with consecutive-repeat avoidance.
+- Recorded the Phantom episode's requested presentation overrides in `config/presentation/phantom-clefairy-shadow.json`. Scene 5 remains automatic and keeps its candidate shortage/review state visible.
+- Added local WAV validation for finite samples, non-silence, constant-signal detection, sample rate, duration, peak, and RMS. The 15-scene Supertonic F1 run passed all checks.
+- Added measured-duration WebVTT captions and a Pillow/imageio-ffmpeg 9:16 compositor. The current draft rendered at 63.321 seconds and passed geometry, duration, and audio validation.
+- Added a dependency-free `make test` unittest suite for presentation recommendation, stable candidate IDs, and silent/non-silent WAV behavior.
+- Draft mode intentionally permits `needs_review` assets and missing-candidate text cards for visual inspection. Final rendering remains blocked until the human chooses and approves every source and confirms attribution/license handling.
+- NamuWiki evidence captures now default to preserving the complete table or paragraph context in the vertical render (`contain`) instead of cropping the sides.
+
 ## Earlier project milestones
 
 - Added concept registry and the initial fictional-media lore concept.
@@ -81,5 +92,5 @@ The TTS comparison is closed for now. Qwen is recorded as the quality/reference 
 ## Open work
 
 - Add a real media-search adapter that stores landing pages, licenses, creators, and attribution for sourced assets.
-- Assemble captions, audio, visuals, and transitions into the final 9:16 video.
-- Add automated WAV non-silence validation and generation-time fallback handling.
+- Complete candidate coverage, human source review, attribution decisions, and final approved render.
+- Add generation-time provider fallback handling, not only model-load failure handling.

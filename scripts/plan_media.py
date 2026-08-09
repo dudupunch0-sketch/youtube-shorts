@@ -48,6 +48,21 @@ def generation_prompt(segment: dict[str, Any]) -> str:
     )
 
 
+def presentation_defaults() -> dict[str, Any]:
+    return {
+        "layout": "full_frame",
+        "fit": "cover",
+        "caption_safe_area": "bottom",
+        "assets": [],
+        "transition": {
+            "default": "fade",
+            "duration_sec": 0.28,
+            "sequence": [],
+            "avoid_consecutive_same": True,
+        },
+    }
+
+
 def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any]:
     episode_id = slugify(episode_path.stem)
     segments = []
@@ -75,11 +90,13 @@ def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any
                     "errors": [],
                 },
                 "candidates": [],
-                "visual": {
-                    "layout": "full_frame",
-                    "fit": "cover",
-                    "caption_safe_area": "bottom",
-                    "assets": [],
+                "visual": presentation_defaults(),
+                "presentation": {
+                    "mode": "auto",
+                    "recommended_layout": "full_frame",
+                    "confidence": 0.0,
+                    "reason": "Awaiting candidate collection",
+                    "source": "planner",
                 },
                 "asset": {
                     "status": "pending",
@@ -105,6 +122,7 @@ def build_manifest(episode_path: Path, episode: dict[str, Any]) -> dict[str, Any
         "strategy": "collect_then_manual_review",
         "search_fallback_skill": "insane-search",
         "generation_fallback": "manual_only",
+        "presentation_overrides": {},
         "asset_root": f"output/media/{episode_id}",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "segments": segments,
