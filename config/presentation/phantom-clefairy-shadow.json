@@ -1,0 +1,45 @@
+{
+  "1": {
+    "layout": "split_2up_left_right",
+    "candidate_indices": [1, 2],
+    "reason": "Hook compares the two visual subjects directly."
+  },
+  "4": {
+    "layout": "sequence",
+    "candidate_indices": [1, 2],
+    "transition": {
+      "sequence": ["slide_left"],
+      "duration_sec": 0.28
+    },
+    "reason": "Show the first silhouette and then replace it with the second for a similarity reveal."
+  },
+  "5": {
+    "layout": "auto",
+    "reason": "Search new candidates first, then let the planner choose parallel or sequential contrast."
+  },
+  "6": {
+    "layout": "full_frame",
+    "candidate_indices": [2],
+    "reason": "Use the contextual official-category source capture as the evidence card."
+  },
+  "8": {
+    "layout": "full_frame",
+    "candidate_indices": [1],
+    "reason": "Use the complete weight table as a fact card."
+  },
+  "9": {
+    "layout": "split_2up_left_right",
+    "candidate_indices": [1, 2],
+    "reason": "Show the artwork and the complete weight table side by side."
+  },
+  "12": {
+    "layout": "full_frame",
+    "candidate_indices": [1],
+    "reason": "Use the complete Clefairy weight table as the counterexample."
+  },
+  "13": {
+    "layout": "full_frame",
+    "candidate_indices": [3],
+    "reason": "Use the explanatory NamuWiki paragraph for the clarification."
+  }
+}

@@ -6,6 +6,16 @@ __pycache__/
 config/local/elevenlabs-tts.json
 output/audio/
 output/manifests/
+!output/manifests/
+output/manifests/*
+!output/manifests/*.media.json
+!output/manifests/*.media-review.md
+output/media/
+output/media-candidates/
+output/playwright/
+output/captions/
+output/video/
+.playwright-cli/
 .venv-tts/
 *.mp4
 *.mov

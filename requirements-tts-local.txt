@@ -3,3 +3,4 @@ supertonic
 qwen-tts
 soundfile
 requests
+imageio-ffmpeg

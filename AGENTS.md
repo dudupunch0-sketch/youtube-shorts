@@ -9,7 +9,7 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 1. Select an explicit concept from `concepts/registry.json`.
 2. Expand a short topic or premise into a Korean script using the active concept's style profile.
 3. Produce 12-18 short narration segments. The target is 60 seconds, with an accepted total timeline of 50-70 seconds.
-4. Find or generate one visual asset per segment. Record source URL, license, creator, or generation provenance.
+4. Collect visual candidates per segment, let a human choose and verify them, then record source URL, license, creator, and attribution. Use `scripts/plan_presentation.py` to recommend `full_frame`, `split_2up_left_right`, `split_2up_top_bottom`, or `sequence`; human overrides remain authoritative. Generate only after explicit approval.
 5. Generate scene audio, captions, and the final 9:16 video.
 6. Validate the episode, timing manifest, media provenance, and final render before publishing.
 
@@ -19,6 +19,21 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 - Creative interpretation is allowed for fictional works, but label interpretation as interpretation.
 - Do not copy the supplied Shorts. Reuse only abstract pacing, structure, and presentation patterns recorded in `references/`.
 - Keep one idea per segment and include a hook and a conclusion.
+
+## Web search and collection fallback
+
+- Use ordinary web search or an official public API first for simple searches.
+- When a source URL is blocked, returns a WAF/challenge response, or normal fetching fails, use the installed `insane-search` skill as the fallback. It is not the first choice for ordinary keyword search.
+- `insane-search` improves access and extraction; it does not grant image/video reuse rights and it is not a license filter.
+- Keep the original landing URL, creator, license, and attribution data in the media manifest even when the fallback skill retrieves the content.
+- Accept a fetched page only after the skill's validation result and trace show a real content response, not merely HTTP 200.
+
+### NamuWiki capture context
+
+- Use `skills/namuwiki-source-capture/SKILL.md` for NamuWiki evidence collection.
+- Capture the nearest complete table for structured values such as weight, height, IDs, classifications, and rates.
+- Capture the complete readable paragraph or list item for explanatory history, relationships, theories, and other prose.
+- Keep embedded third-party media hidden unless it is separately requested and reviewed. Preserve page URL, history URL, capture time, match, and context metadata.
 
 ## TTS policy (decision recorded 2026-08-08)
 
@@ -33,6 +48,10 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 
 Before an audio file enters the video pipeline, check its sample rate, duration, finite sample values, non-zero signal, and a basic peak/RMS range. A file that opens but is silent or has a constant sample value is invalid.
 
+## Render validation
+
+Use `scripts/build_captions.py` to align captions to measured scene durations, `scripts/render_short.py --draft` for a review-only MP4, and `scripts/validate_render.py --allow-draft` to check the 9:16 geometry, 50-70 second duration, and audio track. A draft may display missing/needs-review assets or text cards; it is not a publishable result. Final rendering without `--draft` requires approved assets.
+
 ## Environment rules
 
 - Run project commands in WSL Ubuntu. Do not install a Linux NVIDIA driver inside WSL; the Windows NVIDIA driver supplies the WSL CUDA bridge.
@@ -41,8 +60,7 @@ Before an audio file enters the video pipeline, check its sample rate, duration,
 
 ## Current TODO
 
-- Complete asset search/generation and attribution handling.
-- Complete caption timing and 9:16 video assembly.
-- Add automated audio non-silence validation to the local TTS script.
+- Complete candidate coverage, human selection, download, and attribution handling.
+- Review the draft's layout, captions, source context, and narration; then approve or replace assets scene by scene.
 - Add a safe provider fallback policy for generation-time failures, not only model-load failures.
 - Expand the style skill TODOs using additional reference Shorts when the channel direction is finalized.

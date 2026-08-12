@@ -64,10 +64,62 @@
     "label_interpretation_as_such": true
   },
   "media": {
+    "strategy": "collect_then_manual_review",
+    "first_implementation": "candidate_collection_only",
+    "search_fallback_skill": "insane-search",
+    "generation_fallback": "manual_only",
+    "layouts": {
+      "full_frame": {"asset_count": 1, "positions": ["full"]},
+      "split_2up_left_right": {"asset_count": 2, "positions": ["left", "right"]},
+      "split_2up_top_bottom": {"asset_count": 2, "positions": ["top", "bottom"]},
+      "sequence": {"min_asset_count": 2, "max_asset_count": 4, "positions": ["sequence"]}
+    },
+    "legacy_layout_aliases": {"split_2up": "split_2up_left_right"},
+    "caption_safe_area": "bottom",
+    "namuwiki_capture": {
+      "provider": "namuwiki_capture",
+      "mode": "mobile_browser_text_excerpt",
+      "license_assumption": "CC BY-NC-SA 2.0 KR",
+      "noncommercial_only": true,
+      "capture_script": "scripts/capture_namuwiki.py"
+    },
+    "presentation": {
+      "layouts": {
+        "full_frame": {"asset_count": 1, "positions": ["full"]},
+        "split_2up_left_right": {"asset_count": 2, "positions": ["left", "right"]},
+        "split_2up_top_bottom": {"asset_count": 2, "positions": ["top", "bottom"]},
+        "sequence": {"min_asset_count": 2, "max_asset_count": 4, "positions": ["sequence"]}
+      },
+      "legacy_layout_aliases": {"split_2up": "split_2up_left_right"},
+      "transitions": {
+        "allowed": ["fade", "slide_left", "slide_up", "cut"],
+        "default": "fade",
+        "duration_sec": 0.28,
+        "avoid_consecutive_same": true,
+        "max_consecutive_same": 1
+      },
+      "auto_planner": {
+        "script": "scripts/plan_presentation.py",
+        "low_confidence_requires_review": true,
+        "stable_candidate_ids": true
+      }
+    },
+    "manifest_schema": "scripts/plan_media.py",
+    "manifest_migrator": "scripts/migrate_media_manifest.py",
+    "candidate_collector": "scripts/collect_media_candidates.py",
+    "manual_candidate_importer": "scripts/import_media_candidates.py",
+    "review_report_script": "scripts/render_media_review.py",
+    "validation_script": "scripts/validate_media_manifest.py",
+    "require_human_review_for": [
+      "unknown_license",
+      "official_copyrighted_asset",
+      "cc_by_nc",
+      "cc_by_nd"
+    ],
     "preferred_order": [
       "licensed_web_asset",
-      "generated_image",
-      "abstract_background"
+      "human_reviewed_web_asset",
+      "generated_image_after_explicit_approval"
     ],
     "required_attribution_fields": [
       "source_url",

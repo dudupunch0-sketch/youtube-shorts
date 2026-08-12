@@ -33,14 +33,36 @@ TTS 생성 및 실제 길이 측정
 
 ```text
 config/pipeline.json       파이프라인 규칙과 길이 제한
+config/presentation/       에피소드별 연출 override
+docs/goal-prompt.md        반복 실행용 goal 프롬프트
 concepts/                   concept 레지스트리와 concept별 정의
 references/                 레퍼런스 쇼츠에서 추출한 스타일 프로필
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
+skills/namuwiki-source-capture/ 표·문단 맥락형 나무위키 출처 캡처 스킬
 examples/notes/             입력 노트 예시
 examples/episodes/          장면 JSON 예시
 scripts/generate_episode.py 주제에서 episode JSON을 생성하는 CLI
 scripts/validate_episode.py 에피소드 포맷 검증기
 scripts/generate_tts.py       장면별 TTS와 타이밍 manifest 생성 CLI
+scripts/plan_media.py         장면별 미디어 검색·생성 계획 manifest 생성 CLI
+scripts/collect_media_candidates.py 공개 검색 API 후보 수집 CLI
+scripts/import_media_candidates.py 사람이 찾은 후보 URL을 manifest에 병합
+scripts/render_media_review.py 장면별 클릭 가능한 후보 검토표 생성
+scripts/set_media_layout.py 장면별 full_frame/split_2up 후보 선택
+scripts/plan_presentation.py 문맥 기반 레이아웃·전환 추천 및 override 적용
+scripts/migrate_media_manifest.py 기존 manifest를 다중 자산 schema로 마이그레이션
+scripts/download_media_selection.py 선택 후보를 로컬 검토 폴더에 다운로드
+scripts/render_media_preview.py 선택 레이아웃 미리보기 생성
+scripts/capture_namuwiki.py 표·문단 맥락형 모바일 나무위키 캡처
+scripts/mark_generated_media.py 명시적으로 승인된 생성 이미지의 provenance 기록
+scripts/validate_media_manifest.py 미디어 파일·manifest 검증기
+scripts/audio_validation.py    WAV 신호 검증 모듈
+scripts/validate_audio.py      TTS timing manifest 전체 오디오 검증
+scripts/build_captions.py      실제 TTS 길이 기반 WebVTT 생성
+scripts/render_short.py        9:16 draft/final MP4 합성
+scripts/validate_render.py      MP4·오디오·길이·해상도 검증
+output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태
+output/media/               에피소드별 이미지 자산
 ```
 
 ## 빠른 검증
@@ -48,10 +70,72 @@ scripts/generate_tts.py       장면별 TTS와 타이밍 manifest 생성 CLI
 WSL에서 실행한다.
 
 ```bash
+make test
 python3 scripts/validate_episode.py examples/episodes/roman-baths.json
 ```
 
-검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 현재 예시에는 실제 TTS와 미디어 파일이 아직 연결되지 않았으므로, 다음 단계에서 각 어댑터를 붙인다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
+검증기는 장면 수, 필수 필드, 목표 영상 길이, 장면별 시간 범위를 검사한다. 레퍼런스 영상은 복제하지 않고, `references/shorts-style-profile.md`에 정리한 형식·리듬·출처 정책만 재사용한다.
+
+## 미디어 계획과 검증
+
+첫 구현은 장면마다 사용할 웹 이미지·영상 후보를 수집한다. 후보의 라이선스와 실제 사용 가능 여부는 사람이 판단하며, 자동 생성은 명시적으로 요청한 경우에만 별도로 실행한다.
+
+```bash
+python3 scripts/plan_media.py \
+  output/episodes/phantom-clefairy-shadow.json
+
+python3 scripts/collect_media_candidates.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/import_media_candidates.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  references/media-candidate-seeds/phantom-clefairy-shadow.json
+
+python3 scripts/render_media_review.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/plan_presentation.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  --overrides config/presentation/phantom-clefairy-shadow.json
+
+python3 scripts/set_media_layout.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  1 split_2up_top_bottom 1 2
+
+python3 scripts/capture_namuwiki.py \
+  "https://namu.wiki/w/팬텀(포켓몬스터)" \
+  --match 픽시의 그림자 \
+  --context auto \
+  --segment=13 \
+  --manifest=output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/validate_media_manifest.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+```
+
+연출 planner는 대본 문맥과 후보 수를 보고 `full_frame`, `split_2up_left_right`,
+`split_2up_top_bottom`, `sequence` 중 하나를 추천한다. `sequence`에는 `fade`,
+`slide_left`, `slide_up`, `cut` 전환을 적용하며, 같은 효과가 연속되지 않도록 한다.
+장면별 override가 있으면 사람이 지정한 값이 우선한다. 후보가 부족한 장면은 자동으로
+생성하지 않고, 추가 검색·텍스트 카드 대기 상태로 남긴다.
+
+나무위키의 표·문단 캡처는 `contain`으로 세로 화면에 배치해 전체 맥락이 잘리지 않도록
+한다. 캡처 후보에는 원본 URL, 문서 역사 URL, 캡처 시각, 캡처 맥락과 제3자 미디어 포함
+여부가 함께 남는다. 이는 수집·검토 편의를 위한 것이며 라이선스 승인을 자동으로 의미하지
+않는다.
+
+`--context auto` is the default. When the matched text is inside a table, the
+capture contains the nearest complete table, including its title, headers, and
+related rows. Use `--context element` only for an intentional narrow text
+capture, or `--context table` to require a table match.
+
+`insane-search`는 일반 검색/API가 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 접근 fallback으로 사용한다. 검색이 성공해도 라이선스와 출처 검증은 별도로 수행한다. 수집기는 후보 URL과 라이선스 메타데이터를 `candidates`에 기록하고, 선택 전에는 어떤 자산도 `approved`로 바꾸지 않는다. 검토표는 `output/manifests/*.media-review.md`에 생성된다.
+
+## 웹 미디어 검색 fallback
+
+웹 검색이나 공식 공개 API를 먼저 사용한다. 특정 URL이 403, WAF 챌린지, 빈 페이지 등으로 막힐 때만 Codex에 설치된 `insane-search` 스킬을 fallback으로 사용한다. 이 스킬은 페이지 접근과 내용 추출을 돕지만 라이선스를 보증하지 않으므로, 최종 미디어 manifest에는 원본 URL·제작자·라이선스·출처를 계속 기록해야 한다.
+
+일반 URL fallback의 진입점은 스킬의 `scripts/run_engine.sh`이며, 결과의 validation과 trace가 실제 콘텐츠를 확인한 경우에만 수집 결과를 채택한다. Openverse·Wikimedia Commons 같은 공개 미디어 검색 결과도 동일하게 원본 라이선스 페이지를 확인한다.
 
 ## TTS 연결
 
@@ -87,7 +171,14 @@ uv pip install --python .venv-tts/bin/python -r requirements-tts-local.txt
 ```bash
 .venv-tts/bin/python scripts/generate_local_tts.py \
   output/episodes/phantom-clefairy-shadow.json \
-  --provider supertonic
+  --provider supertonic \
+  --voice F1 \
+  --speed 1.4 \
+  --timeline-mode speech \
+  --manifest output/manifests/phantom-clefairy-shadow.supertonic.final.tts.json
+
+.venv-tts/bin/python scripts/validate_audio.py \
+  output/manifests/phantom-clefairy-shadow.supertonic.final.tts.json
 
 .venv-tts/bin/python scripts/generate_local_tts.py \
   output/episodes/phantom-clefairy-shadow.json \
@@ -126,14 +217,39 @@ python3 scripts/generate_tts.py \
 
 음성은 사용자가 직접 복잡하게 찾아야 하는 것은 아니다. 우선 한국어 내레이션에 어울리는 음성 하나를 계정에서 선택하면 되고, 이후에는 같은 프로필로 자동 생성된다. 원하는 분위기(차분한 설명체, 빠른 정보형, 낮은 남성 음성 등)만 정하면 음성 선택 기준은 프로젝트 쪽에서 관리할 수 있다.
 
-## 다음 작업
+## 자막과 9:16 영상 합성
 
-1. ElevenLabs 키·음성 프로필로 실제 TTS 한 편 생성
-2. 웹 미디어 검색/출처 저장 어댑터 연결
-3. 이미지·음성·자막을 MP4로 합성
-4. 사람 검수용 프리뷰 리포트 생성
-5. 새 레퍼런스를 받을 때만 스타일 프로필 갱신 기능 추가
-6. 유튜브 업로드는 위 과정이 안정화된 뒤 별도 단계로 추가
+TTS의 실제 장면 길이를 기준으로 자막과 영상 타임라인을 만든다. `--draft`는 아직
+`needs_review`인 후보와 후보 없는 장면의 텍스트 카드를 허용하는 사람 검토용 결과다.
+최종 렌더는 모든 선택 자산이 `approved`일 때만 실행한다.
+
+```bash
+python3 scripts/build_captions.py \
+  output/episodes/phantom-clefairy-shadow.json \
+  output/manifests/phantom-clefairy-shadow.supertonic.final.tts.json
+
+.venv-tts/bin/python scripts/render_short.py \
+  output/manifests/phantom-clefairy-shadow.media.json \
+  output/manifests/phantom-clefairy-shadow.supertonic.final.tts.json \
+  --draft \
+  --output output/video/phantom-clefairy-shadow-draft.mp4
+
+.venv-tts/bin/python scripts/validate_render.py \
+  output/manifests/phantom-clefairy-shadow.render.json \
+  --allow-draft
+```
+
+현재 팬텀 draft는 실제 TTS 기준 63.321초이며, `1080x1920`과 오디오 트랙 검증을
+통과했다. 이 draft는 게시물이 아니라 출처·레이아웃·자막을 확인하기 위한 산출물이다.
+
+## 현재 남은 작업
+
+1. 장면별 후보를 사람이 검토하고, 사용할 이미지·캡처·라이선스·출처 표기를 확정
+2. 후보가 없는 장면을 추가 검색해 보강하거나 텍스트 카드로 유지할지 결정
+3. draft의 연출·자막·TTS 발음을 검토한 뒤 필요한 override 수정
+4. 전부 승인된 상태에서 `--draft` 없이 최종 MP4를 렌더하고 게시 전 사실 검수
+5. 생성 시점 provider 오류에 대한 안전한 fallback 추가
+6. 채널 방향이 확정되면 추가 Shorts로 style skill TODO 보강
 
 ## 실제 사용 흐름
 
