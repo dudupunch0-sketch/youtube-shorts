@@ -2,6 +2,86 @@
 
 This file records project decisions, experiments, and known limitations. It is a development log, not a user-facing release changelog.
 
+## 2026-08-13 — Publish layer stage 1
+
+### Context
+
+Evaluated `block/buzz` as a way to hand off content production and channel operations. It
+is a Nostr-based self-hosted collaboration workspace (channels, agents-as-members, YAML
+workflows, signed audit log), not a content tool. It produces no script, audio, video, or
+upload. Its genuinely relevant features are frame-anchored video comments and
+reaction-triggered approval workflows, but the approval gates are still marked in-progress
+upstream, and the project has one participant, so there is no second approver for the
+audit trail to record. Decision: do not integrate. Revisit if a second reviewer joins and
+the approval gates ship; only pipeline steps 4 and 6 would need to move.
+
+### Publish design and implementation
+
+- Added `docs/youtube-publish-design.md` describing the stage after final render.
+- Implemented stage 1, which needs no network or OAuth: `scripts/plan_publish.py`,
+  `scripts/render_publish_review.py`, `scripts/approve_publish.py`,
+  `scripts/validate_publish.py`, plus the shared modules `scripts/publish_licensing.py`,
+  `scripts/publish_metadata.py`, and `scripts/publish_validation.py`.
+- Added the `publish` block to `config/pipeline.json`, YouTube OAuth paths to
+  `.env.example`, and gitignore entries for the credential files. Publish manifests and
+  review sheets are whitelisted in `.gitignore` like media manifests.
+- Added 17 unit tests. `make test` now runs 21.
+
+### Decisions
+
+- The channel has no monetization plan, so `commercial_use` is `false`. It relaxes the
+  NonCommercial clause only. Unknown licenses, unrecognized license strings, NoDerivatives,
+  and franchise official artwork stay blocked.
+- `status.containsSyntheticMedia` is writable in `videos.insert` (added to the Data API on
+  2024-10-30), so the AI-voice disclosure required by the TTS policy is automated rather
+  than left to Studio. Both the API field and the description sentence are validated.
+- The description limit is 5000 UTF-8 bytes, not characters. Korean is three bytes per
+  character, so the practical limit is about 1,660 characters. Validating characters would
+  let descriptions be silently truncated.
+- `videos.insert` has its own quota bucket at 100 calls per day, separate from the shared
+  10,000-unit pool, so quota is not a constraint at this channel's scale.
+- Uploads will be pinned to `privacyStatus: private`; promotion is a separate step.
+
+### Applying it to the Phantom episode
+
+- 7 distinct sources across 15 scenes; 4 are license-blocked. Three record `unknown` and
+  one is `by-nc-nd`. The three NamuWiki captures pass now that NC is relaxed, but carry
+  ShareAlike warnings.
+- 7 scenes (2, 3, 7, 10, 11, 14, 15) have no selected asset at all.
+- Two defects were found by running the planner on real data and then fixed: NamuWiki
+  landing URLs differing only in percent-encoding of `)` produced duplicate attribution
+  lines, and collector-recorded attribution strings dropped the scene prefix.
+- The monetization decision alone does not make this episode publishable.
+
+### Where to pick this up
+
+In order. Steps 1-3 need no new accounts or credentials.
+
+1. **Replace the four license-blocked sources.** Scenes 1 and 4 use two `unknown`
+   pokemondb artworks, scene 9 uses an `unknown` dexerto page, and scene 5 uses a
+   `by-nc-nd` asset. Prefer Openverse, Wikimedia Commons, or an official source page with
+   a recorded license. Re-run `plan_publish.py` after each change; the license verdict is
+   recomputed from the media manifest every time.
+2. **Fill or resolve the seven empty scenes** (2, 3, 7, 10, 11, 14, 15). Either collect
+   candidates or decide they stay text cards. A text card still needs a manifest entry, or
+   `check_licensing` reports the scene as missing.
+3. **Render final and validate for real.** Once every selected asset is `approved`, render
+   without `--draft`, then run `validate_publish.py` *without* `--skip-render`. The render
+   checks (draft flag, 50-70s, 1080x1920, MP4 present) have never run against a real final
+   render, only against a synthetic fixture.
+4. **Publish stage 2.** Requires a Google Cloud project and an OAuth desktop client, which
+   is a user action, not a code change. Scopes and the WSL consent flow are in section 6 of
+   `docs/youtube-publish-design.md`. Scripts to add: `authorize_youtube.py`,
+   `upload_youtube.py`.
+5. **Stages 3-4.** `promote_youtube.py` for public/scheduled release, then
+   `fetch_youtube_stats.py`.
+
+Config-only decisions still open, all in `config/pipeline.json` under `publish`:
+`category_id` (24), post-upload default (private, manual promotion),
+`selfDeclaredMadeForKids` (false), and the description `footer` (empty).
+
+Not planned: `block/buzz` integration. See the context note at the top of this entry.
+
 ## 2026-08-08 — Search fallback installed
 
 - Installed the public `insane-search-codex` package, version 0.8.2, from `fivetaku/gptaku-plugins-codex`.
@@ -94,3 +174,4 @@ The TTS comparison is closed for now. Qwen is recorded as the quality/reference 
 - Add a real media-search adapter that stores landing pages, licenses, creators, and attribution for sourced assets.
 - Complete candidate coverage, human source review, attribution decisions, and final approved render.
 - Add generation-time provider fallback handling, not only model-load failure handling.
+- Implement publish stage 2 and beyond: OAuth authorization, private upload, promotion to public or scheduled, and stats collection.

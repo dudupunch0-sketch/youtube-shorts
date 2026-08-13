@@ -34,7 +34,9 @@ TTS 생성 및 실제 길이 측정
 ```text
 config/pipeline.json       파이프라인 규칙과 길이 제한
 config/presentation/       에피소드별 연출 override
+config/publish/            에피소드별 게시 메타데이터 override
 docs/goal-prompt.md        반복 실행용 goal 프롬프트
+docs/youtube-publish-design.md 게시·운영 레이어 설계와 구현 상태
 concepts/                   concept 레지스트리와 concept별 정의
 references/                 레퍼런스 쇼츠에서 추출한 스타일 프로필
 skills/scriptwriter/       노트 확장용 문체 스킬 초안
@@ -61,7 +63,15 @@ scripts/validate_audio.py      TTS timing manifest 전체 오디오 검증
 scripts/build_captions.py      실제 TTS 길이 기반 WebVTT 생성
 scripts/render_short.py        9:16 draft/final MP4 합성
 scripts/validate_render.py      MP4·오디오·길이·해상도 검증
+scripts/plan_publish.py         게시 메타데이터·출처 표기 계획 생성
+scripts/render_publish_review.py 게시 승인용 검토표 생성
+scripts/approve_publish.py      게시 승인 기록 및 취소
+scripts/validate_publish.py     게시 직전 게이트 검증
+scripts/publish_licensing.py    라이선스 표기 판정 모듈
+scripts/publish_metadata.py     설명문·출처 조립 모듈
+scripts/publish_validation.py   게시 검증 규칙 모듈
 output/manifests/*.media.json 장면별 미디어 provenance와 검수 상태
+output/manifests/*.publish.json 게시 메타데이터와 승인 기록
 output/media/               에피소드별 이미지 자산
 ```
 
@@ -242,14 +252,67 @@ python3 scripts/build_captions.py \
 현재 팬텀 draft는 실제 TTS 기준 63.321초이며, `1080x1920`과 오디오 트랙 검증을
 통과했다. 이 draft는 게시물이 아니라 출처·레이아웃·자막을 확인하기 위한 산출물이다.
 
+## 게시 계획과 승인
+
+최종 렌더가 끝나면 게시 메타데이터를 계획하고 사람이 승인한다. 이 단계는 네트워크와
+YouTube 인증이 필요 없다. 설계와 구현 상태는 `docs/youtube-publish-design.md`에 있다.
+
+```bash
+python3 scripts/plan_publish.py \
+  output/manifests/phantom-clefairy-shadow.media.json
+
+python3 scripts/render_publish_review.py \
+  output/manifests/phantom-clefairy-shadow.publish.json
+
+python3 scripts/validate_publish.py \
+  output/manifests/phantom-clefairy-shadow.publish.json \
+  --skip-render
+
+python3 scripts/approve_publish.py \
+  output/manifests/phantom-clefairy-shadow.publish.json \
+  --approve --by "이름" --note "사실 검수 완료"
+```
+
+계획은 항상 `needs_review`로 생성된다. 제목은 episode의 `title`을 쓰고, 설명문은
+훅 → 주제 → AI 음성 고지 → 해석 표기 → 출처 목록 → 푸터 순으로 조립한다. 출처는
+장면이 실제로 선택한 자산에서만 뽑고, 같은 문서를 여러 장면에서 쓰면 한 줄로 합친다.
+
+`--skip-render`는 최종 렌더 전에 메타데이터·권리·게이트만 확인하는 옵션이다. 실제
+업로드 전에는 반드시 이 옵션 없이 다시 검증한다. 태그는 자동 생성하지 않고
+`config/pipeline.json`의 `base_tags`와 `config/publish/<episode_id>.json` override만
+사용한다.
+
+### 라이선스 판정
+
+수익화 계획이 없으므로 `commercial_use`는 `false`다. 이 설정은 NC(비영리) 조항만
+완화한다. 아래는 비수익 채널에서도 차단된다.
+
+- `unknown` 또는 빈 라이선스
+- 인식할 수 없는 라이선스 표기
+- ND(NoDerivatives) — 자막·합성·편집이 들어가므로 조건 위반이다
+- 프랜차이즈 공식 아트워크 — 비영리라도 이용 허락이 생기지 않는다
+
+SA(ShareAlike) 자료는 통과하지만 적용 범위를 사람이 확인해야 한다는 경고가 남는다.
+팬텀 에피소드에 적용하면 출처 7건 중 4건이 차단되고, 선택 자산이 없는 장면 7개가
+함께 보고된다.
+
+AI 음성 고지는 두 곳에 들어간다. `status.containsSyntheticMedia` API 필드와 설명문
+문장이며, 검증기가 둘 다 확인한다. 설명문 상한은 5000자가 아니라 **5000바이트**이고,
+한국어는 글자당 3바이트이므로 실제 상한은 약 1,660자다.
+
+업로드와 공개 전환은 아직 구현되지 않았다. 필요한 OAuth 설정은 설계 문서의 6절에 있다.
+
 ## 현재 남은 작업
 
-1. 장면별 후보를 사람이 검토하고, 사용할 이미지·캡처·라이선스·출처 표기를 확정
-2. 후보가 없는 장면을 추가 검색해 보강하거나 텍스트 카드로 유지할지 결정
+1. 장면별 후보를 사람이 검토하고, 사용할 이미지·캡처·라이선스·출처 표기를 확정.
+   현재 `unknown` 라이선스 3건과 `by-nc-nd` 1건은 교체가 필요하다
+2. 후보가 없는 장면 7개(2, 3, 7, 10, 11, 14, 15)를 추가 검색해 보강하거나 텍스트
+   카드로 유지할지 결정
 3. draft의 연출·자막·TTS 발음을 검토한 뒤 필요한 override 수정
 4. 전부 승인된 상태에서 `--draft` 없이 최종 MP4를 렌더하고 게시 전 사실 검수
 5. 생성 시점 provider 오류에 대한 안전한 fallback 추가
 6. 채널 방향이 확정되면 추가 Shorts로 style skill TODO 보강
+7. 게시 2단계 구현: OAuth 인증, 비공개 업로드, 공개 전환, 지표 수집
 
 ## 실제 사용 흐름
 

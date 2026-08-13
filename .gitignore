@@ -4,12 +4,16 @@ __pycache__/
 *.pyc
 .env
 config/local/elevenlabs-tts.json
+config/local/youtube-oauth.json
+config/local/youtube-token.json
 output/audio/
 output/manifests/
 !output/manifests/
 output/manifests/*
 !output/manifests/*.media.json
 !output/manifests/*.media-review.md
+!output/manifests/*.publish.json
+!output/manifests/*.publish-review.md
 output/media/
 output/media-candidates/
 output/playwright/

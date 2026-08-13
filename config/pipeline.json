@@ -127,6 +127,53 @@
       "creator"
     ]
   },
+  "publish": {
+    "platform": "youtube",
+    "default_profile": "korean-shorts",
+    "upload_privacy_status": "private",
+    "require_manual_approval": true,
+    "require_final_render": true,
+    "commercial_use": false,
+    "profiles": {
+      "korean-shorts": {
+        "category_id": "24",
+        "default_language": "ko",
+        "default_audio_language": "ko",
+        "made_for_kids": false,
+        "contains_synthetic_media": true,
+        "base_tags": [],
+        "footer": ""
+      }
+    },
+    "limits": {
+      "title_max_chars": 100,
+      "description_max_bytes": 5000,
+      "tags_max_total_chars": 500,
+      "shorts_max_duration_seconds": 180
+    },
+    "ai_disclosure": {
+      "required": true,
+      "api_field": "status.containsSyntheticMedia",
+      "description_sentence_ko": "이 영상의 내레이션은 AI 음성으로 생성되었습니다."
+    },
+    "manual_checklist": [
+      "썸네일 또는 커버 프레임 확인",
+      "재생목록 추가 여부 확인",
+      "댓글 설정과 리믹스 허용 범위 확인",
+      "업로드 후 저작권 클레임 확인",
+      "게시 전 사실 검수 완료 확인"
+    ],
+    "overrides_dir": "config/publish",
+    "scripts": {
+      "planner": "scripts/plan_publish.py",
+      "review_report": "scripts/render_publish_review.py",
+      "approval": "scripts/approve_publish.py",
+      "validator": "scripts/validate_publish.py",
+      "licensing_module": "scripts/publish_licensing.py",
+      "metadata_module": "scripts/publish_metadata.py",
+      "validation_module": "scripts/publish_validation.py"
+    }
+  },
   "tts": {
     "default_provider": "supertonic",
     "providers": {
