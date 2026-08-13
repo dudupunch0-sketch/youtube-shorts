@@ -1,0 +1,276 @@
+{
+  "manifest_version": 1,
+  "episode_id": "phantom-clefairy-shadow",
+  "episode_path": "output/episodes/phantom-clefairy-shadow.json",
+  "media_manifest": "output/manifests/phantom-clefairy-shadow.media.json",
+  "render_report": null,
+  "video_path": null,
+  "generated_at": "2026-08-13T05:37:22.819015+00:00",
+  "publish_profile": "korean-shorts",
+  "commercial_use": false,
+  "segment_count": 15,
+  "limits": {
+    "title_max_chars": 100,
+    "description_max_bytes": 5000,
+    "tags_max_total_chars": 500,
+    "shorts_max_duration_seconds": 180
+  },
+  "metadata": {
+    "title": "팬텀은 사실 삐삐의 그림자일까?",
+    "title_candidates": [],
+    "description": "팬텀은 사실 삐삐의 그림자일까?\n\n다루는 주제: 팬텀과 삐삐의 그림자설\n\n이 영상의 내레이션은 AI 음성으로 생성되었습니다.\n\n이 영상에는 공식 설정이 아닌 해석과 팬 이론이 포함되어 있습니다. 해석 부분은 공식 사실이 아닙니다.\n\n출처 및 라이선스\n- 장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/artwork/gengar)\n- 장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/pokedex/clefairy)\n- 장면 5: \"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.\n- 장면 5: \"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.\n- 장면 6, 8, 13: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)\n- 장면 9: Unknown / unknown (https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/)\n- 장면 9, 12: 나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+    "description_blocks": {
+      "hook": "팬텀은 사실 삐삐의 그림자일까?",
+      "body": "다루는 주제: 팬텀과 삐삐의 그림자설",
+      "ai_disclosure": "이 영상의 내레이션은 AI 음성으로 생성되었습니다.",
+      "interpretation_notice": "이 영상에는 공식 설정이 아닌 해석과 팬 이론이 포함되어 있습니다. 해석 부분은 공식 사실이 아닙니다.",
+      "attribution": "출처 및 라이선스\n- 장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/artwork/gengar)\n- 장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/pokedex/clefairy)\n- 장면 5: \"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.\n- 장면 5: \"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.\n- 장면 6, 8, 13: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)\n- 장면 9: Unknown / unknown (https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/)\n- 장면 9, 12: 나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+      "footer": ""
+    },
+    "tags": [],
+    "category_id": "24",
+    "default_language": "ko",
+    "default_audio_language": "ko"
+  },
+  "status": {
+    "privacy_status": "private",
+    "publish_at": null,
+    "self_declared_made_for_kids": false,
+    "contains_synthetic_media": true,
+    "license": "youtube",
+    "embeddable": true
+  },
+  "attribution": [
+    {
+      "segments": [
+        1,
+        4
+      ],
+      "candidate_ids": [
+        "cand-3a4c7f337811",
+        "cand-adda18d99c84"
+      ],
+      "source_url": "https://img.pokemondb.net/artwork/large/gengar.jpg",
+      "landing_url": "https://pokemondb.net/artwork/gengar",
+      "license": "unknown",
+      "license_url": null,
+      "creator": "Ken Sugimori (as described by the landing page)",
+      "attribution": null,
+      "provider": "web_image_query",
+      "review_status": "needs_review",
+      "license_decision": "block",
+      "license_reason": "라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "license_conditions": [],
+      "commercial_use_allowed": null,
+      "line": "장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/artwork/gengar)"
+    },
+    {
+      "segments": [
+        1,
+        4
+      ],
+      "candidate_ids": [
+        "cand-ed38a292da0c",
+        "cand-386403cce8ef"
+      ],
+      "source_url": "https://img.pokemondb.net/artwork/large/clefairy.jpg",
+      "landing_url": "https://pokemondb.net/pokedex/clefairy",
+      "license": "unknown",
+      "license_url": null,
+      "creator": "Ken Sugimori (as described by the landing page)",
+      "attribution": null,
+      "provider": "web_image_query",
+      "review_status": "needs_review",
+      "license_decision": "block",
+      "license_reason": "라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "license_conditions": [],
+      "commercial_use_allowed": null,
+      "line": "장면 1, 4: Ken Sugimori (as described by the landing page) / unknown (https://pokemondb.net/pokedex/clefairy)"
+    },
+    {
+      "segments": [
+        5
+      ],
+      "candidate_ids": [
+        "cand-8768941022dc"
+      ],
+      "source_url": "https://live.staticflickr.com/8421/7633207028_88d9573748_b.jpg",
+      "landing_url": "https://www.flickr.com/photos/46156860@N04/7633207028",
+      "license": "by-nc-sa",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "creator": "Faugel",
+      "attribution": "\"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
+      "provider": "openverse",
+      "review_status": "needs_review",
+      "license_decision": "allow",
+      "license_reason": "재사용 가능한 라이선스로 분류되었습니다.",
+      "license_conditions": [
+        "비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+        "설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+        "ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다."
+      ],
+      "commercial_use_allowed": false,
+      "line": "장면 5: \"Boy with a face of a man\" by Faugel is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/."
+    },
+    {
+      "segments": [
+        5
+      ],
+      "candidate_ids": [
+        "cand-75d39111adf0"
+      ],
+      "source_url": "https://live.staticflickr.com/2134/2184175400_e1ce3984c5_b.jpg",
+      "landing_url": "https://www.flickr.com/photos/21175496@N04/2184175400",
+      "license": "by-nc-nd",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "creator": " Ed Murray",
+      "attribution": "\"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+      "provider": "openverse",
+      "review_status": "needs_review",
+      "license_decision": "block",
+      "license_reason": "NoDerivatives(ND) 조건입니다. 자막·합성·편집이 들어가는 영상에 사용할 수 없습니다.",
+      "license_conditions": [],
+      "commercial_use_allowed": null,
+      "line": "장면 5: \"bottled up light\" by  Ed Murray is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/."
+    },
+    {
+      "segments": [
+        6,
+        8,
+        13
+      ],
+      "candidate_ids": [
+        "cand-156168994661",
+        "cand-6375b69a1cc3",
+        "cand-7421e925d523"
+      ],
+      "source_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+      "landing_url": "https://namu.wiki/w/%ED%8C%AC%ED%85%80%28%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0%29",
+      "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+      "creator": "NamuWiki contributors; see page history",
+      "attribution": "나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+      "provider": "namuwiki_capture",
+      "review_status": "needs_review",
+      "license_decision": "allow",
+      "license_reason": "재사용 가능한 라이선스로 분류되었습니다.",
+      "license_conditions": [
+        "비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+        "설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+        "ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다."
+      ],
+      "commercial_use_allowed": false,
+      "line": "장면 6, 8, 13: 나무위키 '팬텀(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%8C%AC%ED%85%80(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)"
+    },
+    {
+      "segments": [
+        9
+      ],
+      "candidate_ids": [
+        "cand-84582203f99f"
+      ],
+      "source_url": "https://media.dexerto.com/media/pokemon-firered-leafgreen-clefable-artwork.png?format=auto&quality=75&width=385",
+      "landing_url": "https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/",
+      "license": "unknown",
+      "license_url": null,
+      "creator": "Unknown",
+      "attribution": null,
+      "provider": "web_image_query",
+      "review_status": "needs_review",
+      "license_decision": "block",
+      "license_reason": "라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "license_conditions": [],
+      "commercial_use_allowed": null,
+      "line": "장면 9: Unknown / unknown (https://www.dexerto.com/wikis/pokemon-firered-leafgreen/pokedex/clefable/)"
+    },
+    {
+      "segments": [
+        9,
+        12
+      ],
+      "candidate_ids": [
+        "cand-78d3f23f3a61",
+        "cand-c91e7445d65f"
+      ],
+      "source_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+      "landing_url": "https://namu.wiki/w/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+      "license": "CC BY-NC-SA 2.0 KR (text; verify document and media exclusions)",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+      "creator": "NamuWiki contributors; see page history",
+      "attribution": "나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)",
+      "provider": "namuwiki_capture",
+      "review_status": "needs_review",
+      "license_decision": "allow",
+      "license_reason": "재사용 가능한 라이선스로 분류되었습니다.",
+      "license_conditions": [
+        "비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+        "설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+        "ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다."
+      ],
+      "commercial_use_allowed": false,
+      "line": "장면 9, 12: 나무위키 '픽시(포켓몬스터)' 문서 및 문서 역사: https://namu.wiki/activity/%ED%94%BD%EC%8B%9C(%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0)"
+    }
+  ],
+  "claim_summary": {
+    "creative_interpretation": 6,
+    "secondary_reference": 4,
+    "official": 5
+  },
+  "disclosure": {
+    "required": true,
+    "api_field": "status.containsSyntheticMedia",
+    "description_sentence_ko": "이 영상의 내레이션은 AI 음성으로 생성되었습니다."
+  },
+  "manual_checklist": [
+    "썸네일 또는 커버 프레임 확인",
+    "재생목록 추가 여부 확인",
+    "댓글 설정과 리믹스 허용 범위 확인",
+    "업로드 후 저작권 클레임 확인",
+    "게시 전 사실 검수 완료 확인"
+  ],
+  "review": {
+    "status": "needs_review",
+    "approved_by": null,
+    "approved_at": null,
+    "notes": []
+  },
+  "checks": {
+    "validated_at": "2026-08-13T05:37:22.895027+00:00",
+    "passed": false,
+    "failures": [
+      "장면 1, 4: 라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "장면 1, 4: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 1, 4: 라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "장면 1, 4: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 5: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 5: NoDerivatives(ND) 조건입니다. 자막·합성·편집이 들어가는 영상에 사용할 수 없습니다.",
+      "장면 5: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 6, 8, 13: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 9: 라이선스가 기록되지 않았습니다. 사용 전 권리를 확인해야 합니다.",
+      "장면 9: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "장면 9, 12: 자산이 아직 승인되지 않았습니다 (현재 `needs_review`).",
+      "선택된 자산이 없는 장면이 있습니다: 2, 3, 7, 10, 11, 14, 15",
+      "게시 계획이 승인되지 않았습니다 (현재 `needs_review`). scripts/approve_publish.py로 승인하세요."
+    ],
+    "warnings": [
+      "장면 5: 비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+      "장면 5: 설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+      "장면 5: ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다.",
+      "장면 6, 8, 13: 비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+      "장면 6, 8, 13: 설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+      "장면 6, 8, 13: ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다.",
+      "장면 9, 12: 비영리 채널 전제를 유지해야 합니다. 수익화를 켜면 재검토가 필요합니다.",
+      "장면 9, 12: 설명문에 제작자·라이선스·원본 링크를 표기해야 합니다.",
+      "장면 9, 12: ShareAlike(SA) 조건입니다. 영상에 적용될 범위를 사람이 확인해야 합니다.",
+      "render 검증을 건너뛰었습니다. 업로드 전에 반드시 다시 검증하세요."
+    ],
+    "render_checked": false
+  },
+  "upload": {
+    "state": "not_uploaded",
+    "video_id": null,
+    "uploaded_at": null,
+    "promoted_at": null,
+    "attempts": []
+  }
+}

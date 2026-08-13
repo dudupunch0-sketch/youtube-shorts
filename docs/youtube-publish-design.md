@@ -1,7 +1,11 @@
 # YouTube 게시·운영 레이어 설계
 
-렌더가 끝난 MP4를 실제 YouTube Shorts로 올리고 운영하는 단계의 설계 문서다. 구현 전
-합의용이며, 결정되지 않은 항목은 마지막 절에 모아 둔다.
+렌더가 끝난 MP4를 실제 YouTube Shorts로 올리고 운영하는 단계의 설계 문서다.
+결정되지 않은 항목은 마지막 절에 모아 둔다.
+
+**구현 상태 (2026-08-13)**: 1단계(오프라인 계획·검토·승인·검증)는 구현되어 있다.
+2단계 이후(OAuth, 업로드, 공개 전환, 지표)는 아직 코드가 없다. `commercial_use`는
+수익화 계획이 없다는 결정에 따라 `false`로 확정되었다.
 
 ## 1. 범위
 
@@ -344,34 +348,49 @@ YOUTUBE_CHANNEL_ID=
 - 또한 현재 manifest의 후보 상당수가 `license: "unknown"`이고, 프랜차이즈 공식 아트워크는
   검토 노트에 "권리와 플랫폼 정책 확인 전 사용 금지"로 남아 있다.
 
-그래서 `commercial_use`를 `pipeline.json`에 명시적 플래그로 둔다. 기본값은 안전한 쪽인
-`true`(수익화 가정)로 두고, 이 경우 검증기가 NC 자료를 차단한다. 취미 목적 비수익
-채널이면 `false`로 바꾸고 NC 자료를 검토 후 허용한다. 이 값이 정해지기 전에는
-팬텀 에피소드의 최종 렌더 자체가 확정될 수 없다.
+그래서 `commercial_use`를 `pipeline.json`에 명시적 플래그로 둔다.
+
+**결정 (2026-08-13)**: 수익화 계획이 없으므로 `commercial_use: false`다. NC 자료는
+사람 검토를 거쳐 사용할 수 있다. 다만 이 플래그가 완화하는 것은 NC 조항 하나뿐이다.
+아래는 비수익 채널에서도 그대로 차단된다.
+
+- `unknown`이나 빈 라이선스 — 권리를 확인하지 않은 것과 같다
+- 인식할 수 없는 라이선스 표기 — 정규화 후 다시 판정한다
+- ND(NoDerivatives) — 자막·합성·편집이 들어가므로 조건 위반이다
+- 프랜차이즈 공식 아트워크 — 비영리라도 저작권 이용 허락이 생기지는 않는다
+
+팬텀 에피소드에 실제로 적용해보면 출처 7건 중 4건이 차단된다. 나무위키 캡처
+3건은 NC가 풀려 통과하고, `unknown` 3건과 `by-nc-nd` 1건이 남는다. 즉 수익화
+결정만으로 이 에피소드가 게시 가능해지지는 않는다.
 
 ## 10. 구현 순서
 
 각 단계가 독립적으로 검증 가능하도록 쪼갠다.
 
-1. **1단계 — 오프라인 계획과 게이트.** `plan_publish.py`, `render_publish_review.py`,
-   `approve_publish.py`, `validate_publish.py`. 네트워크와 OAuth가 필요 없고
-   `tests/test_pipeline.py`에 단위 테스트를 붙일 수 있다. 설명문 바이트 상한, 라이선스
-   차단, 승인 게이트, 고지 문장 검사를 여기서 전부 확정한다.
+1. **1단계 — 오프라인 계획과 게이트. 구현 완료.** `plan_publish.py`,
+   `render_publish_review.py`, `approve_publish.py`, `validate_publish.py`와 공용 모듈
+   `publish_licensing.py`, `publish_metadata.py`, `publish_validation.py`. 네트워크와
+   OAuth가 필요 없고 `tests/test_pipeline.py`에 17개 단위 테스트가 붙어 있다. 설명문
+   바이트 상한, 라이선스 차단, 승인 게이트, 고지 문장 검사가 여기서 확정되었다.
 2. **2단계 — 인증과 비공개 업로드.** `authorize_youtube.py`, `upload_youtube.py`.
    `private` 고정이라 실수의 비용이 낮다. 실제 채널에 테스트 영상 하나로 확인한다.
 3. **3단계 — 공개 전환.** `promote_youtube.py`. 예약 공개와 즉시 공개를 지원한다.
 4. **4단계 — 운영 지표.** `fetch_youtube_stats.py`로 `videos.list` 조회 결과를 누적한다.
    재생목록 추가와 썸네일은 이 시점에 필요하면 붙인다.
 
-1단계는 기존 저장소만으로 완결되므로 지금 바로 구현할 수 있다. 2단계부터는 Google Cloud
-프로젝트와 OAuth 클라이언트가 필요하다.
+2단계부터는 Google Cloud 프로젝트와 OAuth 클라이언트가 필요하다.
 
 ## 11. 미해결 결정 사항
 
-1. **수익화 여부.** 9절의 `commercial_use` 값. 나머지 라이선스 정책이 여기에 달려 있다.
-2. **`category_id`.** 24(Entertainment), 27(Education), 22(People & Blogs) 중 선택.
+1. ~~**수익화 여부.**~~ 결정됨: 계획 없음 → `commercial_use: false` (9절).
+2. **`category_id`.** 현재 24(Entertainment)를 기본값으로 두었다. 27(Education) 또는
+   22(People & Blogs)로 바꿀 수 있다.
 3. **업로드 후 기본 동작.** 비공개 유지 후 수동 공개인지, 예약 공개 시각을 프로필에
-   고정할지.
-4. **아동용 대상 여부.** `selfDeclaredMadeForKids`. 포켓몬 소재라 판단이 필요하다.
-   true로 선언하면 댓글이 비활성화된다.
+   고정할지. 현재는 비공개 유지가 기본이다.
+4. **아동용 대상 여부.** `selfDeclaredMadeForKids`. 현재 false다. 포켓몬 소재라 판단이
+   필요하다. true로 선언하면 댓글이 비활성화된다.
 5. **채널 고정 푸터.** 설명문 마지막에 넣을 고정 문구(채널 소개, 정정 요청 안내 등).
+   현재는 빈 문자열이다.
+
+2~5번은 모두 `config/pipeline.json`의 `publish` 블록에서 바꿀 수 있고, 코드 변경이
+필요하지 않다.

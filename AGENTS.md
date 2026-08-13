@@ -12,6 +12,28 @@ Build a repeatable pipeline for Korean YouTube Shorts about fictional-media lore
 4. Collect visual candidates per segment, let a human choose and verify them, then record source URL, license, creator, and attribution. Use `scripts/plan_presentation.py` to recommend `full_frame`, `split_2up_left_right`, `split_2up_top_bottom`, or `sequence`; human overrides remain authoritative. Generate only after explicit approval.
 5. Generate scene audio, captions, and the final 9:16 video.
 6. Validate the episode, timing manifest, media provenance, and final render before publishing.
+7. Plan publish metadata with `scripts/plan_publish.py`, review it, record approval with
+   `scripts/approve_publish.py`, and gate the upload with `scripts/validate_publish.py`.
+
+## Publish policy (decision recorded 2026-08-13)
+
+- The channel has no monetization plan, so `publish.commercial_use` is `false` in
+  `config/pipeline.json`. This relaxes the NonCommercial clause only.
+- Blocked regardless of monetization: unknown or empty licenses, unrecognized license
+  strings, NoDerivatives (a captioned composite is a derivative), and franchise official
+  artwork. Non-commercial use does not create a license for copyrighted key art.
+- ShareAlike assets pass with a warning. A human confirms the scope that applies.
+- Attribution lines come from the asset each scene actually selected, never from the
+  candidate list. Sources reused across scenes collapse into one line, and URLs are
+  compared after percent-decoding so encoding variants of one page do not duplicate.
+- The synthetic-narration disclosure goes in two places: the `status.containsSyntheticMedia`
+  API field and a sentence in the description. The validator checks both.
+- The description limit is 5000 UTF-8 bytes, not 5000 characters. Korean costs three bytes
+  per character. Never validate this in characters.
+- Uploads are pinned to `privacyStatus: private`. Promotion to public is a separate step
+  and the only irreversible one.
+- `plan_publish.py` always writes `review.status: needs_review`. Do not approve a publish
+  plan on the user's behalf.
 
 ## Content and references
 
@@ -60,6 +82,9 @@ Use `scripts/build_captions.py` to align captions to measured scene durations, `
 
 ## Current TODO
 
+- Replace the Phantom episode's three `unknown`-license sources and one `by-nc-nd` source,
+  and fill the seven scenes that have no selected asset (2, 3, 7, 10, 11, 14, 15).
+- Implement publish stage 2: OAuth authorization, private upload, promotion, and stats.
 - Complete candidate coverage, human selection, download, and attribution handling.
 - Review the draft's layout, captions, source context, and narration; then approve or replace assets scene by scene.
 - Add a safe provider fallback policy for generation-time failures, not only model-load failures.
