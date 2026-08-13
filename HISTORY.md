@@ -53,6 +53,35 @@ the approval gates ship; only pipeline steps 4 and 6 would need to move.
   lines, and collector-recorded attribution strings dropped the scene prefix.
 - The monetization decision alone does not make this episode publishable.
 
+### Where to pick this up
+
+In order. Steps 1-3 need no new accounts or credentials.
+
+1. **Replace the four license-blocked sources.** Scenes 1 and 4 use two `unknown`
+   pokemondb artworks, scene 9 uses an `unknown` dexerto page, and scene 5 uses a
+   `by-nc-nd` asset. Prefer Openverse, Wikimedia Commons, or an official source page with
+   a recorded license. Re-run `plan_publish.py` after each change; the license verdict is
+   recomputed from the media manifest every time.
+2. **Fill or resolve the seven empty scenes** (2, 3, 7, 10, 11, 14, 15). Either collect
+   candidates or decide they stay text cards. A text card still needs a manifest entry, or
+   `check_licensing` reports the scene as missing.
+3. **Render final and validate for real.** Once every selected asset is `approved`, render
+   without `--draft`, then run `validate_publish.py` *without* `--skip-render`. The render
+   checks (draft flag, 50-70s, 1080x1920, MP4 present) have never run against a real final
+   render, only against a synthetic fixture.
+4. **Publish stage 2.** Requires a Google Cloud project and an OAuth desktop client, which
+   is a user action, not a code change. Scopes and the WSL consent flow are in section 6 of
+   `docs/youtube-publish-design.md`. Scripts to add: `authorize_youtube.py`,
+   `upload_youtube.py`.
+5. **Stages 3-4.** `promote_youtube.py` for public/scheduled release, then
+   `fetch_youtube_stats.py`.
+
+Config-only decisions still open, all in `config/pipeline.json` under `publish`:
+`category_id` (24), post-upload default (private, manual promotion),
+`selfDeclaredMadeForKids` (false), and the description `footer` (empty).
+
+Not planned: `block/buzz` integration. See the context note at the top of this entry.
+
 ## 2026-08-08 — Search fallback installed
 
 - Installed the public `insane-search-codex` package, version 0.8.2, from `fivetaku/gptaku-plugins-codex`.
